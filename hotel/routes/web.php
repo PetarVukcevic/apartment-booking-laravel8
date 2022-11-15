@@ -14,5 +14,41 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('main');
+    return view('home');
 });
+
+Route::get('/about-us', function () {
+    return view('about-us');
+});
+
+Route::get('/testimonials', function () {
+    return view('testimonials');
+});
+
+Route::get('/faq', function () {
+    return view('faq');
+});
+
+Route::get('/blog', function () {
+    return view('blog');
+});
+
+Route::get('/catalog', function () {
+    return view('catalog');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+Route::fallback(function ()
+{
+    # To Specific Controller
+    return Redirect::to('/'); # ('/') if defined
+
+    # To Specific View
+    return response()->view('home', [], 404);
+});
+
+
+
