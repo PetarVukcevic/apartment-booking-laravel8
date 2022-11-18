@@ -35,7 +35,7 @@
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="heading heading-4">
                                 <div class="heading-bg heading-right">
-                                    <p class="mb-0">All About Petar's Apartments</p>
+                                    <p class="mb-0">All About P Stays</p>
                                     <h2>Our Story</h2>
                                 </div>
                             </div>
@@ -45,7 +45,7 @@
                 </div>
                 <!-- .col-md-12 end -->
                 <div class="col-xs-12 col-sm-12 col-md-6">
-                    <h3 class="color-heading mb-sm font-18">Petar's Apartments is a leading developer of A-grade commercial, industrial and residential projects in USA.</h3>
+                    <h3 class="color-heading mb-sm font-18">P Stays is a leading developer of A-grade commercial, industrial and residential projects in USA.</h3>
                     <p class="mb-60">Since its foundation the company has doubled its turnover year on year, with its staff numbers swelling accordingly. Today Yellow Hats has over 4,000 professionals on its payroll. The company is active in Middle East, CIS and Europe. Yellow Hats has a team of specialists capable of maximizing the result and delivering projects of any complexity and scope. Our employees are acclaimed experts in such areas as project.</p>
                     <a class="btn btn-secondary mb-30-xs" href="#">our services</a>
                 </div>
@@ -239,7 +239,7 @@
                             </div>
                             <div id="collapse02-3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                                 <div class="panel-body">
-                                    Yellow Hats is a leading developer of A-grade commercial, industrial and residential projects in USA. Since its foundation the company has doubled its turnover year on year, with its staff numbers swelling accordingly.
+                                    P Stays is a leading developer of A-grade commercial, industrial and residential projects in USA. Since its foundation the company has doubled its turnover year on year, with its staff numbers swelling accordingly.
                                 </div>
                             </div>
                         </div>
@@ -251,7 +251,7 @@
                     <div id="testimonial-oc-5"  class="testimonial-slide testimonial testimonial-3">
                         <div class="testimonial-item">
                             <div class="testimonial-content">
-                                <p>In Yellow Hats, understanding the needs of clients is our professional duty. We individually assess each plan and offer optimal solutions, proceeding from the project’s objectives and specifics. The company’s stable financial standing enables us to set minimal advance payment rates and a comfortable schedule of financing for our awesome client</p>
+                                <p>In P Stays, understanding the needs of clients is our professional duty. We individually assess each plan and offer optimal solutions, proceeding from the project’s objectives and specifics. The company’s stable financial standing enables us to set minimal advance payment rates and a comfortable schedule of financing for our awesome client</p>
                                 <div class="testimonial-img">
                                     <img src="assets/images/testimonial/3.png" alt="author"/>
                                 </div>
@@ -277,7 +277,7 @@
 
                         <div class="testimonial-item">
                             <div class="testimonial-content">
-                                <p>Yellow Hats Group carries out full-cycle development, including the attraction of investments, construction and managing premium residential and non-residential properties.</p>
+                                <p>P stays Group carries out full-cycle development, including the attraction of investments, construction and managing premium residential and non-residential properties.</p>
                                 <div class="testimonial-img">
                                     <img src="assets/images/testimonial/1.png" alt="author"/>
                                 </div>

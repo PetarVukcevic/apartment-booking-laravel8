@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Apartment;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('home', [
+        'apartments' => Apartment::all()
+    ]);
 });
 
 Route::get('/about-us', function () {
@@ -34,8 +37,17 @@ Route::get('/blog', function () {
 });
 
 Route::get('/catalog', function () {
-    return view('catalog');
+    return view('catalog', [
+            'apartments' => Apartment::all()
+    ]);
 });
+
+// TODO
+//Route::get('catalog/{apartment}', function (Apartment $apartment) {
+//    return view('apartment', [
+//        'apartment' => Apartment::findOrFail($apartment)
+//    ]);
+//});
 
 Route::get('/contact', function () {
     return view('contact');

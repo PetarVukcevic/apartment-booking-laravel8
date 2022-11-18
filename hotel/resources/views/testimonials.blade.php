@@ -13,7 +13,7 @@
                         </div>
                         <ol class="breadcrumb">
                             <li>
-                                <a href="index.html">Home</a>
+                                <a href="/">Home</a>
                             </li>
                             <li class="active">Testimonials</li>
                         </ol>
@@ -148,7 +148,7 @@
                                     <i class="fa fa-quote-left"></i>
                                     <img src="assets/images/testimonial/1.png" alt="author"/>
                                 </div>
-                                <p>Yellow Hats Group carries out full-cycle development, including the attraction of investments, construction and managing premium residential and non-residential properties.</p>
+                                <p>P Stays Group carries out full-cycle development, including the attraction of investments, construction and managing premium residential and non-residential properties.</p>
                             </div>
                             <div class="testimonial-divider">
                             </div>
@@ -184,7 +184,7 @@
                                     <i class="fa fa-quote-left"></i>
                                     <img src="assets/images/testimonial/1.png" alt="author"/>
                                 </div>
-                                <p>Yellow Hats Group carries out full-cycle development, including the attraction of investments, construction and managing premium residential and non-residential properties.</p>
+                                <p>P Stays Group carries out full-cycle development, including the attraction of investments, construction and managing premium residential and non-residential properties.</p>
                             </div>
                             <div class="testimonial-divider">
                             </div>

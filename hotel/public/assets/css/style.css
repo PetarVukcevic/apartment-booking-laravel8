@@ -948,7 +948,7 @@ section {
 	background-color: #fff !important
 }
 
-.bg-dark h6 { color:#f6f6f7} 
+.bg-dark h6 { color:#f6f6f7}
 /* Background Image */
 .bg-section {
 	position: relative;
@@ -2301,7 +2301,7 @@ transform: scale(1.0);
 	color: #fff !important
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) and (max-width : 767px) {
 
 .navbar-nav {
@@ -3464,7 +3464,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 	padding-right: 20px;
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) and (max-width : 479px) {
 
 .heading {
@@ -3494,7 +3494,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 }
 }
 
-/* Extra Small Devices, Phones */ 
+/* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px)and (max-width : 767px ) {
 
 .heading-bg.heading-right h2,
@@ -3620,7 +3620,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 	line-height: 34px;
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) and (max-width : 479px) {
 
 .page-title h2 {
@@ -3651,7 +3651,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 }
 }
 
-/* Extra Small Devices, Phones */ 
+/* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px)and (max-width : 767px ) {
 
 .page-title h2 {
@@ -3962,7 +3962,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 	outline: 2px solid #ffc527 !important
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) and (max-width : 479px) {
 
 .rev_slider h1 {
@@ -4020,7 +4020,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 }
 }
 
-/* Extra Small Devices, Phones */ 
+/* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px)and (max-width : 767px ) {
 
 .rev_slider h1 {
@@ -4543,7 +4543,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 	border: 1px solid rgba(49, 49, 49, 0.1);
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) and (max-width : 479px) {
 
 .shotcode-1 .feature .feature-icon {
@@ -4555,7 +4555,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 }
 }
 
-/* Extra Small Devices, Phones */ 
+/* Extra Small Devices, Phones */
 @media only screen and (min-width : 320px)and (max-width : 767px ) {
 
 .shortcode-3 .pr-50 {
@@ -5025,11 +5025,11 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 	color: #ffc527
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) and (max-width : 479px) {
 }
 
-/* Extra Small Devices, Phones */ 
+/* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px)and (max-width : 767px ) {
 }
 
@@ -5284,7 +5284,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 	margin-top: 20px;
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) and (max-width : 479px) {
 
 .testimonial .testimonial-content {
@@ -5311,7 +5311,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 }
 }
 
-/* Extra Small Devices, Phones */ 
+/* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px)and (max-width : 767px ) {
 
 .testimonial-3 .testimonial-content:before {
@@ -5823,7 +5823,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 	margin-bottom: 50px;
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) and (max-width : 479px) {
 
 .service-1 .service-img img,
@@ -5909,7 +5909,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 }
 }
 
-/* Extra Small Devices, Phones */ 
+/* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px)and (max-width : 767px ) {
 
 .single-service .service-img img {
@@ -6509,7 +6509,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 	color: #2f2f2f;
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) and (max-width : 479px) {
 
 .projects-filter ul li {
@@ -6550,7 +6550,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 }
 }
 
-/* Extra Small Devices, Phones */ 
+/* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px)and (max-width : 767px ) {
 
 .projects-filter ul li {
@@ -6868,7 +6868,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 	text-transform: uppercase;
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) and (max-width : 767px ) {
 
 .cta {
@@ -6942,7 +6942,7 @@ li.dropdown-submenu.pull-left > ul.dropdown-menu {
 }
 }
 
-/* Extra Small Devices, Phones */ 
+/* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px)and (max-width : 767px ) {
 
 .cta-2 .btn-primary {
@@ -7655,7 +7655,7 @@ ul.comments-list ul.comment-children ul .comment-body .comment {
 	margin-bottom: 30px;
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) and (max-width : 767px) {
 
 .entry-next,
@@ -8124,7 +8124,7 @@ margin-bottom: 0
 	width: auto
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) and (max-width : 479px) {
 
 .sidebar {
@@ -8136,7 +8136,7 @@ margin-bottom: 0
 }
 }
 
-/* Extra Small Devices, Phones */ 
+/* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px)and (max-width : 767px ) {
 }
 
@@ -8943,7 +8943,7 @@ td.cart-product-quantity {
 	border-bottom: 2px solid #ffc527
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) and (max-width : 767px) {
 
 .product-img img {
@@ -9170,7 +9170,7 @@ input[aria-invalid="true"] {
 	font-size: 14px;
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) and (max-width : 479px) {
 
 .contact .widgets-contact .widget {
@@ -9441,7 +9441,7 @@ footer hr {
 	border-bottom: 1px solid rgba(47, 47, 47, 0.2);
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) and (max-width : 767px) {
 
 .widgets-links {
@@ -9587,7 +9587,7 @@ footer hr {
 	margin-right: 30px;
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) and (max-width : 479px) {
 
 .error-page .btn-primary {
@@ -9779,7 +9779,7 @@ footer hr {
 	margin-bottom: 47px
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) and (max-width : 479px) {
 
 .mainten-page h1,
@@ -9794,7 +9794,7 @@ footer hr {
 }
 }
 
-/* Extra Small Devices, Phones */ 
+/* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px)and (max-width : 767px ) {
 
 .mainten-page h1,

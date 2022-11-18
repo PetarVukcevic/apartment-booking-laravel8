@@ -308,8 +308,8 @@
                         </div>
                         <!-- .col-md-12 end -->
                         <div class="col-xs-12 col-xs-12 col-md-12 mb-50">
-                            <p>P Property is a leading finder of luxury properties all over the World. Since its foundation the company has doubled its turnover year on year, with its staff numbers swelling accordingly. </p>
-                            <p  class="mb-0">Today P Property has over 4,000 professionals on its payroll. The company is active in Middle East, CIS and Europe.</p>
+                            <p>P Stays is a leading finder of luxury properties all over the World. Since its foundation the company has doubled its turnover year on year, with its staff numbers swelling accordingly. </p>
+                            <p  class="mb-0">Today P Stays has over 4,000 professionals on its payroll. The company is active in Middle East, CIS and Europe.</p>
                         </div>
                         <!-- .col-md-12 end -->
                         <div class="col-xs-12 col-sm-6 col-md-3">
@@ -447,7 +447,7 @@
                                     <i class="fa fa-quote-left"></i>
                                     <img src="assets/images/testimonial/1.png" alt="author"/>
                                 </div>
-                                <p>Yellow Hats Group carries out full-cycle development, including the attraction of investments, construction and managing premium residential and non-residential properties.</p>
+                                <p>P Stays Group carries out full-cycle development, including the attraction of investments, construction and managing premium residential and non-residential properties.</p>
                             </div>
                             <div class="testimonial-divider">
                             </div>
@@ -483,7 +483,7 @@
                                     <i class="fa fa-quote-left"></i>
                                     <img src="assets/images/testimonial/1.png" alt="author"/>
                                 </div>
-                                <p>Yellow Hats Group carries out full-cycle development, including the attraction of investments, construction and managing premium residential and non-residential properties.</p>
+                                <p>P Stays Group carries out full-cycle development, including the attraction of investments, construction and managing premium residential and non-residential properties.</p>
                             </div>
                             <div class="testimonial-divider">
                             </div>

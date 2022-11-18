@@ -36,7 +36,7 @@
 
     <!-- Document Title
     ============================================= -->
-    <title>P Property</title>
+    <title>P Stays</title>
 </head>
 <body>
 <div class="preloader">
@@ -70,7 +70,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-left">
-                    <li class="has-dropdown active">
+                    <li>
                         <a href="/">Home</a>
                     </li>
                     <!-- li end -->
@@ -252,8 +252,8 @@
                         <img src="assets/images/footer-logo.png" alt="logo"/>
                     </div>
                     <div class="widget-about-info">
-                        <h5 class="text-capitalize text-white">p property</h5>
-                        <p class="mb-0">P Property is a leading finder of luxury properties all over the World. Since its foundation the company has doubled its turnover year on year, with its staff numbers swelling accordingly.</p>
+                        <h5 class="text-capitalize text-white">p stays</h5>
+                        <p class="mb-0">P Stays is a leading finder of luxury properties all over the World. Since its foundation the company has doubled its turnover year on year, with its staff numbers swelling accordingly.</p>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-3 widget-navigation text-center-xs mb-30-xs">
