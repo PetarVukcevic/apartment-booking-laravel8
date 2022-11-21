@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Apartment;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home', [
-        'apartments' => Apartment::all()
+        'apartments' => Apartment::with('category')->get()
     ]);
 });
 
@@ -39,6 +40,12 @@ Route::get('/blog', function () {
 Route::get('/catalog', function () {
     return view('catalog', [
             'apartments' => Apartment::all()
+    ]);
+});
+
+Route::get('/categories/{category}', function (Category $category) {
+    return view('catalog', [
+        'apartments' => $category->apartments()
     ]);
 });
 
