@@ -20,16 +20,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         User::factory(3)->create();
-         Category::factory(3)->create();
-         City::factory(3)->create();
-         Apartment::factory(5)->create();
-         Booking::factory(5)->create();
-         Rating::factory(3)->create();
+        $this->call([
+            UserSeeder::class,
+            CateegorySeeder::class,
+            CitySeeder::class,
+            ApartmentSeeder::class,
+            BookingSeeder::class,
+            RatingSeeder::class
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        ]);
     }
 }
