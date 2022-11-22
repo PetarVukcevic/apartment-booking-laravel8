@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApartmentController;
 use App\Models\Apartment;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
@@ -16,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+
+
     return view('home', [
         'apartments' => Apartment::with('category')->get()
     ]);
@@ -37,11 +40,7 @@ Route::get('/blog', function () {
     return view('blog');
 });
 
-Route::get('/catalog', function () {
-    return view('catalog', [
-            'apartments' => Apartment::all()
-    ]);
-});
+Route::get('/catalog', [ApartmentController::class, 'index'])->name('catalog');
 
 Route::get('/categories/{category:id}', function (Category $category) {
     return view('catalog', [

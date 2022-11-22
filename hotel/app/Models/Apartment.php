@@ -11,6 +11,15 @@ class Apartment extends Model
 
     protected $fillable = ['title', 'rooms', 'price', 'description', 'img_url', 'address', 'adults', 'children'];
 
+    public function scopeFilter($query, array $filters)
+    {
+        $query->when($filters['search'] ?? false, fn ($query, $search) =>
+            $query
+                ->where('title', 'like', '%' . $search . '%'));
+
+    }
+
+
     public function category()
     {
         return $this->belongsTo(Category::class);

@@ -118,9 +118,11 @@
                         <span class="title">search</span>
                     </div>
                     <div class="search-box">
-                        <form class="search-form">
+                        <form class="search-form" method="GET">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Type Your Search Words">
+                                <input name="search" type="text" class="form-control"
+                                       placeholder="Type Your Search Words"
+                                        value="{{ request('search') }}">
                                 <span class="input-group-btn">
 								<button class="btn" type="button"><i class="fa fa-search"></i></button>
 								</span>
