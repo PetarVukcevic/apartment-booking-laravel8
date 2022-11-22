@@ -59,22 +59,9 @@
                     <!-- .row end -->
 
                     <div class="row">
-                        <x-apartment/>
-                        <x-apartment/>
-                        <x-apartment/>
-                        <x-apartment/>
-                        <x-apartment/>
-                        <x-apartment/>
-                        <x-apartment/>
-                        <x-apartment/>
-                        <x-apartment/>
-                        <x-apartment/>
-                        <x-apartment/>
-                        <x-apartment/>
-                        <x-apartment/>
-                        <x-apartment/>
-                        <x-apartment/>
-                        <x-apartment/>
+
+                      <x-apartments-grid :apartments="$apartments"/>
+
                     </div>
                     <!-- .row end -->
 

@@ -97,10 +97,10 @@
                     </li>
                     <!-- li end -->
                     <li class="has-dropdown">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Catalog</a>
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Apartments</a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="/catalog">Browse apartments</a>
+                                <a href="/catalog">Catalog</a>
                             </li>
                         </ul>
                     </li>

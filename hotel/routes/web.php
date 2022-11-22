@@ -43,7 +43,7 @@ Route::get('/catalog', function () {
     ]);
 });
 
-Route::get('/categories/{category}', function (Category $category) {
+Route::get('/categories/{category:id}', function (Category $category) {
     return view('catalog', [
         'apartments' => $category->apartments()
     ]);
