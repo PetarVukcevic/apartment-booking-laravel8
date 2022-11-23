@@ -3,7 +3,7 @@
 ============================================= -->
     <section class="bg-overlay bg-overlay-gradient pb-0">
         <div class="bg-section" >
-            <img src="assets/images/page-title/1.jpg" alt="Background"/>
+            <img src={{url("assets/images/page-title/1.jpg")}} alt="Background"/>
         </div>
         <div class="container">
             <div class="row">
@@ -116,7 +116,7 @@
                         </li>
                         @foreach($categories as $category)
                             <li>
-                                <a href="/categories/{{ $category->id }}">{{$category->name}}</a>
+                                <a href="{{ url('/categories/'.$category->id) }}">{{$category->name}}</a>
                             </li>
                         @endforeach
                     </x-catalog-sidebar>

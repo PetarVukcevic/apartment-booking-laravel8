@@ -9,7 +9,7 @@
     <meta name="author" content="wplly" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="construction html5 template">
-    <link href="assets/images/logo/footer-logo.png" rel="icon">
+    <link href={{asset("assets/images/logo/footer-logo.png")}} rel="icon">
 
     <!-- Fonts
     ============================================= -->
@@ -17,21 +17,21 @@
 
     <!-- Stylesheets
     ============================================= -->
-    <link href="assets/css/external.css" rel="stylesheet">
+    <link href={{asset("assets/css/external.css")}} rel="stylesheet">
     <!-- Extrnal CSS -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href={{asset("assets/css/bootstrap.min.css")}} rel="stylesheet">
     <!-- Boostrap Core CSS -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href={{asset("assets/css/style.css")}} rel="stylesheet">
     <!-- Style CSS -->
 
     <!-- RS5.0 Main Stylesheet -->
-    <link rel="stylesheet" type="text/css" href="assets/revolution/css/settings.css">
-    <link rel="stylesheet" type="text/css" href="assets/revolution/css/layers.css">
-    <link rel="stylesheet" type="text/css" href="assets/revolution/css/navigation.css">
+    <link rel="stylesheet" type="text/css" href={{asset("assets/revolution/css/settings.css")}}>
+    <link rel="stylesheet" type="text/css" href={{asset("assets/revolution/css/layers.css")}}>
+    <link rel="stylesheet" type="text/css" href={{asset("assets/revolution/css/navigation.css")}}>
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
     <!--[if lt IE 9]>
-    <script src="assets/js/html5shiv.js"></script>
-    <script src="assets/js/respond.min.js"></script>
+    <script src={{asset("assets/js/html5shiv.js")}}></script>
+    <script src={{asset("assets/js/respond.min.js")}}></script>
     <![endif]-->
 
     <!-- Document Title
@@ -62,7 +62,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="logo" href="/">
-                    <img src="assets/images/logo/nav-logo.png" alt="Vukcevic Apartments">
+                    <img src={{url("assets/images/logo/nav-logo.png")}} alt="Vukcevic Apartments">
                 </a>
 
             </div>
@@ -232,7 +232,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12 widgets-links">
                 <div class="col-xs-12 col-sm-12 col-md-4 widget-about text-center-xs mb-30-xs">
                     <div class="widget-about-logo pull-left pull-none-xs">
-                        <img src="assets/images/logo/footer-logo.png" alt="logo"/>
+                        <img src={{url("assets/images/logo/footer-logo.png")}} alt="logo"/>
                     </div>
                     <div class="widget-about-info">
                         <h5 class="text-capitalize text-white">p property</h5>
@@ -393,21 +393,21 @@
 
 <!-- Footer Scripts
 ============================================= -->
-<script src="assets/js/jquery-2.1.1.min.js"></script>
-<script src="assets/js/plugins.js?v=1.0.0"></script>
-<script src="assets/js/functions.js?v=1.2.0"></script>
+<script src={{asset("assets/js/jquery-2.1.1.min.js")}}></script>
+<script src={{asset("assets/js/plugins.js?v=1.0.0")}}></script>
+<script src={{asset("assets/js/functions.js?v=1.2.0")}}></script>
 <!-- RS5.0 Core JS Files -->
-<script type="text/javascript" src="assets/revolution/js/jquery.themepunch.tools.min.js?rev=5.0"></script>
-<script type="text/javascript" src="assets/revolution/js/jquery.themepunch.revolution.min.js?rev=5.0"></script>
+<script type="text/javascript" src={{asset("assets/revolution/js/jquery.themepunch.tools.min.js?rev=5.0")}}></script>
+<script type="text/javascript" src={{asset("assets/revolution/js/jquery.themepunch.revolution.min.js?rev=5.0")}}></script>
 
-<script type="text/javascript" src="assets/revolution/js/extensions/revolution.extension.video.min.js"></script>
-<script type="text/javascript" src="assets/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-<script type="text/javascript" src="assets/revolution/js/extensions/revolution.extension.actions.min.js"></script>
-<script type="text/javascript" src="assets/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-<script type="text/javascript" src="assets/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
-<script type="text/javascript" src="assets/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-<script type="text/javascript" src="assets/revolution/js/extensions/revolution.extension.migration.min.js"></script>
-<script type="text/javascript" src="assets/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+<script type="text/javascript" src={{asset("assets/revolution/js/extensions/revolution.extension.video.min.js")}}></script>
+<script type="text/javascript" src={{asset("assets/revolution/js/extensions/revolution.extension.slideanims.min.js")}}></script>
+<script type="text/javascript" src={{asset("assets/revolution/js/extensions/revolution.extension.actions.min.js")}}></script>
+<script type="text/javascript" src={{asset("assets/revolution/js/extensions/revolution.extension.layeranimation.min.js")}}></script>
+<script type="text/javascript" src={{asset("assets/revolution/js/extensions/revolution.extension.kenburn.min.js")}}></script>
+<script type="text/javascript" src={{asset("assets/revolution/js/extensions/revolution.extension.navigation.min.js")}}></script>
+<script type="text/javascript" src={{asset("assets/revolution/js/extensions/revolution.extension.migration.min.js")}}></script>
+<script type="text/javascript" src={{asset("assets/revolution/js/extensions/revolution.extension.parallax.min.js")}}></script>
 
 <script type="text/javascript">
     jQuery(document).ready(function() {
