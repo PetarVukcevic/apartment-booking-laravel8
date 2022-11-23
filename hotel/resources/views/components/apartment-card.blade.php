@@ -1,7 +1,7 @@
 @props(['apartment'])
 
 <div class="product-img">
-    <img src="assets/images/shop/grid/apartman.png" alt="Apartment">
+    <img src="assets/images/shop/grid/apartman_pr.png" alt="Apartment">
     <div class="product-hover">
         <div class="product-cart">
             <a class="btn btn-secondary btn-block" href="#">Book</a>
@@ -13,5 +13,5 @@
     <h4>
         <a href="#">{{ $apartment->title }}</a>
     </h4>
-    <p class="product-price">{{ $apartment->price }}</p>
+    <p class="product-price">{{ $apartment->price }}.00 €</p>
 </div>

@@ -111,27 +111,8 @@
                     <!-- li end -->
                 </ul>
 
-                <!-- Mod-->
-                <div class="module module-search pull-left">
-                    <div class="search-icon">
-                        <i class="fa fa-search"></i>
-                        <span class="title">search</span>
-                    </div>
-                    <div class="search-box">
-                        <form class="search-form" method="GET">
-                            <div class="input-group">
-                                <input name="search" type="text" class="form-control"
-                                       placeholder="Type Your Search Words"
-                                        value="{{ request('search') }}">
-                                <span class="input-group-btn">
-								<button class="btn" type="button"><i class="fa fa-search"></i></button>
-								</span>
-                            </div>
-                            <!-- /input-group -->
-                        </form>
-                    </div>
-                </div>
-                <!-- .module-search-->
+
+
                 <!-- .module-cart -->
 {{--                <div class="module module-cart pull-left">--}}
 {{--                    <div class="cart-icon">--}}

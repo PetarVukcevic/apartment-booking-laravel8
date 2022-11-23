@@ -48,6 +48,8 @@ Route::get('/categories/{category:id}', function (Category $category) {
     ]);
 });
 
+
+
 // TODO
 //Route::get('catalog/{apartment}', function (Apartment $apartment) {
 //    return view('apartment', [
