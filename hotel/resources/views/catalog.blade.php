@@ -110,33 +110,18 @@
 
                     <!-- Categories
                     ============================================= -->
-                    <div class="widget widget-categories">
-                        <div class="widget-title">
-                            <h3>categories</h3>
-                        </div>
-                        <div class="widget-content">
-                            <ul class="list-unstyled">
-                                <li>
-                                    <a href="#">Tiling &amp; Painting</a>
-                                </li>
-                                <li>
-                                    <a href="#">Renovations</a>
-                                </li>
-                                <li>
-                                    <a href="#">Design &amp; Build</a>
-                                </li>
-                                <li>
-                                    <a href="#">Consulting</a>
-                                </li>
-                                <li>
-                                    <a href="#">Management</a>
-                                </li>
-                                <li>
-                                    <a href="#">Wood Flooring</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                    <x-catalog-sidebar>
+                        <li>
+                            <a href="/catalog">all</a>
+                        </li>
+                        @foreach($categories as $category)
+                            <li>
+                                <a href="/categories/{{ $category->id }}">{{$category->name}}</a>
+                            </li>
+                        @endforeach
+                    </x-catalog-sidebar>
+
+
 
 
                     <!-- Filter

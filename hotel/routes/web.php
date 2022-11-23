@@ -19,9 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
 
 
-    return view('home', [
-        'apartments' => Apartment::with('category')->get()
-    ]);
+    return view('home');
 });
 
 Route::get('/about-us', function () {
@@ -37,18 +35,15 @@ Route::get('/faq', function () {
 });
 
 Route::get('/blog', function () {
-    return view('blog');
+
+    return view('blog', []);
 });
 
 Route::get('/catalog', [ApartmentController::class, 'index'])->name('catalog');
 
-Route::get('/categories/{category:id}', function (Category $category) {
-    return view('catalog', [
-        'apartments' => $category->apartments()
-    ]);
-});
+Route::get('/categories/{category:id}', [ApartmentController::class, 'categories']);
 
-
+Route::get('/landlord/{landlord:username}', [ApartmentController::class, 'landlord']);
 
 // TODO
 //Route::get('catalog/{apartment}', function (Apartment $apartment) {

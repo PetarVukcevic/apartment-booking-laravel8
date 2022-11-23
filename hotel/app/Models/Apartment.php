@@ -32,7 +32,7 @@ class Apartment extends Model
 
     public function landlord()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function ratings()

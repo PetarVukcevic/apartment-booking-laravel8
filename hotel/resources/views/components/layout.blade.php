@@ -9,7 +9,7 @@
     <meta name="author" content="wplly" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="construction html5 template">
-    <link href="assets/images/favicon/favicon.ico" rel="icon">
+    <link href="assets/images/logo/footer-logo.png" rel="icon">
 
     <!-- Fonts
     ============================================= -->
@@ -36,7 +36,7 @@
 
     <!-- Document Title
     ============================================= -->
-    <title>P Stays</title>
+    <title>P Property</title>
 </head>
 <body>
 <div class="preloader">
@@ -62,7 +62,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="logo" href="/">
-                    <img src="assets/images/logo/logo-light.png" alt="Vukcevic Apartments">
+                    <img src="assets/images/logo/nav-logo.png" alt="Vukcevic Apartments">
                 </a>
 
             </div>
@@ -232,11 +232,11 @@
             <div class="col-xs-12 col-sm-12 col-md-12 widgets-links">
                 <div class="col-xs-12 col-sm-12 col-md-4 widget-about text-center-xs mb-30-xs">
                     <div class="widget-about-logo pull-left pull-none-xs">
-                        <img src="assets/images/footer-logo.png" alt="logo"/>
+                        <img src="assets/images/logo/footer-logo.png" alt="logo"/>
                     </div>
                     <div class="widget-about-info">
-                        <h5 class="text-capitalize text-white">p stays</h5>
-                        <p class="mb-0">P Stays is a leading finder of luxury properties all over the World. Since its foundation the company has doubled its turnover year on year, with its staff numbers swelling accordingly.</p>
+                        <h5 class="text-capitalize text-white">p property</h5>
+                        <p class="mb-0">P Property is a leading finder of luxury properties all over the World. Since its foundation the company has doubled its turnover year on year, with its staff numbers swelling accordingly.</p>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-3 widget-navigation text-center-xs mb-30-xs">
@@ -382,9 +382,9 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 copyrights text-center">
-                <p class="text-capitalize">© 2016 - 2017 yellow hats. all rights reserved</p>
+                <p class="text-capitalize">© 2022 p property. all rights reserved</p>
                 <p class="text-capitalize">With Love by
-                    <a href="http://themeforest.net/user/7oroof/portfolio?ref=7oroof">7oroof.com</a>
+                    <a href="http://petarvukcevic.ml">petarvukcevic.ml</a>
                 </p>
             </div>
         </div>
