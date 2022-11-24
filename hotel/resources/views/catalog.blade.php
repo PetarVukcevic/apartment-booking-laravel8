@@ -116,7 +116,7 @@
                         </li>
                         @foreach($categories as $category)
                             <li>
-                                <a href="{{ url('/categories/'.$category->id) }}">{{$category->name}}</a>
+                                <a href="{{ url('/catalog?category='.$category->name) }}">{{$category->name}}</a>
                             </li>
                         @endforeach
                     </x-catalog-sidebar>

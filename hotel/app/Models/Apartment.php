@@ -17,6 +17,14 @@ class Apartment extends Model
             $query
                 ->where('title', 'like', '%' . $search . '%'));
 
+        $query->when($filters['category'] ?? false, fn ($query, $category) =>
+            $query
+                ->whereExists(fn($query) =>
+                   $query->from('categories')
+                        ->whereColumn('categories.id', 'apartments.category_id')
+                        ->where('categories.name', $category))
+                );
+
     }
 
 

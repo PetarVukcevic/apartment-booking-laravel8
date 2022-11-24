@@ -17,8 +17,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-
-
     return view('home');
 });
 
@@ -40,8 +38,6 @@ Route::get('/blog', function () {
 });
 
 Route::get('/catalog', [ApartmentController::class, 'index'])->name('catalog');
-
-Route::get('/categories/{category:id}', [ApartmentController::class, 'categories']);
 
 Route::get('/landlord/{landlord:username}', [ApartmentController::class, 'landlord']);
 
