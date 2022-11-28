@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class CateegorySeeder extends Seeder
+class CategorySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -19,22 +19,26 @@ class CateegorySeeder extends Seeder
         DB::table('categories')->insert([
             [
                 'id' => 1,
-                'name' => fake()->word(),
+                'name' => 'High End Apartments',
+                'slug' => 'high-end-apartments',
                 'description' => fake()->text(),
             ],
             [
                 'id' => 2,
-                'name' => fake()->word(),
+                'name' => 'Luxury Appartments',
+                'slug' => 'luxury-apartments',
                 'description' => fake()->text(),
             ],
             [
                 'id' => 3,
-                'name' => fake()->word(),
+                'name' => 'Economic Apartments',
+                'slug' => 'economic_apartments',
                 'description' => fake()->text(),
             ],
             [
                 'id' => 4,
-                'name' => fake()->word(),
+                'name' => 'Hotel Rooms',
+                'slug' => 'hotel_rooms',
                 'description' => fake()->text(),
             ],
         ]);

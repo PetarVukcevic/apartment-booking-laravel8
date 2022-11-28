@@ -37,9 +37,7 @@ Route::get('/blog', function () {
     return view('blog', []);
 });
 
-Route::get('/catalog', [ApartmentController::class, 'index'])->name('catalog');
-
-Route::get('/landlord/{landlord:username}', [ApartmentController::class, 'landlord']);
+Route::get('/catalog', [ApartmentController::class, 'apartments'])->name('catalog');
 
 // TODO
 //Route::get('catalog/{apartment}', function (Apartment $apartment) {

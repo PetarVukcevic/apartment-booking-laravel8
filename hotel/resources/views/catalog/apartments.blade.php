@@ -83,7 +83,7 @@
                         @if($apartments->count())
                             <x-apartments-grid :apartments="$apartments"/>
                         @else
-                            <h1 class="text-center mt-30">No posts found. Please check back later.</h1>
+                            <h1 class="text-center mt-30">No apartments found. Please check back later.</h1>
                         @endif
 
                     </div>

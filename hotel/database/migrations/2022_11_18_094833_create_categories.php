@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('description');
+            $table->string('name',55);
+            $table->string('slug', 20);
+            $table->text('description', 255);
             $table->timestamps();
             $table->boolean('deleted')->nullable();
         });

@@ -15,5 +15,5 @@
     </h4>
     <p class="product-price">{{ $apartment->price }}.00 €</p>
 
-   <p>By  <a href="/landlord/{{ $apartment->landlord->username }}">{{ $apartment->landlord->username }}</a></p>
+   <p>By  <a href="?landlord={{ $apartment->landlord->username }}">{{ $apartment->landlord->username }}</a></p>
 </div>

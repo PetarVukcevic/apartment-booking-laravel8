@@ -31,7 +31,7 @@ class ApartmentSeeder extends Seeder
                'price' => 290.00,
                'description' => '<p>' . implode('</p><p>' , fake()->paragraphs(2)) . '</p>',
                'img_url' => 'assets/images/shop/grid/1.jpg',
-               'address' => fake()->address()
+               'address' => 'Beogradska 21'
            ],
             [
                 'id' => 2,
@@ -44,7 +44,7 @@ class ApartmentSeeder extends Seeder
                 'price' => 290.00,
                 'description' => '<p>' . implode('</p><p>' , fake()->paragraphs(2)) . '</p>',
                 'img_url' => 'assets/images/shop/grid/1.jpg',
-                'address' => fake()->address()
+                'address' => 'Oktoih 1'
             ],
             [
                 'id' => 3,
@@ -57,7 +57,7 @@ class ApartmentSeeder extends Seeder
                 'price' => 290.00,
                 'description' => '<p>' . implode('</p><p>' , fake()->paragraphs(2)) . '</p>',
                 'img_url' => 'assets/images/shop/grid/1.jpg',
-                'address' => fake()->address()
+                'address' => 'Bulevar Ivana Crnojevica 160'
             ], [
                 'id' => 4,
                 'title' => 'Kane Lux',
@@ -69,7 +69,7 @@ class ApartmentSeeder extends Seeder
                 'price' => 290.00,
                 'description' => '<p>' . implode('</p><p>' , fake()->paragraphs(2)) . '</p>',
                 'img_url' => 'assets/images/shop/grid/1.jpg',
-                'address' => fake()->address()
+                'address' => 'Marka Miljanova 14'
             ],
         ]);
     }

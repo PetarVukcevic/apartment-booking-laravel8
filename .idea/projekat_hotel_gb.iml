@@ -117,6 +117,7 @@
       <excludeFolder url="file://$MODULE_DIR$/hotel/vendor/symfony/service-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/hotel/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/hotel/vendor/itsgoingd/clockwork" />
+      <excludeFolder url="file://$MODULE_DIR$/hotel/vendor/_laravel_idea" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -3,7 +3,7 @@
     </li>
     @foreach($categories as $category)
         <li>
-            <a href="{{ url('/catalog?category='.$category->name) }}">{{$category->name}}</a>
+            <a href="{{ url('/catalog?category='.$category->slug) }}">{{$category->name}}</a>
         </li>
     @endforeach
 

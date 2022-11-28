@@ -22,8 +22,14 @@ class Apartment extends Model
                 ->whereExists(fn($query) =>
                    $query->from('categories')
                         ->whereColumn('categories.id', 'apartments.category_id')
-                        ->where('categories.name', $category))
+                        ->where('categories.slug', $category))
                 );
+
+        $query->when($filters['landlord'] ?? false, fn($query, $landlord) =>
+            $query->whereHas('landlord', fn($query) =>
+                $query->where('username', $landlord)
+            )
+        );
 
     }
 

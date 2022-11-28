@@ -10,23 +10,21 @@ use Illuminate\Http\Request;
 class ApartmentController extends Controller
 {
 
-    public function index() {
+    public function apartments() {
 
-        return view('catalog', [
-            'apartments' => Apartment::latest()->filter(request(['search','category']))->get(),
-            'categories' => Category::all(),
+        return view('catalog.apartments', [
+            'apartments' => Apartment::latest()->filter(request(['search','category','landlord']))->get(),
 //            'currentCategory' => Category::firstWhere('name',\request(('category')))
 
         ]);
     }
 
-    public function landlord(User $landlord) {
 
-        return view('catalog', [
-            'apartments' => $landlord->apartments,
-//            'currentCategory' => $category,
-            'categories' => Category::all()
-        ]);
-    }
+//    public function show(Apartment $apartment) {
+//        return view('catalog.show',[
+//            'apartment' => $apartment
+//        ]);
+//
+//    }
 
 }

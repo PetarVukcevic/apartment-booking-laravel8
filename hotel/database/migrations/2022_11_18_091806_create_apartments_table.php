@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('apartments', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('title', 30);
             $table->foreignId('category_id');
             $table->foreignId('city_id');
             $table->foreignId('user_id');
@@ -23,7 +23,7 @@ return new class extends Migration
             $table->float('price');
             $table->text('description');
             $table->string('img_url');
-            $table->string('address');
+            $table->string('address',100);
             $table->integer('adults');
             $table->integer('children')->nullable();
             $table->timestamps();
