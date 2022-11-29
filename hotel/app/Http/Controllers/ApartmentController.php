@@ -12,11 +12,12 @@ class ApartmentController extends Controller
 
     public function apartments() {
 
+        $apartments = Apartment::latest()->filter(
+            request(['search','category','landlord'])
+        )->simplePaginate(4);
 
         return view('catalog.apartments', [
-            'apartments' => Apartment::latest()->filter(
-                request(['search','category','landlord'])
-            )->simplePaginate(3)
+            'apartments' => $apartments,
 //            'currentCategory' => Category::firstWhere('name',\request(('category')))
 
         ]);

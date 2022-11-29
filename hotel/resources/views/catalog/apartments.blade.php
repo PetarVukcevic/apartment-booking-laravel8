@@ -14,7 +14,7 @@
                         </div>
                         <ol class="breadcrumb">
                             <li>
-                                <a href="/">Home</a>
+                                <a href="{{ url('/') }}">Home</a>
                             </li>
                             <li class="active">Catalog</li>
                         </ol>
@@ -63,18 +63,6 @@
                                                 </select>
                                             </div>
 
-        {{--   TO DO   --}}
-{{--                                            <div class="product-sort">--}}
-{{--                                                <span>Show:</span>--}}
-{{--                                                <select>--}}
-{{--                                                    @foreach($paginate_numbers as $paginate_number)--}}
-{{--                                                    <option selected="" value="{{ $paginate_number }}">{{ $paginate_number }} items / page</option>--}}
-{{--                                                    <option value="{{ $paginate_number }}">{{ $paginate_number }} items / page</option>--}}
-{{--                                                    <option value="{{ $paginate_number }}">{{ $paginate_number }} items / page</option>--}}
-{{--                                                    <option value="{{ $paginate_number }}">{{ $paginate_number }} items / page</option>--}}
-{{--                                                    @endforeach--}}
-{{--                                                </select>--}}
-{{--                                            </div>--}}
                                         </li>
                                     </ul>
                                 </div>

@@ -62,7 +62,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="logo" href="/">
-                    <img src={{url("assets/images/logo/nav-logo.png")}} alt="Vukcevic Apartments">
+                    <img src={{asset("assets/images/logo/nav-logo.png")}} alt="Vukcevic Apartments">
                 </a>
 
             </div>
@@ -111,55 +111,6 @@
                     <!-- li end -->
                 </ul>
 
-
-
-                <!-- .module-cart -->
-{{--                <div class="module module-cart pull-left">--}}
-{{--                    <div class="cart-icon">--}}
-{{--                        <i class="fa fa-shopping-cart"></i>--}}
-{{--                        <span class="title">shop cart</span>--}}
-{{--                        <span class="cart-label">2</span>--}}
-{{--                    </div>--}}
-{{--                    <div class="cart-box">--}}
-{{--                        <div class="cart-overview">--}}
-{{--                            <ul class="list-unstyled">--}}
-{{--                                <li>--}}
-{{--                                    <img class="img-responsive" src="assets/images/shop/thumb/1h.png" alt="product"/>--}}
-{{--                                    <div class="product-meta">--}}
-{{--                                        <h5 class="product-title">CST/Berger</h5>--}}
-{{--                                        <p class="product-price">Price: $68.00 </p>--}}
-{{--                                        <p class="product-quantity">Quantity: 1</p>--}}
-{{--                                    </div>--}}
-{{--                                    <a class="cancel" href="#">cancel</a>--}}
-{{--                                </li>--}}
-{{--                                <li>--}}
-{{--                                    <img class="img-responsive" src="assets/images/shop/thumb/2h.png" alt="product"/>--}}
-{{--                                    <div class="product-meta">--}}
-{{--                                        <h5 class="product-title">Charger/Radio</h5>--}}
-{{--                                        <p class="product-price">Price: $180.00 </p>--}}
-{{--                                        <p class="product-quantity">Quantity: 1</p>--}}
-{{--                                    </div>--}}
-{{--                                    <a class="cancel" href="#">cancel</a>--}}
-{{--                                </li>--}}
-{{--                            </ul>--}}
-{{--                        </div>--}}
-{{--                        <div class="cart-total">--}}
-{{--                            <div class="total-desc">--}}
-{{--                                <h5>CART SUBTOTAL :</h5>--}}
-{{--                            </div>--}}
-{{--                            <div class="total-price">--}}
-{{--                                <h5>$248.00</h5>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="clearfix">--}}
-{{--                        </div>--}}
-{{--                        <div class="cart-control">--}}
-{{--                            <a class="btn btn-primary" href="#">view cart</a>--}}
-{{--                            <a class="btn btn-secondary pull-right" href="#">check out</a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-                <!-- .module-cart end -->
 
             </div>
             <!-- /.navbar-collapse -->

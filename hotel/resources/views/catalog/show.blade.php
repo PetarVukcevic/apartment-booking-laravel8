@@ -38,13 +38,13 @@
                 <div class="col-xs-12 col-sm-12 col-md-8">
                     <div id="project-carousel" class="project-carousel mb-30">
                         <div class="item">
-                            <img src="{{ asset("assets/images/shop/grid/apartman_single.png") }}" alt="Apartman">
+                            <img src="{{ asset($apartment->single_img_url) }}" alt="Apartman">
                         </div>
                         <div class="item">
-                            <img src="{{ asset("assets/images/shop/grid/apartman_single.png") }}" alt="Apartman">
+                            <img src="{{ asset($apartment->single_img_url) }}" alt="Apartman">
                         </div>
                         <div class="item">
-                            <img src="{{ asset("assets/images/shop/grid/apartman_single.png") }}" alt="Apartman">
+                            <img src="{{ asset($apartment->single_img_url) }}" alt="Apartman">
                         </div>
                     </div>
                     <!-- .project-carousel end -->
@@ -63,7 +63,7 @@
                         <div class="project-desc">
                             <ul class="list-unstyled">
                                 <li class="mt-xs">Landlord:
-                                    <span><a href="/catalog?landlord={{ $apartment->landlord->username }}">{{ $apartment->landlord->first_name }} {{ $apartment->landlord->last_name }}</a></span>
+                                    <span><a href="{{ url('/catalog?landlord='. $apartment->landlord->username) }}">{{ $apartment->landlord->first_name }} {{ $apartment->landlord->last_name }}</a></span>
                                 </li>
 
                                 <li class="mt-xs">City:
@@ -83,7 +83,9 @@
                                 @endif
 
                                 <li class="mt-xs">Category:
-                                    <span><a href="./?=category={{ $apartment->category->slug }}">{{ $apartment->category->name }}</a></span>
+{{--                                    <span><a href="./?category={{ $apartment->category->slug }}">{{ $apartment->category->name }}</a></span>--}}
+                                    <span><a href="{{ url('catalog?category='.$apartment->category->slug) }}">{{ $apartment->category->name }}</a></span>
+
                                 </li>
 
                                 <li class="mt-xs">Price per night:
@@ -148,8 +150,7 @@
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="description">
-                            <p>Lorem ipsum dolor sit amet, mauris suspendisse viverra eleifend tortor tellus suscipit, tortor aliquet at nulla mus, dignissim neque, nulla neque. Ultrices proin mi urna nibh ut, aenean sollicitudin etiam libero nisl, ultrices ridiculus in magna purus consequuntur, ipsum donec orci ad vitae pede, id odio.</p>
-                            <p>Lorem ipsum dolor sit amet, mauris suspendisse viverra eleifend tortor tellus suscipit, tortor aliquet at nulla mus, dignissim neque, nulla neque. Ultrices proin mi urna nibh ut, aenean sollicitudin etiam libero nisl, ultrices ridiculus in magna purus consequuntur, ipsum donec orci ad vitae pede, id odio.</p>
+                            <p>{!! $apartment->description !!}</p>
                         </div>
                         <!-- #description end -->
                         <div role="tabpanel" class="tab-pane" id="details">
