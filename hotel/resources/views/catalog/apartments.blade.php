@@ -82,6 +82,8 @@
 
                         @if($apartments->count())
                             <x-apartments-grid :apartments="$apartments"/>
+
+                            {{ $apartments->links() }}
                         @else
                             <h1 class="text-center mt-30">No apartments found. Please check back later.</h1>
                         @endif
@@ -89,16 +91,7 @@
                     </div>
                     <!-- .row end -->
 
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12 pager mb-30-xs mb-30-sm">
-                            <div class="page-prev">
-                                <a href="#"><i class="fa fa-angle-left"></i></a>
-                            </div>
-                            <div class="page-next">
-                                <a href="#"><i class="fa fa-angle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
+
                     <!-- .row end -->
                 </div>
                 <!-- .shop-content end -->
