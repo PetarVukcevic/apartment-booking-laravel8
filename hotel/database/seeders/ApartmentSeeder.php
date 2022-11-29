@@ -31,8 +31,10 @@ class ApartmentSeeder extends Seeder
                'adults' => 3,
                'price' => 290.00,
                'description' => '<p>' . implode('</p><p>' , fake()->paragraphs(2)) . '</p>',
-               'img_url' => 'assets/images/shop/grid/1.jpg',
-               'address' => 'Beogradska 21'
+               'img_url' => 'assets/images/shop/grid/apartman_pr.png',
+               'single_img_url' => 'assets/images/shop/grid/apartman_single.png',
+               'address' => 'Beogradska 21',
+               'created_at' => date_create()
            ],
             [
                 'id' => 2,
@@ -45,8 +47,10 @@ class ApartmentSeeder extends Seeder
                 'adults' => 3,
                 'price' => 225.00,
                 'description' => '<p>' . implode('</p><p>' , fake()->paragraphs(2)) . '</p>',
-                'img_url' => 'assets/images/shop/grid/1.jpg',
-                'address' => 'Oktoih 1'
+                'img_url' => 'assets/images/shop/grid/apartman_pr.png',
+                'single_img_url' => 'assets/images/shop/grid/apartman_single.png',
+                'address' => 'Oktoih 1',
+                'created_at' => date_create()
             ],
             [
                 'id' => 3,
@@ -59,8 +63,10 @@ class ApartmentSeeder extends Seeder
                 'adults' => 3,
                 'price' => 490.00,
                 'description' => '<p>' . implode('</p><p>' , fake()->paragraphs(2)) . '</p>',
-                'img_url' => 'assets/images/shop/grid/1.jpg',
-                'address' => 'Bulevar Ivana Crnojevica 160'
+                'img_url' => 'assets/images/shop/grid/apartman_pr.png',
+                'single_img_url' => 'assets/images/shop/grid/apartman_single.png',
+                'address' => 'Bulevar Ivana Crnojevica 160',
+                'created_at' => date_create()
             ], [
                 'id' => 4,
                 'title' => 'Kane Lux',
@@ -72,8 +78,10 @@ class ApartmentSeeder extends Seeder
                 'adults' => 3,
                 'price' => 130.00,
                 'description' => '<p>' . implode('</p><p>' , fake()->paragraphs(2)) . '</p>',
-                'img_url' => 'assets/images/shop/grid/1.jpg',
-                'address' => 'Marka Miljanova 14'
+                'img_url' => 'assets/images/shop/grid/apartman_pr.png',
+                'single_img_url' => 'assets/images/shop/grid/apartman_single.png',
+                'address' => 'Marka Miljanova 14',
+                'created_at' => date_create()
             ],
             [
                 'id' => 5,
@@ -86,8 +94,10 @@ class ApartmentSeeder extends Seeder
                 'adults' => 3,
                 'price' => 150.00,
                 'description' => '<p>' . implode('</p><p>' , fake()->paragraphs(2)) . '</p>',
-                'img_url' => 'assets/images/shop/grid/1.jpg',
-                'address' => 'Dalmatinska 121'
+                'img_url' => 'assets/images/shop/grid/apartman_pr.png',
+                'single_img_url' => 'assets/images/shop/grid/apartman_single.png',
+                'address' => 'Dalmatinska 121',
+                'created_at' => date_create()
             ],
             [
                 'id' => 6,
@@ -100,8 +110,10 @@ class ApartmentSeeder extends Seeder
                 'adults' => 3,
                 'price' => 190.00,
                 'description' => '<p>' . implode('</p><p>' , fake()->paragraphs(2)) . '</p>',
-                'img_url' => 'assets/images/shop/grid/1.jpg',
-                'address' => 'Ulica slobode 11'
+                'img_url' => 'assets/images/shop/grid/apartman_pr.png',
+                'single_img_url' => 'assets/images/shop/grid/apartman_single.png',
+                'address' => 'Ulica slobode 11',
+                'created_at' => date_create()
             ],
             [
                 'id' => 7,
@@ -114,8 +126,10 @@ class ApartmentSeeder extends Seeder
                 'adults' => 3,
                 'price' => 40.00,
                 'description' => '<p>' . implode('</p><p>' , fake()->paragraphs(2)) . '</p>',
-                'img_url' => 'assets/images/shop/grid/1.jpg',
-                'address' => 'Hercegovacka 32'
+                'img_url' => 'assets/images/shop/grid/apartman_pr.png',
+                'single_img_url' => 'assets/images/shop/grid/apartman_single.png',
+                'address' => 'Hercegovacka 32',
+                'created_at' => date_create()
             ],
             [
                 'id' => 8,
@@ -128,8 +142,10 @@ class ApartmentSeeder extends Seeder
                 'adults' => 3,
                 'price' => 40.00,
                 'description' => '<p>' . implode('</p><p>' , fake()->paragraphs(2)) . '</p>',
-                'img_url' => 'assets/images/shop/grid/1.jpg',
-                'address' => 'Hercegovacka 2'
+                'img_url' => 'assets/images/shop/grid/apartman_pr.png',
+                'single_img_url' => 'assets/images/shop/grid/apartman_single.png',
+                'address' => 'Hercegovacka 2',
+                'created_at' => date_create()
             ],
             [
                 'id' => 9,
@@ -142,8 +158,10 @@ class ApartmentSeeder extends Seeder
                 'adults' => 1,
                 'price' => 45.00,
                 'description' => '<p>' . implode('</p><p>' , fake()->paragraphs(2)) . '</p>',
-                'img_url' => 'assets/images/shop/grid/1.jpg',
-                'address' => 'Plitvicka 32'
+                'img_url' => 'assets/images/shop/grid/apartman_pr.png',
+                'single_img_url' => 'assets/images/shop/grid/apartman_single.png',
+                'address' => 'Plitvicka 32',
+                'created_at' => date_create()
             ],
             [
                 'id' => 10,
@@ -156,8 +174,10 @@ class ApartmentSeeder extends Seeder
                 'adults' => 2,
                 'price' => 155.00,
                 'description' => '<p>' . implode('</p><p>' , fake()->paragraphs(2)) . '</p>',
-                'img_url' => 'assets/images/shop/grid/1.jpg',
-                'address' => 'Bulevar Sv. Petra Cetinjskog 12b'
+                'img_url' => 'assets/images/shop/grid/apartman_pr.png',
+                'single_img_url' => 'assets/images/shop/grid/apartman_single.png',
+                'address' => 'Bulevar Sv. Petra Cetinjskog 12b',
+                'created_at' => date_create()
             ],
             [
                 'id' => 11,
@@ -170,8 +190,10 @@ class ApartmentSeeder extends Seeder
                 'adults' => 2,
                 'price' => 110.00,
                 'description' => '<p>' . implode('</p><p>' , fake()->paragraphs(2)) . '</p>',
-                'img_url' => 'assets/images/shop/grid/1.jpg',
-                'address' => 'Bulevar Sv. Petra Cetinjskog 12b'
+                'img_url' => 'assets/images/shop/grid/apartman_pr.png',
+                'single_img_url' => 'assets/images/shop/grid/apartman_single.png',
+                'address' => 'Bulevar Sv. Petra Cetinjskog 12b',
+                'created_at' => date_create()
             ],
             [
                 'id' => 12,
@@ -184,8 +206,10 @@ class ApartmentSeeder extends Seeder
                 'adults' => 3,
                 'price' => 90.00,
                 'description' => '<p>' . implode('</p><p>' , fake()->paragraphs(2)) . '</p>',
-                'img_url' => 'assets/images/shop/grid/1.jpg',
-                'address' => 'Beranska 21'
+                'img_url' => 'assets/images/shop/grid/apartman_pr.png',
+                'single_img_url' => 'assets/images/shop/grid/apartman_single.png',
+                'address' => 'Beranska 21',
+                'created_at' => date_create()
             ],
 
 

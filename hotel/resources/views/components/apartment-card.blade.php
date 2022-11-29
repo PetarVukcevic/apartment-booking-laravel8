@@ -1,17 +1,17 @@
 @props(['apartment'])
 
 <div class="product-img">
-    <img src={{url("assets/images/shop/grid/apartman_pr.png")}} alt="Apartment">
+    <img src={{ url("assets/images/shop/grid/apartman_pr.png") }} alt="Apartment">
     <div class="product-hover">
         <div class="product-cart">
-            <a class="btn btn-secondary btn-block" href="#">Book</a>
+            <a class="btn btn-secondary btn-block" href="catalog/{{ $apartment->slug }}">Review</a>
         </div>
     </div>
 </div>
 <!-- .product-img end -->
 <div class="product-bio">
     <h4>
-        <a href="#">{{ $apartment->title }}</a>
+        <a href="{{ $apartment->slug }}">{{ $apartment->title }}</a>
     </h4>
     <p class="product-price">{{ $apartment->price }}.00 €</p>
 

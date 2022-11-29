@@ -38,13 +38,8 @@ Route::get('/blog', function () {
 });
 
 Route::get('/catalog', [ApartmentController::class, 'apartments'])->name('catalog');
+Route::get('catalog/{apartment:slug}', [ApartmentController::class, 'show']);
 
-// TODO
-Route::get('catalog/{apartment}', function (Apartment $apartment) {
-    return view('apartment', [
-        'apartment' => Apartment::findOrFail($apartment)
-    ]);
-});
 
 Route::get('/contact', function () {
     return view('contact');

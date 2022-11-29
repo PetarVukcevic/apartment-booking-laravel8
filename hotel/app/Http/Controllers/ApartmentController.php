@@ -23,11 +23,11 @@ class ApartmentController extends Controller
     }
 
 
-//    public function show(Apartment $apartment) {
-//        return view('catalog.show',[
-//            'apartment' => $apartment
-//        ]);
-//
-//    }
+    public function show(Apartment $apartment) {
+        return view('catalog.show',[
+            'apartment' => $apartment
+        ]);
+
+    }
 
 }

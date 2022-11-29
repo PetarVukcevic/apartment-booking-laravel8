@@ -24,6 +24,7 @@ return new class extends Migration
             $table->float('price');
             $table->text('description');
             $table->string('img_url');
+            $table->string('single_img_url');
             $table->string('address',100);
             $table->integer('adults');
             $table->integer('children')->nullable();
