@@ -62,35 +62,51 @@
                         </div>
                         <div class="project-desc">
                             <ul class="list-unstyled">
-                                <li>Landlord:
+                                <li class="mt-xs">Landlord:
                                     <span><a href="/catalog?landlord={{ $apartment->landlord->username }}">{{ $apartment->landlord->first_name }} {{ $apartment->landlord->last_name }}</a></span>
                                 </li>
 
-                                <li>City:
+                                <li class="mt-xs">City:
                                     <span>{{ $apartment->city->name }}</span>
                                 </li>
-                                <li>Address:
+                                <li class="mt-xs">Address:
                                     <span>{{ $apartment->address }}</span>
                                 </li>
 
-                                <li>Adults:
+                                <li class="mt-xs">Adults:
                                     <span>{{ $apartment->adults }}</span>
                                 </li>
                                 @if($apartment->children != null)
-                                    <li>Children:
+                                    <li class="mt-xs">Children:
                                         <span>{{ $apartment->children }}</span>
                                     </li>
                                 @endif
 
-                                <li>Category:
+                                <li class="mt-xs">Category:
                                     <span><a href="./?=category={{ $apartment->category->slug }}">{{ $apartment->category->name }}</a></span>
                                 </li>
 
-                                <li>Price per night:
+                                <li class="mt-xs">Price per night:
                                     <span>{{ $apartment->price }}.00 €</span>
                                 </li>
                             </ul>
                         </div>
+                        <div class="product-review text-left text-center-xs mt-md">
+							<span class="product-rating">
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star-half-o"></i>
+							<i class="fa fa-star-o"></i>
+							</span>
+                            <span>5 Review(s)</span>
+                            /
+                            <span>
+							<a href="#">Add Review</a>
+							</span>
+                        </div>
+
+
                     </div>
                     <!-- .project-block end -->
 
@@ -101,20 +117,6 @@
                 </div>
 
                 <!-- rating -->
-                <div class="product-review text-center text-center-xs">
-							<span class="product-rating">
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star-half-o"></i>
-							<i class="fa fa-star-o"></i>
-							</span>
-                    <span>5 Review(s)</span>
-                    /
-                    <span>
-							<a href="#">Add Review</a>
-							</span>
-                </div>
                 <!-- rating end -->
             </div>
 
