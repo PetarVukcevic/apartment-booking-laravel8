@@ -40,11 +40,11 @@ Route::get('/blog', function () {
 Route::get('/catalog', [ApartmentController::class, 'apartments'])->name('catalog');
 
 // TODO
-//Route::get('catalog/{apartment}', function (Apartment $apartment) {
-//    return view('apartment', [
-//        'apartment' => Apartment::findOrFail($apartment)
-//    ]);
-//});
+Route::get('catalog/{apartment}', function (Apartment $apartment) {
+    return view('apartment', [
+        'apartment' => Apartment::findOrFail($apartment)
+    ]);
+});
 
 Route::get('/contact', function () {
     return view('contact');

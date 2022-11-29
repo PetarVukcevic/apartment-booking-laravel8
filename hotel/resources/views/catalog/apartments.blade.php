@@ -62,6 +62,19 @@
                                                     <option value="100">100 items / page</option>
                                                 </select>
                                             </div>
+
+        {{--   TO DO   --}}
+{{--                                            <div class="product-sort">--}}
+{{--                                                <span>Show:</span>--}}
+{{--                                                <select>--}}
+{{--                                                    @foreach($paginate_numbers as $paginate_number)--}}
+{{--                                                    <option selected="" value="{{ $paginate_number }}">{{ $paginate_number }} items / page</option>--}}
+{{--                                                    <option value="{{ $paginate_number }}">{{ $paginate_number }} items / page</option>--}}
+{{--                                                    <option value="{{ $paginate_number }}">{{ $paginate_number }} items / page</option>--}}
+{{--                                                    <option value="{{ $paginate_number }}">{{ $paginate_number }} items / page</option>--}}
+{{--                                                    @endforeach--}}
+{{--                                                </select>--}}
+{{--                                            </div>--}}
                                         </li>
                                     </ul>
                                 </div>
