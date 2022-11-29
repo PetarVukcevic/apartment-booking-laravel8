@@ -122,14 +122,128 @@
 
             <!-- Apartment description row -->
             <div class="row">
-                <div class="project-widget">
-                    <div class="project-title">
-                        <h3>Description</h3>
+{{--                <div class="project-widget">--}}
+{{--                    <div class="project-title">--}}
+{{--                        <h3>Description</h3>--}}
+{{--                    </div>--}}
+{{--                    <div class="project-desc">--}}
+{{--                        <p>{!! $apartment->description !!}</p>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+
+                <div class="product-tabs mb-50">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active">
+                            <a href="#description" aria-controls="description" role="tab" data-toggle="tab">description</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#details" aria-controls="details" role="tab" data-toggle="tab">details</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab">reviews(2)</a>
+                        </li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="description">
+                            <p>Lorem ipsum dolor sit amet, mauris suspendisse viverra eleifend tortor tellus suscipit, tortor aliquet at nulla mus, dignissim neque, nulla neque. Ultrices proin mi urna nibh ut, aenean sollicitudin etiam libero nisl, ultrices ridiculus in magna purus consequuntur, ipsum donec orci ad vitae pede, id odio.</p>
+                            <p>Lorem ipsum dolor sit amet, mauris suspendisse viverra eleifend tortor tellus suscipit, tortor aliquet at nulla mus, dignissim neque, nulla neque. Ultrices proin mi urna nibh ut, aenean sollicitudin etiam libero nisl, ultrices ridiculus in magna purus consequuntur, ipsum donec orci ad vitae pede, id odio.</p>
+                        </div>
+                        <!-- #description end -->
+                        <div role="tabpanel" class="tab-pane" id="details">
+                            <h5>Technical Details</h5>
+                            <table class="table table-striped">
+                                <tbody>
+                                <tr>
+                                    <td>Part Number</td>
+                                    <td>60-MCTE</td>
+                                </tr>
+                                <tr>
+                                    <td>Item Weight</td>
+                                    <td>54 pounds</td>
+                                </tr>
+                                <tr>
+                                    <td>Product Dimensions</td>
+                                    <td>92.8 x 92.8 x 92.8 inches</td>
+                                </tr>
+                                <tr>
+                                    <td>Item model number</td>
+                                    <td>60-MCTE</td>
+                                </tr>
+                                <tr>
+                                    <td>Item Package Quantity</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>Number of Handles</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>Batteries Required?</td>
+                                    <td>No</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- #details end -->
+                        <div role="tabpanel" class="tab-pane reviews" id="reviews">
+                            <ul class="product-review list-unstyled">
+                                <li class="review-comment">
+                                    <h6>Mostafa Amin</h6>
+                                    <p class="review-date">22/02/2016</p>
+                                    <div class="product-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                    </div>
+                                    <div class="product-comment">
+                                        <p>Lorem ipsum dolor sit amet, mauris suspendisse viverra eleifend tortor tellus suscipit, tortor aliquet at nulla mus, dignissim neque, nulla neque. Ultrices proin mi urna nibh ut, aenean sollicitudin etiam libero nisl, ultrices ridiculus in magna purus consequuntur, ipsum donec orci ad vitae pede, id odio.</p>
+                                    </div>
+                                </li>
+                                <!-- .review-comment end -->
+
+                                <li class="review-comment">
+                                    <h6>Mohamed Habaza</h6>
+                                    <p class="review-date">21/02/2016</p>
+                                    <div class="product-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </div>
+                                    <div class="product-comment">
+                                        <p>Lorem ipsum dolor sit amet, mauris suspendisse viverra eleifend tortor tellus suscipit, tortor aliquet at nulla mus, dignissim neque, nulla neque. Ultrices proin mi urna nibh ut, aenean sollicitudin etiam libero nisl, ultrices ridiculus in magna purus consequuntur, ipsum donec orci ad vitae pede, id odio.</p>
+                                    </div>
+                                </li>
+                                <!-- .review-comment end -->
+                            </ul>
+                            <div class="form-review">
+                                <form>
+                                    <input type="text" class="form-control" id="name" placeholder="Your Name"/>
+                                    <input type="email" class="form-control" id="email" placeholder="Your Email"/>
+                                    <select class="form-control">
+                                        <option selected="" value="Default">Your Rating</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                    <textarea class="form-control" id="review" rows="2" placeholder="Review"></textarea>
+                                    <button type="submit" class="btn btn-primary btn-black btn-block">Post Your review</button>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- #reviews end -->
                     </div>
-                    <div class="project-desc">
-                        <p>{!! $apartment->description !!}</p>
-                    </div>
+                    <!-- #tab-content end -->
                 </div>
+
 
                 <!-- paginate -->
                 <div class="col-xs-12 col-sm-12 col-md-12 pager-2">
