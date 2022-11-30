@@ -43,11 +43,11 @@
                                             <div class="product-sort mb-15-xs">
                                                 <span>sort by:</span>
                                                 <select id="sorting">
-                                                    <option value="title" @if($sorting === 'title') selected @endif>Apartment title</option>
-                                                    <option value="newest" @if($sorting === 'newest') selected @endif>Newest</option>
-                                                    <option value="oldest" @if($sorting === 'oldest') selected @endif>Oldest</option>
-                                                    <option value="highest_price" @if($sorting === 'highest_price') selected @endif>Highest Price</option>
-                                                    <option value="lowest_price" @if($sorting === 'lowest_price') selected @endif>Lowest Price</option>
+                                                    <option value="title" @if($sorting == 'title') selected @endif>Apartment title</option>
+                                                    <option value="newest" @if($sorting == 'newest') selected @endif>Newest</option>
+                                                    <option value="oldest" @if($sorting == 'oldest') selected @endif>Oldest</option>
+                                                    <option value="highest_price" @if($sorting == 'highest_price') selected @endif>Highest Price</option>
+                                                    <option value="lowest_price" @if($sorting == 'lowest_price') selected @endif>Lowest Price</option>
                                                 </select>
                                             </div>
                                         </li>
@@ -55,10 +55,10 @@
                                             <div>
                                                 <span>Show:</span>
                                                 <select id="pagination">
-                                                    <option value="5" @if($items === 5) selected @endif>5 items / page</option>
-                                                    <option value="10" @if($items === 10) selected @endif>10 items / page</option>
-                                                    <option value="25" @if($items === 25) selected @endif>25 items / page</option>
-                                                    <option value="50" @if($items === 50) selected @endif>50 items / page</option>
+                                                    <option value="5" @if($items == 5) selected @endif>5 items / page</option>
+                                                    <option value="10" @if($items == 10) selected @endif>10 items / page</option>
+                                                    <option value="25" @if($items == 25) selected @endif>25 items / page</option>
+                                                    <option value="50" @if($items == 50) selected @endif>50 items / page</option>
                                                 </select>
                                             </div>
 

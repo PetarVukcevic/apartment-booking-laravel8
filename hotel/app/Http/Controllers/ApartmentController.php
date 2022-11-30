@@ -19,17 +19,17 @@ class ApartmentController extends Controller
                 request(['search','category','landlord','city'])
             )->simplePaginate($items);
         }
-        elseif ($sorting === 'lowest_price') {
+        elseif ($sorting == 'lowest_price') {
             $apartments = Apartment::orderBy('price', 'ASC')->filter(
                 request(['search','category','landlord','city'])
             )->simplePaginate($items);
         }
-        elseif ($sorting === 'highest_price') {
+        elseif ($sorting == 'highest_price') {
             $apartments = Apartment::orderBy('price', 'DESC')->filter(
                 request(['search','category','landlord','city'])
             )->simplePaginate($items);
         }
-        elseif ($sorting === 'oldest') {
+        elseif ($sorting == 'oldest') {
             $apartments = Apartment::orderBy('created_at','DESC')->filter(
                 request(['search','category','landlord','city'])
             )->simplePaginate($items);
