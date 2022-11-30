@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Apartment;
+use Request;
 
 
 class ApartmentController extends Controller
 {
 
-    public function apartments(\Request $request) {
+    public function apartments(Request $request) {
 
         $items = $request->items ?? 5;
 
@@ -19,8 +20,6 @@ class ApartmentController extends Controller
         return view('catalog.apartments', [
             'apartments' => $apartments,
             'items' => $items
-//            'currentCategory' => Category::firstWhere('name',\request(('category')))
-
         ]);
     }
 
