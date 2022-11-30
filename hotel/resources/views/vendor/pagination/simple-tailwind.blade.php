@@ -8,14 +8,14 @@
                 </div>
             @else
                 <div class="page-prev">
-                    <a href="{{ $paginator->previousPageUrl() }}" rel="prev"><i class="fa fa-angle-left"></i></a>
+                    <a href="{{ request()->fullUrlWithQuery(['page' => $paginator->currentPage() - 1]) }}" rel="prev"><i class="fa fa-angle-left"></i></a>
                 </div>
             @endif
 
             {{-- Next Page Link --}}
             @if ($paginator->hasMorePages())
                 <div class="page-next">
-                    <a href="{{ $paginator->nextPageUrl() }}" rel="next"><i class="fa fa-angle-right"></i></a>
+                    <a href="{{ request()->fullUrlWithQuery(['page' => $paginator->currentPage() + 1]) }}" rel="next"><i class="fa fa-angle-right"></i></a>
                 </div>
             @else
                 <div class="page-next disabled" area-disabled="true">
