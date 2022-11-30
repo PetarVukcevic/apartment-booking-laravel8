@@ -67,7 +67,7 @@
                                 </li>
 
                                 <li class="mt-xs">City:
-                                    <span>{{ $apartment->city->name }}</span>
+                                    <span><a href="{{ url('/catalog?city='. $apartment->city->name) }}">{{ $apartment->city->name }}</a></span>
                                 </li>
                                 <li class="mt-xs">Address:
                                     <span>{{ $apartment->address }}</span>
@@ -110,28 +110,13 @@
 
 
                     </div>
-                    <!-- .project-block end -->
 
-                    <!-- .project-widget end -->
-
-
-                    <!-- .project-widget end -->
                 </div>
 
-                <!-- rating -->
-                <!-- rating end -->
             </div>
 
             <!-- Apartment description row -->
             <div class="row">
-{{--                <div class="project-widget">--}}
-{{--                    <div class="project-title">--}}
-{{--                        <h3>Description</h3>--}}
-{{--                    </div>--}}
-{{--                    <div class="project-desc">--}}
-{{--                        <p>{!! $apartment->description !!}</p>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
 
                 <div class="product-tabs mb-50">
                     <!-- Nav tabs -->

@@ -1,5 +1,5 @@
     <li>
-        <a href="{{ url('catalog?category='.http_build_query(request()->except('category', 'page'))) }}"
+        <a href="{{ route('catalog') }}"
            :active="request()->routeIs('catalog')">all</a>
     </li>
     @foreach($categories as $category)

@@ -4,7 +4,7 @@
     <img src={{ url("assets/images/shop/grid/apartman_pr.png") }} alt="Apartment">
     <div class="product-hover">
         <div class="product-cart">
-            <a class="btn btn-secondary btn-block" href="{{ 'catalog/'.$apartment->slug }}">Review</a>
+            <a class="btn btn-secondary btn-block" href="{{ 'catalog/'.$apartment->slug }}">View</a>
         </div>
     </div>
 </div>

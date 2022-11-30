@@ -42,24 +42,22 @@
                                         <li>
                                             <div class="product-sort mb-15-xs">
                                                 <span>sort by:</span>
-                                                <select>
-                                                    <option selected="" value="Default">Product Name</option>
-                                                    <option value="Larger">Newest Items</option>
-                                                    <option value="Larger">oldest Items</option>
-                                                    <option value="Larger">Hot Items</option>
-                                                    <option value="Small">Highest Price</option>
-                                                    <option value="Medium">Lowest Price</option>
+                                                <select id="per_page">
+                                                    <option selected="" value="product_name">Product Name</option>
+                                                    <option value="newest">Newest</option>
+                                                    <option value="highest_price">Highest Price</option>
+                                                    <option value="lowest_price">Lowest Price</option>
                                                 </select>
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="product-sort">
+                                            <div>
                                                 <span>Show:</span>
-                                                <select>
-                                                    <option selected="" value="10">10 items / page</option>
-                                                    <option value="25">25 items / page</option>
-                                                    <option value="50">50 items / page</option>
-                                                    <option value="100">100 items / page</option>
+                                                <select id="pagination">
+                                                    <option value="5" @if($items == 5) selected @endif>5 items / page</option>
+                                                    <option value="10" @if($items == 10) selected @endif>10 items / page</option>
+                                                    <option value="25" @if($items == 25) selected @endif>25 items / page</option>
+                                                    <option value="50" @if($items == 50) selected @endif>50 items / page</option>
                                                 </select>
                                             </div>
 
@@ -136,5 +134,11 @@
         <!-- .container end -->
     </section>
 
+    <script>
+        document.getElementById('pagination').onchange = function() {
+            window.location = "{{ $apartments->url(1) }}&items=" + this.value;
+        };
+    </script>
 
 </x-layout>
+

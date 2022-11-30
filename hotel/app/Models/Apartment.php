@@ -35,6 +35,12 @@ class Apartment extends Model
             )
         );
 
+        $query->when($filters['city'] ?? false, fn($query, $city) =>
+            $query->whereHas('city', fn($query) =>
+                $query->where('name', $city)
+        )
+        );
+
     }
 
 
