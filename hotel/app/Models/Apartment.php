@@ -11,7 +11,6 @@ class Apartment extends Model
 
     protected $fillable = ['title', 'rooms', 'price', 'description', 'img_url', 'address', 'adults', 'children'];
 
-//    public $paginate_numbers = [1, 5, 10, 25];
 
     public function scopeFilter($query, array $filters)
     {

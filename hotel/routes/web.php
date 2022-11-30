@@ -37,7 +37,7 @@ Route::get('/blog', function () {
     return view('blog', []);
 });
 
-Route::get('/catalog', [ApartmentController::class, 'apartments', 'items'])->name('catalog');
+Route::get('/catalog', [ApartmentController::class, 'apartments'])->name('catalog');
 Route::get('catalog/{apartment:slug}', [ApartmentController::class, 'show']);
 
 

@@ -9,9 +9,11 @@
                 <input type="text" name="search" class="form-control"
                        placeholder="Type Your Search Words"
                        value="{{ request('search') }}">
+
                 <span class="input-group-btn">
-								<button class="btn" type="button" (click)="{{ request('search') }}"><i class="fa fa-search"></i></button>
-								</span>
+                    <button class="btn" type="button" (click)="{{ request('search') }}"><i class="fa fa-search"></i></button>
+                </span>
+
             </div>
             <!-- /input-group -->
         </form>
