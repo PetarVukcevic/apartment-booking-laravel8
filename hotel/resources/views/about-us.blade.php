@@ -160,7 +160,7 @@
     ============================================= -->
     <section id="cta-3" class="cta cta-3 bg-overlay bg-overlay-theme text-center">
         <div class="bg-section" >
-            <img src="assets/images/call/2.jpg" alt="Background"/>
+            <img src="{{ asset('assets/images/call/2.jpg') }}" alt="Background"/>
         </div>
         <div class="container">
             <div class="row">
@@ -168,7 +168,7 @@
                     <h2>Quality Comes First</h2>
                     <p>Cutting-edge construction quality management system LATISTA ensures high quality standards at all of the company’s sites. The control mechanism allows integrated monitoring of works at all stages of construction and includes over 100 quality assessment benchmarks.</p>
                     <div class="signiture">
-                        <img src="assets/images/call/sign.png" alt="signiture"/>
+                        <img src={{ asset('assets/images/call/sign.png') }} alt="signiture"/>
                     </div>
                 </div>
                 <!-- .col-md-8 end -->

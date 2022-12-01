@@ -1,16 +1,5 @@
 <x-layout>
 
-    <div class="preloader">
-        <div class="spinner">
-            <div class="bounce1">
-            </div>
-            <div class="bounce2">
-            </div>
-            <div class="bounce3">
-            </div>
-        </div>
-    </div>
-
     <section class=" bg-overlay bg-overlay-gradient pb-0">
         <div class="bg-section" >
             <img src={{ asset("assets/images/page-title/9.jpg") }} alt="Background"/>
@@ -92,21 +81,24 @@
                         <!-- .col-md-4 end -->
                         <div class="col-xs-12 col-sm-12 col-md-8">
                             <div class="row">
-                                <form id="contact-form" action="assets/php/sendmail.php" method="post">
+
+                                <form id="contact-form" action="/contact" method="POST">
+                                    @csrf
+
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control mb-30" name="contact-name" id="name" placeholder="Your Name" required/>
+                                        <input type="text" class="form-control mb-30" name="full_name" id="name" placeholder="Your Name" required/>
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="email" class="form-control mb-30" name="contact-email" id="email" placeholder="Your Email" required/>
+                                        <input type="email" class="form-control mb-30" name="email" id="email" placeholder="Your Email" required/>
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control mb-30" name="contact-telephone" id="telephone" placeholder="Telephone" required/>
+                                        <input type="text" class="form-control mb-30" name="telephone" id="telephone" placeholder="Telephone" required/>
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control mb-30" name="contact-subject" id="subject" placeholder="Subject" required/>
+                                        <input type="text" class="form-control mb-30" name="subject" id="subject" placeholder="Subject" required/>
                                     </div>
                                     <div class="col-md-12">
-                                        <textarea class="form-control mb-30" name="contact-message" id="message" rows="2" placeholder="Message Details" required></textarea>
+                                        <textarea class="form-control mb-30" name="body" id="message" rows="2" placeholder="Message Details" required></textarea>
                                     </div>
                                     <div class="col-md-12">
                                         <button type="submit" id="submit-message" class="btn btn-primary btn-black btn-block">Send Message</button>
@@ -115,8 +107,10 @@
                                         <!--Alert Message-->
                                         <div id="contact-result">
                                         </div>
+
                                     </div>
                                 </form>
+
                             </div>
                         </div>
                         <!-- .col-md-8 end -->

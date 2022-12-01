@@ -17,9 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('full_name', 255);
             $table->string('email', 255);
-            $table->string('subject', 200);
+            $table->string('telephone', 255);
+            $table->string('subject', 255);
             $table->string('body', 500);
-            $table->timestamp('created_at');
+            $table->timestamps();
         });
     }
 

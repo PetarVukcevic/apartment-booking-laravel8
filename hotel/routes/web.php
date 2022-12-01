@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ApartmentController;
+use App\Http\Controllers\MessageController;
 use App\Models\Apartment;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
@@ -41,9 +42,8 @@ Route::get('/catalog', [ApartmentController::class, 'apartments'])->name('catalo
 Route::get('catalog/{apartment:slug}', [ApartmentController::class, 'show']);
 
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+Route::get('/contact', [MessageController::class, 'create'])->name('contact');
+Route::post('/contact', [MessageController::class, 'store']);
 
 Route::fallback(function ()
 {
