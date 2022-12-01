@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ApartmentController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MessageController;
 use App\Models\Apartment;
 use App\Models\Category;
@@ -17,16 +18,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/about-us', function () {
     return view('about-us');
-});
-
-Route::get('/testimonials', function () {
-    return view('testimonials');
 });
 
 Route::get('/faq', function () {

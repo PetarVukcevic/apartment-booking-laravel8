@@ -1,8 +1,5 @@
 <x-layout>
 
-
-    <!-- Slider
-    ============================================= -->
     <section id="hero" class="hero">
 
         <!-- START REVOLUTION SLIDER 5.0 -->
@@ -13,7 +10,7 @@
                     <!-- slide 1 -->
                     <li data-transition="zoomout" data-slotamount="default"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000" style="background-color: rgba(34, 34, 34, 0.3);">
                         <!-- MAIN IMAGE -->
-                        <img src="assets/images/sliders/1.jpg"  alt=""  width="1920" height="1280">
+                        <img src="{{ asset('assets/images/sliders/1.jpg') }}"  alt=""  width="1920" height="1280">
                         <!-- LAYER NR. 1 -->
                         <div class="tp-caption"
                              data-x="center" data-hoffset="0"
@@ -114,7 +111,7 @@
                     <!-- slide 2 -->
                     <li data-transition="scaledownfromright" data-slotamount="default"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000">
                         <!-- MAIN IMAGE -->
-                        <img src="assets/images/sliders/2.jpg"  alt=""  width="1920" height="1280">
+                        <img src="{{ asset('assets/images/sliders/2.jpg') }}"  alt=""  width="1920" height="1280">
                         <!-- LAYER NR. 1 -->
                         <div class="tp-caption"
                              data-x="center" data-hoffset="0"
@@ -200,7 +197,7 @@
                     <!-- slide 3 -->
                     <li data-index='rs-367' data-transition='fadetotopfadefrombottom' data-slotamount='default' data-easein='default' data-easeout='default' data-masterspeed='default'>
                         <!-- MAIN IMAGE -->
-                        <img src="assets/images/sliders/3.jpg"  alt=""  width="1920" height="1280">
+                        <img src="{{ asset('assets/images/sliders/3.jpg') }}"  alt=""  width="1920" height="1280">
                         <!-- LAYER NR. 1 -->
                         <div class="tp-caption"
                              data-x="center" data-hoffset="0"
@@ -389,144 +386,11 @@
         <!-- .container end -->
     </section>
 
-    <!-- Testimonials #1
-    ============================================= -->
-    <section id="testimonials" class="testimonial testimonial-1 bg-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="heading heading-3 text-center">
-                        <div class="heading-bg">
-                            <p class="mb-0">what people say ?</p>
-                            <h2>testimonials</h2>
-                        </div>
-                    </div>
-                    <!-- .heading end -->
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div id="testimonial-oc" class="testimonial-carousel">
-
-                        <!-- testimonial item #1 -->
-                        <div class="testimonial-item">
-                            <div class="testimonial-content">
-                                <div class="testimonial-img">
-                                    <i class="fa fa-quote-left"></i>
-                                    <img src="assets/images/testimonial/3.png" alt="author"/>
-                                </div>
-                                <p>The company’s experts have accumulated valuable experience in green development, being savvy to all aspects of the certification process and requirements.</p>
-                            </div>
-                            <div class="testimonial-divider">
-                            </div>
-                            <div class="testimonial-meta">
-                                <strong>Begha</strong>, Art Director
-                            </div>
-                        </div>
-                        <!-- .testimonial-item end -->
-
-                        <!-- testimonial item #2 -->
-                        <div class="testimonial-item">
-                            <div class="testimonial-content">
-                                <div class="testimonial-img">
-                                    <i class="fa fa-quote-left"></i>
-                                    <img src="assets/images/testimonial/2.png" alt="author"/>
-                                </div>
-                                <p>The skills of our project managers are attested by international certificates from leading overseas professional associations in the realm of construction, land use and real estate. </p>
-                            </div>
-                            <div class="testimonial-divider">
-                            </div>
-                            <div class="testimonial-meta">
-                                <strong>Habaza</strong>, Civil Engineer
-                            </div>
-                        </div>
-                        <!-- .testimonial-item end -->
-
-                        <!-- testimonial item #3 -->
-                        <div class="testimonial-item">
-                            <div class="testimonial-content">
-                                <div class="testimonial-img">
-                                    <i class="fa fa-quote-left"></i>
-                                    <img src="assets/images/testimonial/1.png" alt="author"/>
-                                </div>
-                                <p>P Stays Group carries out full-cycle development, including the attraction of investments, construction and managing premium residential and non-residential properties.</p>
-                            </div>
-                            <div class="testimonial-divider">
-                            </div>
-                            <div class="testimonial-meta">
-                                <strong>Fouad Badawy</strong>, Investor
-                            </div>
-                        </div>
-                        <!-- .testimonial-item end -->
-
-                        <!-- testimonial item #4 -->
-                        <div class="testimonial-item">
-                            <div class="testimonial-content">
-                                <div class="testimonial-img">
-                                    <i class="fa fa-quote-left"></i>
-                                    <img src="assets/images/testimonial/3.png" alt="author"/>
-                                </div>
-                                <p>The skills of our project managers are attested by international certificates from leading overseas professional associations in the realm of construction, land use and real estate.</p>
-                            </div>
-                            <div class="testimonial-divider">
-                            </div>
-                            <div class="testimonial-meta">
-                                <div class="testimonial-name">
-                                    <strong>AYMAN FIKRY</strong>, Civil Engineer
-                                </div>
-                            </div>
-                        </div>
-                        <!-- .testimonial-item end -->
-
-                        <!-- testimonial item #5 -->
-                        <div class="testimonial-item">
-                            <div class="testimonial-content">
-                                <div class="testimonial-img">
-                                    <i class="fa fa-quote-left"></i>
-                                    <img src="assets/images/testimonial/1.png" alt="author"/>
-                                </div>
-                                <p>P Stays Group carries out full-cycle development, including the attraction of investments, construction and managing premium residential and non-residential properties.</p>
-                            </div>
-                            <div class="testimonial-divider">
-                            </div>
-                            <div class="testimonial-meta">
-                                <strong>Fouad Badawy</strong>, Investor
-                            </div>
-                        </div>
-                        <!-- .testimonial-item end -->
-
-                        <!-- testimonial item #6 -->
-                        <div class="testimonial-item">
-                            <div class="testimonial-content">
-                                <div class="testimonial-img">
-                                    <i class="fa fa-quote-left"></i>
-                                    <img src="assets/images/testimonial/2.png" alt="author"/>
-                                </div>
-                                <p>The skills of our project managers are attested by international certificates from leading overseas professional associations in the realm of construction, land use and real estate. </p>
-                            </div>
-                            <div class="testimonial-divider">
-                            </div>
-                            <div class="testimonial-meta">
-                                <strong>Habaza</strong>, Civil Engineer
-                            </div>
-                        </div>
-                        <!-- .testimonial-item end -->
-
-                    </div>
-                </div>
-                <!-- .col-md-12 end -->
-
-            </div>
-            <!-- .row end -->
-
-        </div>
-        <!-- .container end -->
-
-    </section>
-    <!-- #testimonials end -->
 
 
     <!-- Projects
  ============================================= -->
-    <section id="projects" class="projects-grid projects-3col">
+    <section id="projects" class="projects-grid projects-3col  bg-gray">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12">
@@ -790,7 +654,7 @@
 
     <!-- Call To Action #1
     ============================================= -->
-    <section id="cta-1" class="cta pb-0">
+    <section id="cta-1" class="cta pb-0  bg-gray">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12">

@@ -73,7 +73,17 @@
                     <li>
                         <a href="/">Home</a>
                     </li>
-                    <!-- li end -->
+
+                    <!-- Apartments -->
+                    <li class="has-dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Apartments</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="/catalog">Catalog</a>
+                            </li>
+                        </ul>
+                    </li>
+
                     <!-- About us-->
                     <li class="has-dropdown">
                         <a href="/about-us" data-toggle="dropdown" class="dropdown-toggle">about</a>
@@ -82,9 +92,6 @@
                                 <a href="/about-us">about us</a>
                             </li>
 
-                            <li>
-                                <a href="/testimonials">testimonials</a>
-                            </li>
                             <li>
                                 <a href="/faq">FAQS</a>
                             </li>
@@ -96,14 +103,7 @@
                         <a href="/blog">blog</a>
                     </li>
                     <!-- li end -->
-                    <li class="has-dropdown">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Apartments</a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="/catalog">Catalog</a>
-                            </li>
-                        </ul>
-                    </li>
+
                     <!-- li end -->
                     <li class="has-dropdown pull-left">
                         <a href="/contact">contact</a>
@@ -183,7 +183,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12 widgets-links">
                 <div class="col-xs-12 col-sm-12 col-md-4 widget-about text-center-xs mb-30-xs">
                     <div class="widget-about-logo pull-left pull-none-xs">
-                        <img src={{url("assets/images/logo/footer-logo.png")}} alt="logo"/>
+                        <img src={{asset("assets/images/logo/footer-logo.png")}} alt="logo"/>
                     </div>
                     <div class="widget-about-info">
                         <h5 class="text-capitalize text-white">p property</h5>
