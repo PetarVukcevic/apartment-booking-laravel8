@@ -82,31 +82,78 @@
                         <div class="col-xs-12 col-sm-12 col-md-8">
                             <div class="row">
 
-                                <form id="contact-form" action="/contact" method="POST">
+                                <form  action="/contact" method="POST">  {{--id="contact-form--}}
                                     @csrf
 
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control mb-30" name="full_name" id="name" placeholder="Your Name" required/>
+                                        <input type="text" class="form-control mb-30" name="full_name" id="name" value="{{ old('full_name') }}" placeholder="Your Name" required/>
+
+                                        @error('full_name')
+                                        <div class="alert alert-danger" role="alert">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
                                     </div>
+
+
+
                                     <div class="col-md-6">
-                                        <input type="email" class="form-control mb-30" name="email" id="email" placeholder="Your Email" required/>
+                                        <input type="email" class="form-control mb-30" name="email" value="{{ old('email') }}" id="email" placeholder="Your Email" required/>
+
+                                        @error('email')
+                                        <div class="alert alert-danger" role="alert">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
                                     </div>
+
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control mb-30" name="telephone" id="telephone" placeholder="Telephone" required/>
+                                        <input type="text" class="form-control mb-30" value="{{ old('telephone') }}" name="telephone" id="telephone" placeholder="Telephone" required/>
+
+                                        @error('telephone')
+                                        <div class="alert alert-danger" role="alert">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
                                     </div>
+
                                     <div class="col-md-6">
-                                        <input type="text" class="form-control mb-30" name="subject" id="subject" placeholder="Subject" required/>
+                                        <input type="text" class="form-control mb-30" name="subject" value="{{ old('subject') }}" id="subject" placeholder="Subject" required/>
+
+                                        @error('subject')
+                                        <div class="alert alert-danger" role="alert">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
                                     </div>
+
                                     <div class="col-md-12">
-                                        <textarea class="form-control mb-30" name="body" id="message" rows="2" placeholder="Message Details" required></textarea>
+                                        <textarea class="form-control mb-30" name="body" id="message"  rows="2" placeholder="Message Details" required></textarea>
+                                        @error('body')
+                                        <div class="alert alert-danger" role="alert">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
+
                                     </div>
                                     <div class="col-md-12">
                                         <button type="submit" id="submit-message" class="btn btn-primary btn-black btn-block">Send Message</button>
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-12 mt-xs">
+
+{{--                                        @if($errors->any())--}}
+{{--                                            <ul style="list-style-type: none">--}}
+{{--                                                @foreach(@$errors->all() as $error)--}}
+{{--                                                    <li class="text-danger" style="color: red">{{ $error }}</li>--}}
+{{--                                                @endforeach--}}
+{{--                                            </ul>--}}
+{{--                                        @endif--}}
+
                                         <!--Alert Message-->
                                         <div id="contact-result">
                                         </div>
+
+                                        <x-flash/>
 
                                     </div>
                                 </form>
