@@ -14,7 +14,7 @@ class HomeController extends Controller
 
     public function index() {
 
-        $apartments = Apartment::latest()->get();
+        $apartments = Apartment::latest()->with('category', 'landlord')->get();
         $categories = Category::all();
 
         return view('home.index', [

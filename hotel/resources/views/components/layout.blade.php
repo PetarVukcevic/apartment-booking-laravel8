@@ -62,7 +62,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="logo" href="/">
-                    <img src={{asset("assets/images/logo/nav-logo.png")}} alt="Vukcevic Apartments">
+                    <img src="{{asset("assets/images/logo/nav-logo.png")}}" alt="Vukcevic Apartments">
                 </a>
 
             </div>

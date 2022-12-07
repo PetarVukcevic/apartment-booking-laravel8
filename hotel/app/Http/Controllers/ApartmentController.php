@@ -15,28 +15,28 @@ class ApartmentController extends Controller
         $sorting = $request->sorting ?? "newest";
 
         if ($sorting === 'title') {
-            $apartments = Apartment::orderBy('title', 'ASC')->filter(
+            $apartments = Apartment::orderBy('title', 'ASC')->with('landlord')->filter(
                 request(['search','category','landlord','city'])
             )->simplePaginate($items);
         }
         elseif ($sorting == 'lowest_price') {
-            $apartments = Apartment::orderBy('price', 'ASC')->filter(
+            $apartments = Apartment::orderBy('price', 'ASC')->with('landlord')->filter(
                 request(['search','category','landlord','city'])
             )->simplePaginate($items);
         }
         elseif ($sorting == 'highest_price') {
-            $apartments = Apartment::orderBy('price', 'DESC')->filter(
+            $apartments = Apartment::orderBy('price', 'DESC')->with('landlord')->filter(
                 request(['search','category','landlord','city'])
             )->simplePaginate($items);
         }
         elseif ($sorting == 'oldest') {
-            $apartments = Apartment::orderBy('created_at','DESC')->filter(
+            $apartments = Apartment::orderBy('created_at','DESC')->with('landlord')->filter(
                 request(['search','category','landlord','city'])
             )->simplePaginate($items);
 
         }
         else {
-            $apartments = Apartment::orderBy('created_at','ASC')->filter(
+            $apartments = Apartment::orderBy('created_at','ASC')->with('landlord')->filter(
                 request(['search','category','landlord','city'])
             )->simplePaginate($items);
         }
