@@ -360,22 +360,62 @@
                             </div>
                             <div class="cta-desc">
                                 <p>Don’t Hesitate To Ask</p>
-                                <h5>Request A Quote</h5>
+{{--                                <h5>Request A Quote</h5>--}}
+                                <h5>Ask a question</h5>
+
                             </div>
                         </div>
                         <!-- .cta-2 end -->
                         <div class="form">
-                            <form id="quote-form" action="assets/php/sendquote.php" method="post">
-                                <input type="text" class="form-control" name="quote-name" id="name" placeholder="Your Name" required/>
-                                <input type="email" class="form-control" name="quote-email" id="email" placeholder="Email" required/>
-                                <input type="text" class="form-control" name="quote-telephone" id="telephone" placeholder="Telephone" required/>
-                                <textarea class="form-control" name="quote-message"  id="quote" placeholder="Quote Details" rows="2" required></textarea>
-                                <button type="submit" class="btn btn-primary btn-black btn-block">Submit Inquiry</button>
+                            <form action="/" method="post">
+                                @csrf
+                                <input type="text" class="form-control" value="{{ old('full_name') }}"
+                                       name="full_name" id="name" placeholder="Your Name" required/>
+                                @error('full_name')
+                                <p style="color: red">
+                                    {{ $message }}
+                                </p>
+                                @enderror
+
+                                <input type="email" class="form-control" value="{{ old('email') }}"
+                                       name="email" id="email" placeholder="Email" required/>
+                                @error('email')
+                                <p style="color: red">
+                                    {{ $message }}
+                                </p>
+                                @enderror
+
+                                <input type="text" class="form-control" value="{{ old('telephone') }}"
+                                       name="telephone" id="telephone" placeholder="Telephone" required/>
+                                @error('telephone')
+                                <p style="color: red">
+                                    {{ $message }}
+                                </p>
+                                @enderror
+
+                                <input type="text" class="form-control" value="{{ old('subject') }}"
+                                       name="subject" id="telephone" placeholder="Subject" required/>
+                                @error('subject')
+                                <p style="color: red">
+                                    {{ $message }}
+                                </p>
+                                @enderror
+
+                                <textarea class="form-control" name="body"  id="quote" placeholder="Message..." rows="2" required></textarea>
+                                @error('body')
+                                <p style="color: red">
+                                    {{ $message }}
+                                </p>
+                                @enderror
+
+                                <button type="submit" class="btn btn-primary btn-black btn-block">send message</button>
                                 <!--Alert Message-->
-                                <div id="quote-result" class="mt-xs">
-                                </div>
+{{--                                <div id="quote-result" class="mt-xs">--}}
+{{--                                </div>--}}
+                                <x-flash/>
                             </form>
                         </div>
+
                     </div>
                     <!-- .cta-form -->
                 </div>
@@ -390,7 +430,7 @@
 
     <!-- Projects
  ============================================= -->
-    <section id="projects" class="projects-grid projects-3col  bg-gray">
+    <section id="projects" class="projects-grid projects-3col  bg-gray mt-md">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12">

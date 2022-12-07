@@ -17,8 +17,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', [HomeController::class, 'index']);
+Route::post('/', [HomeController::class, 'sendEmail'])->name('send.email');
+
+Route::get('/catalog', [ApartmentController::class, 'apartments'])->name('catalog');
+Route::get('catalog/{apartment:slug}', [ApartmentController::class, 'show']);
+
+
+Route::get('/contact', [MessageController::class, 'create'])->name('contact');
+Route::post('/contact', [MessageController::class, 'sendEmail'])->name('send.email');
 
 Route::get('/about-us', function () {
     return view('about-us');
@@ -32,14 +39,6 @@ Route::get('/blog', function () {
 
     return view('blog', []);
 });
-
-Route::get('/catalog', [ApartmentController::class, 'apartments'])->name('catalog');
-Route::get('catalog/{apartment:slug}', [ApartmentController::class, 'show']);
-
-
-Route::get('/contact', [MessageController::class, 'create'])->name('contact');
-//Route::post('/contact', [MessageController::class, 'store']);
-Route::post('/contact', [MessageController::class, 'sendEmail'])->name('send.email');
 
 Route::fallback(function ()
 {
