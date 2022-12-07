@@ -43,7 +43,7 @@ class MessageController extends Controller
         Message::create($attributes);
         Mail::to('petar.vukcevic2001@gmail.com')->send(new ContactMail($attributes));
 
-        return redirect('/contact')->with('success', 'Thank you. We will contact you shortly.');
+        return redirect(url()->current())->with('success', 'Thank you. We will contact you shortly.');
     }
 
 }

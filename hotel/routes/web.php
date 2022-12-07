@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', [HomeController::class, 'index']);
-Route::post('/', [HomeController::class, 'sendEmail'])->name('send.email');
+Route::post('/', [MessageController::class, 'sendEmail'])->name('send.email');
 
 Route::get('/catalog', [ApartmentController::class, 'apartments'])->name('catalog');
 Route::get('catalog/{apartment:slug}', [ApartmentController::class, 'show']);
