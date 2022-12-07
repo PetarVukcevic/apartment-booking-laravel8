@@ -82,7 +82,7 @@
                         <div class="col-xs-12 col-sm-12 col-md-8">
                             <div class="row">
 
-                                <form  action="/contact" method="POST">  {{--id="contact-form--}}
+                                <form  action="{{ route('contact') }}" method="POST">  {{--id="contact-form--}}
                                     @csrf
 
                                     <div class="col-md-6">

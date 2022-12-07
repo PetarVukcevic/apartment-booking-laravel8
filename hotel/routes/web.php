@@ -38,7 +38,8 @@ Route::get('catalog/{apartment:slug}', [ApartmentController::class, 'show']);
 
 
 Route::get('/contact', [MessageController::class, 'create'])->name('contact');
-Route::post('/contact', [MessageController::class, 'store']);
+//Route::post('/contact', [MessageController::class, 'store']);
+Route::post('/contact', [MessageController::class, 'sendEmail'])->name('send.email');
 
 Route::fallback(function ()
 {
