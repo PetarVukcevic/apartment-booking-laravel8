@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\ContactMail;
+use App\Models\About;
 use App\Models\Apartment;
 use App\Models\Category;
 use App\Models\Message;
@@ -16,10 +17,12 @@ class HomeController extends Controller
 
         $apartments = Apartment::latest()->with('category', 'landlord')->get();
         $categories = Category::all();
+        $about = About::first();
 
         return view('home.index', [
             'apartments' => $apartments,
-            'categories' => $categories
+            'categories' => $categories,
+            'about' => $about
         ]);
     }
 
