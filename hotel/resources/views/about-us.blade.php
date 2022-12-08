@@ -46,8 +46,8 @@
                 <!-- .col-md-12 end -->
                 <div class="col-xs-12 col-sm-12 col-md-6">
                     <h3 class="color-heading mb-sm font-18">P Stays is a leading developer of A-grade commercial, industrial and residential projects in USA.</h3>
-                    <p class="mb-60">Since its foundation the company has doubled its turnover year on year, with its staff numbers swelling accordingly. Today Yellow Hats has over 4,000 professionals on its payroll. The company is active in Middle East, CIS and Europe. Yellow Hats has a team of specialists capable of maximizing the result and delivering projects of any complexity and scope. Our employees are acclaimed experts in such areas as project.</p>
-                    <a class="btn btn-secondary mb-30-xs" href="#">our services</a>
+                    <p class="mb-60">Since its foundation the company has doubled its turnover year on year, with its staff numbers swelling accordingly. Today P Property has over 4,000 professionals on its payroll. The company is active in Middle East, CIS and Europe. P Property has a team of specialists capable of maximizing the result and delivering projects of any complexity and scope. Our employees are acclaimed experts in such areas as project.</p>
+                    <a class="btn btn-secondary mb-30-xs" href="{{ url('catalog') }}">our catalog</a>
                 </div>
                 <!-- .col-md-6 end -->
                 <div class="col-xs-12 col-sm-12 col-md-6">
@@ -93,68 +93,7 @@
         <!-- .container end -->
     </section>
 
-    <!-- Shortcode #6
-    ============================================= -->
-    <section id="shortcode-6" class="shortcode-6 bg-gray text-center-xs">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="heading heading-4">
-                        <div class="heading-bg heading-right">
-                            <p class="mb-0">Internationally Trusted !</p>
-                            <h2>Certifications</h2>
-                        </div>
-                    </div>
-                    <!-- .heading end -->
-                </div>
-                <!-- .col-md-12 end -->
-            </div>
-            <!-- .row end -->
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-4">
-                    <p>Innovativeness is the pledge of our stable development. We tap into the most successful international management data, forestalling the market & setting new standards.</p>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-2 text-center-sm mb-30-sm">
-                    <div class="feature feature-2">
-                        <div class="feature-icon">
-                            <i class="lnr lnr-license font-40 color-theme"></i>
-                        </div>
-                        <h4 class="text-uppercase font-16">safety</h4>
-                    </div>
-                </div>
-                <!-- .col-md-6 end -->
-                <div class="col-xs-12 col-sm-6 col-md-2 text-center-sm mb-30-sm">
-                    <div class="feature feature-2">
-                        <div class="feature-icon">
-                            <i class="lnr lnr-users font-40 color-theme"></i>
-                        </div>
-                        <h4 class="text-uppercase font-16">Community</h4>
-                    </div>
-                </div>
-                <!-- .col-md-6 end -->
-                <div class="col-xs-12 col-sm-6 col-md-2 text-center-sm mb-30-sm">
-                    <div class="feature feature-2">
-                        <div class="feature-icon">
-                            <i class="lnr lnr-cloud-sync font-40 color-theme"></i>
-                        </div>
-                        <h4 class="text-uppercase font-16">Sustainability</h4>
-                    </div>
-                </div>
-                <!-- .col-md-6 end -->
-                <div class="col-xs-12 col-sm-6 col-md-2 text-center-sm mb-30-sm">
-                    <div class="feature feature-2">
-                        <div class="feature-icon">
-                            <i class="lnr lnr-construction font-40 color-theme"></i>
-                        </div>
-                        <h4 class="text-uppercase font-16">Integrity</h4>
-                    </div>
-                </div>
-                <!-- .col-md-6 end -->
-            </div>
-            <!-- .row end -->
-        </div>
-        <!-- .container end -->
-    </section>
+
 
     <!-- Call To Action #3
     ============================================= -->
@@ -205,13 +144,13 @@
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingOne">
                                 <h4 class="panel-title">
-                                    <a class="accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion02" href="#collapse02-1" aria-expanded="true" aria-controls="collapse02-1"> About Yellow Hats </a>
+                                    <a class="accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion02" href="#collapse02-1" aria-expanded="true" aria-controls="collapse02-1"> About P Property </a>
                                     <span class="icon"></span>
                                 </h4>
                             </div>
                             <div id="collapse02-1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                                 <div class="panel-body">
-                                    Since its foundation the company has doubled its turnover year on year, with its staff numbers swelling accordingly. Today Yellow Hats has over 4,000 professionals on its payroll. The company is active in Middle East.
+                                    Since its foundation the company has doubled its turnover year on year, with its staff numbers swelling accordingly. Today P Property has over 4,000 professionals on its payroll. The company is active in Middle East.
                                 </div>
                             </div>
                         </div>
@@ -253,7 +192,7 @@
                             <div class="testimonial-content">
                                 <p>In P Stays, understanding the needs of clients is our professional duty. We individually assess each plan and offer optimal solutions, proceeding from the project’s objectives and specifics. The company’s stable financial standing enables us to set minimal advance payment rates and a comfortable schedule of financing for our awesome client</p>
                                 <div class="testimonial-img">
-                                    <img src="assets/images/testimonial/3.png" alt="author"/>
+                                    <img src="{{ asset('assets/images/testimonial/3.png') }}" alt="author"/>
                                 </div>
                             </div>
                             <div class="testimonial-meta">
@@ -266,7 +205,7 @@
                             <div class="testimonial-content">
                                 <p>The skills of our project managers are attested by international certificates from leading overseas professional associations in the realm of construction, land use and real estate. </p>
                                 <div class="testimonial-img">
-                                    <img src="assets/images/testimonial/2.png" alt="author"/>
+                                    <img src="{{ asset('assets/images/testimonial/2.png') }}" alt="author"/>
                                 </div>
                             </div>
                             <div class="testimonial-meta">
@@ -279,7 +218,7 @@
                             <div class="testimonial-content">
                                 <p>P stays Group carries out full-cycle development, including the attraction of investments, construction and managing premium residential and non-residential properties.</p>
                                 <div class="testimonial-img">
-                                    <img src="assets/images/testimonial/1.png" alt="author"/>
+                                    <img src="{{ asset('assets/images/testimonial/1.png') }}" alt="author"/>
                                 </div>
                             </div>
                             <div class="testimonial-meta">
