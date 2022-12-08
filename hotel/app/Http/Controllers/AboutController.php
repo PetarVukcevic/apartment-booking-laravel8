@@ -12,7 +12,7 @@ class AboutController extends Controller
 
     public function page()
     {
-        $about = About::first()->with('features', 'blogs');
+        $about = About::first();
         $features = Feature::all();
         $blogs = Blog::all();
 
