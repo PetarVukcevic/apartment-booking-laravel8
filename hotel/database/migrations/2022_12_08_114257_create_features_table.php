@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('description', 300);
             $table->foreignId('about_id');
             $table->boolean('deleted')->nullable();
+            $table->string('label');
+            $table->string('collapse');
             $table->timestamps();
         });
     }

@@ -3,18 +3,25 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Blog;
+use App\Models\Feature;
 use Illuminate\Http\Request;
 
 class AboutController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+
+    public function page()
     {
-        //
+        $about = About::first()->with('features', 'blogs');
+        $features = Feature::all();
+        $blogs = Blog::all();
+
+        return view('about.page', [
+            'about' => $about,
+            'features' => $features,
+            'blogs' => $blogs
+        ]);
+
     }
 
     /**

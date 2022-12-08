@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ApartmentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MessageController;
@@ -27,9 +28,7 @@ Route::get('catalog/{apartment:slug}', [ApartmentController::class, 'show']);
 Route::get('/contact', [MessageController::class, 'create'])->name('contact');
 Route::post('/contact', [MessageController::class, 'sendEmail'])->name('send.email');
 
-Route::get('/about-us', function () {
-    return view('about-us');
-});
+Route::get('/about-us', [AboutController::class, 'page']);
 
 Route::get('/faq', function () {
     return view('faq');
