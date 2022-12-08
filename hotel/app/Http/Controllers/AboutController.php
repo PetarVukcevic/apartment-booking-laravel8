@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Badge;
 use App\Models\Blog;
 use App\Models\Feature;
 use Illuminate\Http\Request;
@@ -15,11 +16,13 @@ class AboutController extends Controller
         $about = About::first();
         $features = Feature::all();
         $blogs = Blog::all();
+        $badges = Badge::all();
 
         return view('about.page', [
             'about' => $about,
             'features' => $features,
-            'blogs' => $blogs
+            'blogs' => $blogs,
+            'badges' => $badges
         ]);
 
     }

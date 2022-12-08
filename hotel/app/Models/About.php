@@ -19,4 +19,9 @@ class About extends Model
     {
         return $this->hasMany(Blog::class);
     }
+
+    public function badges()
+    {
+        return $this->hasMany(Badge::class);
+    }
 }

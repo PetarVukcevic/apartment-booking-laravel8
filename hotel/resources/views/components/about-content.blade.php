@@ -1,4 +1,4 @@
-@props(['about', 'features', 'blogs'])
+@props(['about', 'features', 'blogs', 'badges'])
 <section class="bg-overlay bg-overlay-gradient pb-0">
     <div class="bg-section" >
         <img src="{{ asset('assets/images/page-title/about.png') }}" alt="Background"/>
@@ -25,7 +25,7 @@
     </div>
     <!-- .container end -->
 </section>
-
+<!-- MAIN HEADING START -->
 <section id="shotcode-1" class="shotcode-1 text-center-xs text-center-sm">
     <div class="container">
         <div class="row">
@@ -48,53 +48,22 @@
                 <p class="mb-60">{{ $about->main_description }}</p>
                 <a class="btn btn-secondary mb-30-xs" href="{{ url('catalog') }}">our catalog</a>
             </div>
-            <!-- .col-md-6 end -->
-            <div class="col-xs-12 col-sm-12 col-md-6">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 feature feature-1">
-                        <div class="feature-icon">
-                            <i class="lnr lnr-calendar-full"></i>
-                        </div>
-                        <h4 class="text-uppercase">Always Available</h4>
-                        <p>all construction sites open for visitors, with 24/7 video surveillance being conducted at all objects</p>
-                    </div>
-                    <!-- .col-md-6 end -->
-                    <div class="col-xs-12 col-sm-6 col-md-6 feature feature-1">
-                        <div class="feature-icon">
-                            <i class="lnr lnr-briefcase"></i>
-                        </div>
-                        <h4 class="text-uppercase">Qualified Agents</h4>
-                        <p>We have a team of specialists capable of maximizing the result and delivering the projects</p>
-                    </div>
-                    <!-- .col-md-6 end -->
-                    <div class="col-xs-12 col-sm-6 col-md-6 feature feature-1 mb-0">
-                        <div class="feature-icon">
-                            <i class="lnr lnr-database"></i>
-                        </div>
-                        <h4 class="text-uppercase">Fair Prices</h4>
-                        <p>you can be 100% sure that it will be delivered right on time, within the set budget limits</p>
-                    </div>
-                    <!-- .col-md-6 end -->
-                    <div class="col-xs-12 col-sm-6 col-md-6 feature  feature-1 mb-0">
-                        <div class="feature-icon">
-                            <i class="lnr lnr-cart"></i>
-                        </div>
-                        <h4 class="text-uppercase">Best Offers</h4>
-                        <p>All aspects of the operations being transparent and clear for clients and partners</p>
-                    </div>
-                </div>
-                <!-- .row end -->
-            </div>
-            <!-- .col-md-6 end -->
+
+            <!-- BADGES START start -->
+            @if($badges->count())
+                <x-about-badges :badges="$badges"/>
+            @endif
+            <!-- BADGES START end -->
+
         </div>
         <!-- .row end -->
     </div>
     <!-- .container end -->
 </section>
+<!-- MAIN HEADING END -->
 
 
-
-<!-- Call To Action #3
+<!-- Heading One
 ============================================= -->
 <section id="cta-3" class="cta cta-3 bg-overlay bg-overlay-theme text-center">
     <div class="bg-section" >
@@ -115,11 +84,12 @@
     </div>
     <!-- .container end -->
 </section>
-<!-- #cta-3 end -->
+<!-- heading one end -->
 
-<!-- Shortcode #10
+<!-- Heading Two Start
 ============================================= -->
 <section>
+    <!-- container start -->
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -142,13 +112,9 @@
             @endif
             <!-- FEATURES END -->
 
-
-
             <!-- BLOGS START -->
             @if($blogs->count())
-
                 <x-blogs-list :blogs="$blogs"/>
-
             @endif
             <!-- BLOGS END -->
         </div>
