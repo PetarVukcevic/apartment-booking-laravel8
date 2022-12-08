@@ -2,7 +2,7 @@
 
     <section class=" bg-overlay bg-overlay-gradient pb-0">
         <div class="bg-section" >
-            <img src={{ asset("assets/images/page-title/9.jpg") }} alt="Background"/>
+            <img src={{ asset("assets/images/page-title/contact,png.jpg") }} alt="Background"/>
         </div>
         <div class="container">
             <div class="row">

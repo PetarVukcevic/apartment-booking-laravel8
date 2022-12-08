@@ -99,12 +99,6 @@
                     </li>
 
                     <!-- li end -->
-                    <li class="has-dropdown">
-                        <a href="/blog">blog</a>
-                    </li>
-                    <!-- li end -->
-
-                    <!-- li end -->
                     <li class="has-dropdown pull-left">
                         <a href="/contact">contact</a>
                     </li>

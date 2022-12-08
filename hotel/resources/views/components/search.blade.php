@@ -11,7 +11,7 @@
                        value="{{ request('search') }}">
 
                 <span class="input-group-btn">
-                    <button class="btn" type="button" (click)="{{ request('search') }}"><i class="fa fa-search"></i></button>
+                    <button class="btn" type="submit"><i class="fa fa-search"></i></button>
                 </span>
 
             </div>

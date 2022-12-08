@@ -10,7 +10,7 @@
                     <!-- slide 1 -->
                     <li data-transition="zoomout" data-slotamount="default"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000" style="background-color: rgba(34, 34, 34, 0.3);">
                         <!-- MAIN IMAGE -->
-                        <img src="{{ asset('assets/images/sliders/1.jpg') }}"  alt=""  width="1920" height="1280">
+                        <img src="{{ asset('assets/images/sliders/prva.png') }}"  alt=""  width="1920" height="1280">
                         <!-- LAYER NR. 1 -->
                         <div class="tp-caption"
                              data-x="center" data-hoffset="0"
@@ -111,7 +111,7 @@
                     <!-- slide 2 -->
                     <li data-transition="scaledownfromright" data-slotamount="default"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000">
                         <!-- MAIN IMAGE -->
-                        <img src="{{ asset('assets/images/sliders/2.jpg') }}"  alt=""  width="1920" height="1280">
+                        <img src="{{ asset('assets/images/sliders/druga.png') }}"  alt=""  width="1920" height="1280">
                         <!-- LAYER NR. 1 -->
                         <div class="tp-caption"
                              data-x="center" data-hoffset="0"
@@ -197,7 +197,7 @@
                     <!-- slide 3 -->
                     <li data-index='rs-367' data-transition='fadetotopfadefrombottom' data-slotamount='default' data-easein='default' data-easeout='default' data-masterspeed='default'>
                         <!-- MAIN IMAGE -->
-                        <img src="{{ asset('assets/images/sliders/3.jpg') }}"  alt=""  width="1920" height="1280">
+                        <img src="{{ asset('assets/images/sliders/treca.png') }}"  alt=""  width="1920" height="1280">
                         <!-- LAYER NR. 1 -->
                         <div class="tp-caption"
                              data-x="center" data-hoffset="0"

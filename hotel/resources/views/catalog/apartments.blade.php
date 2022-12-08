@@ -3,7 +3,7 @@
 ============================================= -->
     <section class="bg-overlay bg-overlay-gradient pb-0">
         <div class="bg-section" >
-            <img src={{url("assets/images/page-title/1.jpg")}} alt="Background"/>
+            <img src={{url("assets/images/page-title/catalog.png")}} alt="Background"/>
         </div>
         <div class="container">
             <div class="row">
@@ -112,20 +112,7 @@
 
                     <!-- Filter
                     ============================================= -->
-                    <div class="widget widget-filter">
-                        <div class="widget-title">
-                            <h3>Filter</h3>
-                        </div>
-                        <div class="widget-content">
-                            <div id="slider-range">
-                            </div>
-                            <p>
-                                <label for="amount">Price: </label>
-                                <input type="text" id="amount" readonly>
-                            </p>
-                            <a class="btn btn-secondary" href="#">filter</a>
-                        </div>
-                    </div>
+                    <x-price-filter/>
 
                 </div>
                 <!-- .col-md-3 end -->
@@ -135,7 +122,8 @@
         <!-- .container end -->
     </section>
 
-{{--  Paginate script -> changes the route according to items count --}}
+
+    {{--  Paginate script -> changes the route according to items count --}}
     <script type="text/javascript">
         document.getElementById('pagination').onchange = function() {
             window.location = "{{ $apartments->url(1) }}&items=" + this.value;
