@@ -13,10 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('features', function (Blueprint $table) {
+        Schema::create('blogs', function (Blueprint $table) {
             $table->id();
-            $table->text('title', 30);
-            $table->string('description', 300);
+            $table->string('description', 350);
+            $table->text('author');
+            $table->text('author_role');
+            $table->string('author_img_url');
             $table->foreignId('about_id');
             $table->boolean('deleted')->nullable();
             $table->timestamps();
@@ -30,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('features');
+        Schema::dropIfExists('blogs');
     }
 };
