@@ -13,7 +13,7 @@
                         </div>
                         <ol class="breadcrumb">
                             <li>
-                                <a href="/">Home</a>
+                                <a href="{{ url('/') }}">Home</a>
                             </li>
                             <li class="active">contact</li>
                         </ol>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ApartmentController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HomeController;
@@ -32,6 +33,8 @@ Route::post('/contact', [MessageController::class, 'sendEmail'])->name('send.ema
 Route::get('/about-us', [AboutController::class, 'page']);
 
 Route::get('/faq', [FaqController::class, 'page']);
+
+Route::get('/admin-apartments', [AdminController::class, 'section']);
 
 
 Route::fallback(function ()

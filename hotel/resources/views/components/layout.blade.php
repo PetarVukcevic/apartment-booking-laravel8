@@ -95,14 +95,27 @@
                             <li>
                                 <a href="{{ url('faq') }}">FAQS</a>
                             </li>
+
                         </ul>
                     </li>
 
                     <!-- li end -->
-                    <li class="has-dropdown pull-left">
+                    <li>
                         <a href="{{ url('contact') }}">contact</a>
                     </li>
                     <!-- li end -->
+
+                    <!-- Admin section  -->
+                    <li class="has-dropdown" >
+                        <a data-toggle="dropdown" class="dropdown-toggle" style="color: yellow">admin</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="{{ url('admin-apartments') }}">Apartments</a>
+                            </li>
+
+                        </ul>
+                    </li>
+
                 </ul>
 
 
