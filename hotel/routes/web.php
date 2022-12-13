@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ApartmentController;
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MessageController;
 use App\Models\Apartment;
@@ -30,9 +31,7 @@ Route::post('/contact', [MessageController::class, 'sendEmail'])->name('send.ema
 
 Route::get('/about-us', [AboutController::class, 'page']);
 
-Route::get('/faq', function () {
-    return view('faq');
-});
+Route::get('/faq', [FaqController::class, 'page']);
 
 
 Route::fallback(function ()

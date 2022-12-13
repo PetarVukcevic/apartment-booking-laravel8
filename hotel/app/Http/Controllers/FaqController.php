@@ -7,14 +7,14 @@ use Illuminate\Http\Request;
 
 class FaqController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+
+    public function page()
     {
-        //
+        $faq = Faq::all();
+
+        return view('faq.page', [
+            'faq' => $faq
+        ]);
     }
 
     /**
