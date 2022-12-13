@@ -18,6 +18,11 @@ class AdminController extends Controller
         ]);
     }
 
+    public function create()
+    {
+        return view('admin.create');
+    }
+
 //    public function destroy($id)
 //    {
 //        Apartment::find($id)->delete();

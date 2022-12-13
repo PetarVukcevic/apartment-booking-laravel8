@@ -37,6 +37,7 @@ Route::get('/faq', [FaqController::class, 'page']);
 Route::get('/admin-apartments', [AdminController::class, 'section']);
 //Route::delete('/admin-apartments/{id}', [AdminController::class, 'destroy'])->name('apartments.destroy');
 Route::post('/admin-apartments', [AdminController::class, 'destroy']);
+Route::get('/apartments-create', [AdminController::class, 'create']);
 
 
 

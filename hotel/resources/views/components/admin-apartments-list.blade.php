@@ -14,7 +14,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <input type="text" name="apartment_delete_id" id="apartment_id">
+                    <input type="hidden" name="apartment_delete_id" id="apartment_id">
                     <h5>Are you sure you want to delete this Apartment?</h5>
                 </div>
                 <div class="modal-footer">

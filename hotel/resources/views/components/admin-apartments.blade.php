@@ -2,8 +2,9 @@
 <div class="container">
     <h1>All Apartments</h1>
 
+    <x-flash/>
     <div class="row">
-        <a class="btn btn-success">Create new</a>
+        <a href="{{ url('/apartments-create') }}" class="btn btn-success">Create new</a>
         <table class="table">
             <thead>
             <tr>

@@ -32,6 +32,9 @@
     <!--[if lt IE 9]>
     <script src={{asset("assets/js/html5shiv.js")}}></script>
     <script src={{asset("assets/js/respond.min.js")}}></script>
+
+    <script defer src={{ asset("https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js")}}></script>
+
     <![endif]-->
 
     <!-- Document Title
