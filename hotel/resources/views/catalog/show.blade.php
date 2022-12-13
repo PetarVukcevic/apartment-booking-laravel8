@@ -5,18 +5,21 @@
         <img src={{ asset("assets/images/page-title/2.jpg") }} alt="Background"/>
     </div>
     <div class="container">
+
         <div class="row">
+
             <div class="col-xs-12 col-sm-12 col-md-12">
+
                 <div class="page-title title-1 text-center">
                     <div class="title-bg">
                         <h2>{{ $apartment->title }}</h2>
                     </div>
                     <ol class="breadcrumb">
                         <li>
-                            <a href="/">Home</a>
+                            <a href="{{ url('/') }}">Home</a>
                         </li>
                         <li>
-                            <a href="/catalog">Catalog</a>
+                            <a href="{{ url('catalog') }}">Catalog</a>
                         </li>
 
                         <li class="active">{{ $apartment->title }}</li>

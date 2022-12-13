@@ -61,7 +61,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="logo" href="/">
+                <a class="logo" href="{{url('/')}}">
                     <img src="{{asset("assets/images/logo/nav-logo.png")}}" alt="Vukcevic Apartments">
                 </a>
 
@@ -71,7 +71,7 @@
             <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-left">
                     <li>
-                        <a href="/">Home</a>
+                        <a href="{{ url('/') }}">Home</a>
                     </li>
 
                     <!-- Apartments -->
@@ -79,28 +79,28 @@
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle">Apartments</a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="/catalog">Catalog</a>
+                                <a href="{{ url('catalog') }}">Catalog</a>
                             </li>
                         </ul>
                     </li>
 
                     <!-- About us-->
                     <li class="has-dropdown">
-                        <a href="/about-us" data-toggle="dropdown" class="dropdown-toggle">about</a>
+                        <a href="{{ url('about-us') }}" data-toggle="dropdown" class="dropdown-toggle">about</a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="/about-us">about us</a>
+                                <a href="{{ url('about-us') }}">about us</a>
                             </li>
 
                             <li>
-                                <a href="/faq">FAQS</a>
+                                <a href="{{ url('faq') }}">FAQS</a>
                             </li>
                         </ul>
                     </li>
 
                     <!-- li end -->
                     <li class="has-dropdown pull-left">
-                        <a href="/contact">contact</a>
+                        <a href="{{ url('contact') }}">contact</a>
                     </li>
                     <!-- li end -->
                 </ul>
@@ -190,72 +190,72 @@
                         <div class="col-xs-6 col-sm-6 col-md-6">
                             <ul class="list-unstyled text-capitalize">
                                 <li>
-                                    <a href="/about-us"> about us</a>
+                                    <a href="{{ url('about-us') }}"> about us</a>
                                 </li>
                                 <li>
-                                    <a href="#"> careers</a>
+                                    <a href="{{ url('catalog') }}"> catalog</a>
                                 </li>
                                 <li>
-                                    <a href="#"> pricing plans</a>
+                                    <a href="{{ url('contact') }}"> contact</a>
                                 </li>
                             </ul>
                         </div>
                         <div class="col-xs-6 col-sm-6 col-md-6">
                             <ul class="list-unstyled text-capitalize">
                                 <li>
-                                    <a href="#"> team</a>
+                                    <a href="{{ url('about-us') }}"> about</a>
                                 </li>
                                 <li>
-                                    <a href="#"> projects</a>
+                                    <a href="{{ url('catalog') }}"> apartments</a>
                                 </li>
                                 <li>
-                                    <a href="#"> FAQs</a>
+                                    <a href="{{ url('faq') }}"> FAQs</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-5 widget-services text-center-xs">
-                    <h5 class="text-capitalize text-white">services</h5>
-                    <div class="row">
-                        <div class="col-xs-4 col-sm-4 col-md-4">
-                            <ul class="list-unstyled text-capitalize">
-                                <li>
-                                    <a href="#"> design &amp; build</a>
-                                </li>
-                                <li>
-                                    <a href="#"> tiling &amp; painting</a>
-                                </li>
-                                <li>
-                                    <a href="#"> revonations</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-xs-4 col-sm-4 col-md-4">
-                            <ul class="list-unstyled text-capitalize">
-                                <li>
-                                    <a href="#"> management</a>
-                                </li>
-                                <li>
-                                    <a href="#"> wood flooring</a>
-                                </li>
-                                <li>
-                                    <a href="#"> work consulting</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-xs-4 col-sm-4 col-md-4">
-                            <ul class="list-unstyled text-capitalize">
-                                <li>
-                                    <a href="#"> wood flooring</a>
-                                </li>
-                                <li>
-                                    <a href="#"> green building</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+{{--                <div class="col-xs-12 col-sm-6 col-md-5 widget-services text-center-xs">--}}
+{{--                    <h5 class="text-capitalize text-white">services</h5>--}}
+{{--                    <div class="row">--}}
+{{--                        <div class="col-xs-4 col-sm-4 col-md-4">--}}
+{{--                            <ul class="list-unstyled text-capitalize">--}}
+{{--                                <li>--}}
+{{--                                    <a href="#"> design &amp; build</a>--}}
+{{--                                </li>--}}
+{{--                                <li>--}}
+{{--                                    <a href="#"> tiling &amp; painting</a>--}}
+{{--                                </li>--}}
+{{--                                <li>--}}
+{{--                                    <a href="#"> revonations</a>--}}
+{{--                                </li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-xs-4 col-sm-4 col-md-4">--}}
+{{--                            <ul class="list-unstyled text-capitalize">--}}
+{{--                                <li>--}}
+{{--                                    <a href="#"> management</a>--}}
+{{--                                </li>--}}
+{{--                                <li>--}}
+{{--                                    <a href="#"> wood flooring</a>--}}
+{{--                                </li>--}}
+{{--                                <li>--}}
+{{--                                    <a href="#"> work consulting</a>--}}
+{{--                                </li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-xs-4 col-sm-4 col-md-4">--}}
+{{--                            <ul class="list-unstyled text-capitalize">--}}
+{{--                                <li>--}}
+{{--                                    <a href="#"> wood flooring</a>--}}
+{{--                                </li>--}}
+{{--                                <li>--}}
+{{--                                    <a href="#"> green building</a>--}}
+{{--                                </li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
             </div>
         </div>
     </div>
@@ -329,7 +329,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12 copyrights text-center">
                 <p class="text-capitalize">© 2022 p property. all rights reserved</p>
                 <p class="text-capitalize">With Love by
-                    <a href="http://petarvukcevic.ml">petarvukcevic.ml</a>
+                    <a href="{{url('http://petarvukcevic.ml')}}">petarvukcevic.ml</a>
                 </p>
             </div>
         </div>

@@ -103,8 +103,8 @@
                              data-basealign="slide"
                              data-responsive_offset="on"
                              data-responsive="off">
-                            <a class="btn btn-primary mr-sm" href="#">read more</a>
-                            <a class="btn btn-primary btn-white" href="#">get started</a>
+                            <a class="btn btn-primary mr-sm" href="{{ url('about-us') }}">read more</a>
+                            <a class="btn btn-primary btn-white" href="{{ url('catalog') }}">get started</a>
                         </div>
                     </li>
 
@@ -189,8 +189,8 @@
                              data-splitin="none"
                              data-splitout="none"
                              data-responsive_offset="on">
-                            <a class="btn btn-primary mr-sm" href="#">read more</a>
-                            <a class="btn btn-primary btn-white" href="#">get started</a>
+                            <a class="btn btn-primary mr-sm" href="{{ url('about-us') }}">read more</a>
+                            <a class="btn btn-primary btn-white" href="{{ url('catalog') }}">get started</a>
                         </div>
                     </li>
 
@@ -278,8 +278,8 @@
                              data-actions='[{"event":"click","action":"jumptoslide","slide":"next","delay":""}]'
                              data-responsive_offset="on"
                              data-responsive="off">
-                            <a class="btn btn-primary mr-sm" href="#">read more</a>
-                            <a class="btn btn-primary btn-white" href="#">get started</a>
+                            <a class="btn btn-primary mr-sm" href="{{ url('about-us') }}">read more</a>
+                            <a class="btn btn-primary btn-white" href="{{ url('catalog') }}">get started</a>
                         </div>
                     </li>
                 </ul>
@@ -301,7 +301,7 @@
 
 
 
-    <!-- Call To Action #1
+    <!-- Contact form
     ============================================= -->
     <section id="cta-1" class="cta pb-0  bg-gray">
         <div class="container">
@@ -338,5 +338,6 @@
         </div>
         <!-- .container end -->
     </section>
+{{-- end contact form--}}
 
 </x-layout>

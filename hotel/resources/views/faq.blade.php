@@ -33,79 +33,9 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="sidebar sidebar-full col-xs-12 col-sm-12 col-md-3">
 
-                    <!-- Categories
-                    ============================================= -->
-                    <div class="widget widget-categories">
-                        <div class="widget-content">
-                            <ul class="list-unstyled">
-                                <li class="active">
-                                    <a href="#">All services</a>
-                                </li>
-                                <li>
-                                    <a href="#">Tiling &amp; Painting</a>
-                                </li>
-                                <li>
-                                    <a href="#">Renovations</a>
-                                </li>
-                                <li>
-                                    <a href="#">Design &amp; Build</a>
-                                </li>
-                                <li>
-                                    <a href="#">Consulting</a>
-                                </li>
-                                <li>
-                                    <a href="#">Management</a>
-                                </li>
-                                <li>
-                                    <a href="#">Wood Flooring</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Download
-                    ============================================= -->
-                    <div class="widget widget-download">
-                        <div class="widget-title">
-                            <h3>Download Brochures</h3>
-                        </div>
-                        <div class="widget-content">
-                            <div class="download download-pdf">
-                                <a href="#">
-                                    <div class="download-desc">
-                                        <div class="download-desc-icon">
-                                            <img src="assets/images/sidebar/1.png" alt="icon"/>
-                                        </div>
-                                        <h4>Download.pdf</h4>
-                                    </div>
-                                    <div class="download-icon">
-                                        <i class="fa fa-download"></i>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- .download-pdf end -->
-
-                            <div class="download download-doc">
-                                <a href="#">
-                                    <div class="download-desc">
-                                        <div class="download-desc-icon">
-                                            <img src="assets/images/sidebar/2.png" alt="icon"/>
-                                        </div>
-                                        <h4>Download.doc</h4>
-                                    </div>
-                                    <div class="download-icon">
-                                        <i class="fa fa-download"></i>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- .download-pdf end -->
-                        </div>
-                    </div>
-                </div>
                 <!-- .sidebar end -->
-                <div class="col-xs-12 col-sm-12 col-md-9 about-1">
+                <div class="col-xs-12 col-sm-12 col-md-12 about-1">
                     <div class="panel-group accordion" id="accordion02" role="tablist" aria-multiselectable="true">
 
                         <!-- Panel 01 -->
