@@ -1,6 +1,7 @@
 @props(['apartments'])
 <div class="container">
     <h1>All Apartments</h1>
+
     <div class="row">
         <a class="btn btn-success">Create new</a>
         <table class="table">
