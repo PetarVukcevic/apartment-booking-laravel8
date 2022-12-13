@@ -30,7 +30,7 @@ return new class extends Migration
             $table->integer('adults');
             $table->integer('children')->nullable();
             $table->timestamps();
-            $table->boolean('deleted')->nullable();
+            $table->softDeletes();
         });
     }
 

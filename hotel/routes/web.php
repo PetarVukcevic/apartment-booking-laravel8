@@ -35,6 +35,7 @@ Route::get('/about-us', [AboutController::class, 'page']);
 Route::get('/faq', [FaqController::class, 'page']);
 
 Route::get('/admin-apartments', [AdminController::class, 'section']);
+Route::delete('/admin-apartments/{id}', [AdminController::class, 'destroy'])->name('apartments.destroy');
 
 
 Route::fallback(function ()

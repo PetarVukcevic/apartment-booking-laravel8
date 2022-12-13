@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('description', 120);
             $table->string('icon_class');
             $table->foreignId('about_id');
-            $table->boolean('deleted')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

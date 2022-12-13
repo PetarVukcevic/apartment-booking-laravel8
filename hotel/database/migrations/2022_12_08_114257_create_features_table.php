@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text('title', 30);
             $table->string('description', 300);
             $table->foreignId('about_id');
-            $table->boolean('deleted')->nullable();
+            $table->softDeletes();
             $table->string('label');
             $table->string('collapse');
             $table->timestamps();

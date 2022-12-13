@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('slug', 20);
             $table->text('description', 255);
             $table->timestamps();
-            $table->boolean('deleted')->nullable();
+            $table->softDeletes();
         });
     }
 

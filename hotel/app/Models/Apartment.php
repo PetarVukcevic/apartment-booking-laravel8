@@ -4,13 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Apartment extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
-    protected $fillable = ['title', 'rooms', 'price', 'description', 'img_url', 'address', 'adults', 'children'];
-
+    protected $guarded = [];
 
     public function scopeFilter($query, array $filters)
     {

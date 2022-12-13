@@ -6,6 +6,11 @@
         <td>{{ $apartment->city->name }}</td>
         <td>
             <a class="btn btn-success">Edit</a>
-            <button class="btn btn-danger">Delete</button>
+
+            <form method="POST" action="{{ route('apartments.destroy' , $apartment->id) }}" style="display: inline">
+                @csrf
+                <input name="_method" type="hidden" value="DELETE">
+                <button type="submit" class="btn btn-danger delete" title='Delete'>Delete</button>
+            </form>
         </td>
 </tr>

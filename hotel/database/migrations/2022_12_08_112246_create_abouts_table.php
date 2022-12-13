@@ -25,6 +25,7 @@ return new class extends Migration
             $table->text('heading_two', 30);
             $table->text('helper_two', 30);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

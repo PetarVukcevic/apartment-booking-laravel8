@@ -8,12 +8,20 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
 
-    public function section() {
+    public function section()
+    {
 
         $apartments = Apartment::latest()->with('category', 'landlord', 'city')->get();
 
         return view('admin.section', [
             'apartments' => $apartments
         ]);
+    }
+
+    public function destroy($id)
+    {
+        Apartment::find($id)->delete();
+
+        return redirect()->back();
     }
 }

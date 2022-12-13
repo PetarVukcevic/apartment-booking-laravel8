@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('password', 60);
             $table->string('phone_number',20);
             $table->timestamps();
-            $table->boolean('deleted')->nullable();
+            $table->softDeletes();
         });
     }
 

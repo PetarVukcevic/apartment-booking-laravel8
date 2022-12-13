@@ -20,7 +20,7 @@ return new class extends Migration
             $table->float('grade');
             $table->text('comment');
             $table->timestamps();
-            $table->boolean('deleted')->nullable();
+            $table->softDeletes();
         });
     }
 

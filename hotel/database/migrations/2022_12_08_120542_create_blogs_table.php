@@ -20,8 +20,8 @@ return new class extends Migration
             $table->text('author_role');
             $table->string('author_img_url');
             $table->foreignId('about_id');
-            $table->boolean('deleted')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
