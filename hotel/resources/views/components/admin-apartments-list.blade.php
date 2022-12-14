@@ -33,7 +33,7 @@
         <td>{{ $apartment->landlord->first_name }} {{ $apartment->landlord->last_name }}</td>
         <td>{{ $apartment->city->name }}</td>
         <td>
-            <a class="btn btn-success">Edit</a>
+            <a class="btn btn-success" href="/apartments-edit/{{ $apartment->id }}">Edit</a>
 
             <button type="button" value="{{ $apartment->id }}" class="btn btn-danger deleteApartment" title='Delete'>Delete</button>
 

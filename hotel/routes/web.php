@@ -38,6 +38,9 @@ Route::post('/admin-apartments', [AdminApartmentController::class, 'destroy']);
 Route::get('/apartments-create', [AdminApartmentController::class, 'create']);
 Route::post('/apartments-create', [AdminApartmentController::class, 'store']);
 
+Route::get('/apartments-edit/{apartment}', [AdminApartmentController::class, 'edit']);
+Route::patch('/apartments-edit/{apartment}', [AdminApartmentController::class, 'update']);
+
 
 
 

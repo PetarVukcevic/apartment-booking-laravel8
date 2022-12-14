@@ -61,18 +61,61 @@ class AdminApartmentController extends Controller
         $attributes['profile_img'] = 'storage/' . \request()->file('profile_img')->store('assets/images');
         $attributes['view_img'] = 'storage/' . \request()->file('view_img')->store('assets/images');
         $attributes['lg_profile_img'] = 'storage/' . \request()->file('lg_profile_img')->store('assets/images');
-        $attributes['description'] = '<p>' . $attributes['description'] . '</p>';
 
         Apartment::create($attributes);
 
         return redirect('/catalog/'. $attributes['slug']);
     }
-//    public function destroy($id)
-//    {
-//        Apartment::find($id)->delete();
-//
-//        return redirect()->back();
-//    }
+
+    public function edit($id) {
+        $categories = Category::all();
+        $cities = City::all();
+        $landlords = User::all();
+        $apartment = Apartment::find($id);
+
+
+        return view('admin.edit',
+        [
+            'categories' => $categories,
+            'cities' => $cities,
+            'landlords' => $landlords,
+            'apartment' => $apartment
+        ]);
+    }
+
+    public function update(Apartment $apartment)
+    {
+        $attributes = \request()->validate([
+            'title' => 'required',
+            'address' => 'required',
+            'category_id' => ['required', Rule::exists('categories', 'id')],
+            'price' => 'required',
+            'city_id' => 'required',
+            'user_id' => 'required',
+            'rooms' => 'required',
+            'adults' => 'required',
+            'children' => 'required',
+            'profile_img' => 'image',
+            'view_img' => 'image',
+            'lg_profile_img' => 'image',
+            'description' => 'required',
+        ]);
+
+        if (isset($attributes['profile_img'])) {
+            $attributes['profile_img'] = 'storage/' . \request()->file('profile_img')->store('assets/images');
+        }
+        if (isset($attributes['view_img'])) {
+            $attributes['view_img'] = 'storage/' . \request()->file('view_img')->store('assets/images');
+        }
+        if (isset($attributes['lg_profile_img'])) {
+            $attributes['lg_profile_img'] = 'storage/' . \request()->file('lg_profile_img')->store('assets/images');
+        }
+        $attributes['slug'] = Str::slug($attributes['title']);
+
+        $apartment->update($attributes);
+
+        return back()->with('success', 'Apartment updated!');
+    }
 
     public function destroy(Request $request)
     {

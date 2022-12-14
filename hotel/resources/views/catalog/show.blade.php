@@ -138,7 +138,7 @@
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="description">
-                            <p>{!! $apartment->description !!}</p>
+                            <p>{{ $apartment->description }} </p>
                         </div>
                         <!-- #description end -->
                         <div role="tabpanel" class="tab-pane" id="details">

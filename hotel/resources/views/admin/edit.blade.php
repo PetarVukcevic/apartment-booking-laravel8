@@ -1,5 +1,4 @@
 <x-layout>
-
     <section class=" bg-overlay bg-overlay-gradient pb-0">
         <div class="bg-section" >
             <img src={{ asset("assets/images/page-title/contact,png.jpg") }} alt="Background"/>
@@ -9,7 +8,8 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="page-title title-1 text-center">
                         <div class="title-bg">
-                            <h2>Administrator</h2>
+                            <h2>EDIT APARTMENT</h2>
+
                         </div>
                         <ol class="breadcrumb">
                             <li>
@@ -29,15 +29,18 @@
 
     <section>
         <div class="container bg-gray p-md rounded">
-            <h1>Create new apartment</h1>
+            <h1>Edit {{ $apartment->title }}</h1>
+            <x-flash/>
             <hr/>
 
-            <form method="POST" action="/apartments-create" enctype="multipart/form-data" name="create_apart">
+            <form method="POST" action="/apartments-edit/{{ $apartment->id }}" enctype="multipart/form-data" name="create_apart">
                 @csrf
+                @method('PATCH')
+
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="exampleFormControlInput1">Apartment Title</label>
-                        <input type="text" name="title" class="form-control" id="exampleFormControlInput1" value="{{ old('title') }}" placeholder="Title" required>
+                        <input type="text" name="title" class="form-control" id="exampleFormControlInput1" value="{{ $apartment->title }}" placeholder="Title" required>
                         @error('title')
                         <p style="color: red">{{ $message }}</p>
                         @enderror
@@ -47,7 +50,7 @@
 
                     <div class="form-group col-md-6">
                         <label for="exampleFormControlInput1">Apartment Address</label>
-                        <input type="text" name="address" class="form-control" value="{{ old('address') }}" id="exampleFormControlInput1" placeholder="Address" required>
+                        <input type="text" name="address" class="form-control" value="{{ $apartment->address }}" id="exampleFormControlInput1" placeholder="Address" required>
                         @error('address')
                         <p style="color: red">{{ $message }}</p>
                         @enderror
@@ -60,13 +63,15 @@
                     <div class="form-group col-md-6">
                         <label for="exampleFormControlSelect1">Category</label>
                         <select class="form-control" name="category_id" id="exampleFormControlSelect1" required>
-                            <option>Select Category</option>
+                            <option value="{{ $apartment->category->id }}">{{ $apartment->category->name }}</option>
                             @if($categories->count())
                                 @foreach($categories as $category)
+                                    @if($category->id != $apartment->category->id)
                                     <option
                                         value="{{ $category->id }}"
                                         {{ old('category') == $category->id  ? 'selected': ''}}
                                     >{{ $category->name}}</option>
+                                    @endif
                                 @endforeach
                             @endif
                         </select>
@@ -78,7 +83,7 @@
 
                     <div class="form-group col-md-6">
                         <label for="exampleFormControlInput1">Price per night</label>
-                        <input type="number" value="{{ old('price') }}" name="price" class="form-control" id="exampleFormControlInput1" placeholder="Enter price" required>
+                        <input type="number" value="{{ $apartment->price }}" name="price" class="form-control" id="exampleFormControlInput1" placeholder="Enter price" required>
                         @error('price')
                         <p style="color: red">{{ $message }}</p>
                         @enderror
@@ -91,12 +96,14 @@
                     <div class="form-group col-md-6">
                         <label for="exampleFormControlSelect1">City</label>
                         <select class="form-control" name="city_id" id="exampleFormControlSelect1" required>
-                            <option value="">Select City</option>
+                            <option value="{{ $apartment->city->id }}">{{ $apartment->city->name }}</option>
                             @if($cities->count())
                                 @foreach($cities as $city)
+                                    @if($city->id != $apartment->city->id)
                                     <option value="{{ $city->id }}"
                                         {{ old('city') == $city->id  ? 'selected': ''}}
                                     >{{ $city->name }}</option>
+                                    @endif
                                 @endforeach
                             @endif
                         </select>
@@ -109,12 +116,14 @@
                     <div class="form-group col-md-6">
                         <label for="exampleFormControlSelect1">Landlord</label>
                         <select class="form-control" name="user_id" id="exampleFormControlSelect1" required>
-                            <option value="">Select Landlord</option>
+                            <option value="{{ $apartment->landlord->id }}">{{ $apartment->landlord->username }}</option>
                             @if($landlords->count())
                                 @foreach($landlords as $landlord)
+                                    @if($landlord->id != $apartment->landlord->id)
                                     <option value="{{ $landlord->id }}"
                                         {{ old('$landlord') == $landlord->id  ? 'selected': ''}}
                                     >{{ $landlord->username }}</option>
+                                    @endif
                                 @endforeach
                             @endif
                         </select>
@@ -129,7 +138,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="exampleFormControlInput1">Number of rooms</label>
-                        <input type="number" name="rooms" value="{{ old('rooms') }}" class="form-control" id="exampleFormControlInput1" required>
+                        <input type="number" name="rooms" value="{{ $apartment->rooms }}" class="form-control" id="exampleFormControlInput1" required>
                         @error('rooms')
                         <p style="color: red">{{ $message }}</p>
                         @enderror
@@ -138,7 +147,7 @@
 
                     <div class="form-group col-md-4">
                         <label for="exampleFormControlInput1">Number of adults</label>
-                        <input type="number" name="adults" class="form-control" id="exampleFormControlInput1" value="{{ old('adults') }}" required>
+                        <input type="number" name="adults" class="form-control" id="exampleFormControlInput1" value="{{ $apartment->adults }}" required>
                         @error('adults')
                         <p style="color: red">{{ $message }}</p>
                         @enderror
@@ -147,45 +156,49 @@
 
                     <div class="form-group col-md-4">
                         <label for="exampleFormControlInput1">Number of children</label>
-                        <input type="number" name="children" class="form-control" id="exampleFormControlInput1" value="{{ old('children') }}" required>
+                        <input type="number" name="children" class="form-control" id="exampleFormControlInput1" value="{{ $apartment->children }}" required>
                         @error('children')
                         <p style="color: red">{{ $message }}</p>
                         @enderror
-
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="exampleFormControlFile1">Insert Profile image (270x343)</label>
-                        <input type="file" name="profile_img" value="{{ old('profile_img') }}" class="form-control-file" id="exampleFormControlFile1" required>
+                        <input type="file" name="profile_img" value="{{ old('profile_img') }}" class="form-control-file" id="exampleFormControlFile1">
                         @error('profile_img')
                         <p style="color: red">{{ $message }}</p>
                         @enderror
+                            <img class="mt-sm" src="{{ asset($apartment->profile_img) }}" alt="current" width="100px" height="130px">
+
+
 
                     </div>
                     <div class="form-group col-md-4">
                         <label for="exampleFormControlFile1">Insert View image (1660x934)</label>
-                        <input type="file" name="view_img" value="{{ old('view_img') }}" class="form-control-file" id="exampleFormControlFile1" required>
+                        <input type="file" name="view_img" value="{{ old('view_img') }}" class="form-control-file" id="exampleFormControlFile1">
                         @error('view_img')
                         <p style="color: red">{{ $message }}</p>
                         @enderror
+                        <img class="mt-sm" src="{{ asset( $apartment->view_img) }}" alt="current" width="100px" height="130px">
 
                     </div>
                     <div class="form-group col-md-4">
                         <label for="exampleFormControlFile1">Insert Large Profile image (370x370)</label>
                         <input type="file" name="lg_profile_img" value="{{ old('lg_profile_img') }}"
-                               class="form-control-file" id="exampleFormControlFile1" required>
+                               class="form-control-file" id="exampleFormControlFile1" >
                     </div>
                     @error('lg_profile_img')
                     <p style="color: red">{{ $message }}</p>
                     @enderror
+                    <img class="mt-sm" src="{{ asset($apartment->lg_profile_img) }}" alt="current" width="100px" height="130px">
 
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" >
                     <label for="exampleFormControlTextarea1" style="margin-top: 50px;">Description</label>
                     <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3" required>
-                        {{ old('description') }}
+                        {{ $apartment->description }}
                     </textarea>
                     @error('description')
                     <p style="color: red">{{ $message }}</p>
@@ -193,10 +206,9 @@
                 </div>
 
 
-                <button type="submit" class="btn btn-primary btn-black btn-block">Submit</button>
+                <button type="submit" class="btn btn-primary btn-black btn-block">Update</button>
             </form>
 
         </div>
     </section>
-
 </x-layout>
