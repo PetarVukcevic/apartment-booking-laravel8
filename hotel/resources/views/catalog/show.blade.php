@@ -41,13 +41,13 @@
                 <div class="col-xs-12 col-sm-12 col-md-8">
                     <div id="project-carousel" class="project-carousel mb-30">
                         <div class="item">
-                            <img src="{{ asset($apartment->single_img_url) }}" alt="Apartman">
+                            <img src="{{ asset($apartment->view_img) }}" alt="Apartman">
                         </div>
                         <div class="item">
-                            <img src="{{ asset($apartment->single_img_url) }}" alt="Apartman">
+                            <img src="{{ asset($apartment->view_img) }}" alt="Apartman">
                         </div>
                         <div class="item">
-                            <img src="{{ asset($apartment->single_img_url) }}" alt="Apartman">
+                            <img src="{{ asset($apartment->view_img) }}" alt="Apartman">
                         </div>
                     </div>
                     <!-- .project-carousel end -->

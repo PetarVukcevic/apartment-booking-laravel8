@@ -23,9 +23,9 @@ return new class extends Migration
             $table->integer('rooms');
             $table->float('price');
             $table->text('description');
-            $table->string('img_url');
-            $table->string('single_img_url');
-            $table->string('home_img_url');
+            $table->string('profile_img');
+            $table->string('view_img');
+            $table->string('lg_profile_img');
             $table->string('address',100);
             $table->integer('adults');
             $table->integer('children')->nullable();

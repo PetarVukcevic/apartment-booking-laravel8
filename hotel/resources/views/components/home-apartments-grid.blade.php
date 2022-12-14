@@ -4,7 +4,7 @@
 
     <div class="col-xs-12 col-sm-6 col-md-4 project-item {{ $apartment->category->slug }}">
         <div class="project-img">
-            <img class="" src="{{ asset($apartment->home_img_url) }}" alt="interior"/>
+            <img class="" src="{{ asset($apartment->lg_profile_img) }}" alt="Image"/>
             <div class="project-hover">
                 <div class="project-meta">
                     <h6>by {{ $apartment->landlord->first_name }} {{ $apartment->landlord->last_name }}</h6>

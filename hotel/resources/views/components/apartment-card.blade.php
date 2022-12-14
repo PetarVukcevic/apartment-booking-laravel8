@@ -1,7 +1,7 @@
 @props(['apartment'])
 
 <div class="product-img">
-    <img src={{ url("assets/images/shop/grid/apartman_pr.png") }} alt="Apartment">
+    <img src={{ $apartment->profile_img }} alt="Apartment">
     <div class="product-hover">
         <div class="product-cart">
             <a class="btn btn-secondary btn-block" href="{{ 'catalog/'.$apartment->slug }}">View</a>
