@@ -1,13 +1,11 @@
 <?php
 
 use App\Http\Controllers\AboutController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\ApartmentController;
+use App\Http\Controllers\admin\AdminApartmentController;
+use App\Http\Controllers\apartment\ApartmentController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MessageController;
-use App\Models\Apartment;
-use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,11 +32,11 @@ Route::get('/about-us', [AboutController::class, 'page']);
 
 Route::get('/faq', [FaqController::class, 'page']);
 
-Route::get('/admin-apartments', [AdminController::class, 'section']);
-//Route::delete('/admin-apartments/{id}', [AdminController::class, 'destroy'])->name('apartments.destroy');
-Route::post('/admin-apartments', [AdminController::class, 'destroy']);
-Route::get('/apartments-create', [AdminController::class, 'create']);
-Route::post('/apartments-create', [AdminController::class, 'store']);
+Route::get('/admin-apartments', [AdminApartmentController::class, 'section']);
+//Route::delete('/admin-apartments/{id}', [AdminApartmentController::class, 'destroy'])->name('apartments.destroy');
+Route::post('/admin-apartments', [AdminApartmentController::class, 'destroy']);
+Route::get('/apartments-create', [AdminApartmentController::class, 'create']);
+Route::post('/apartments-create', [AdminApartmentController::class, 'store']);
 
 
 

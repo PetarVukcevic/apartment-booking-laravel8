@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Apartment;
 use App\Models\Category;
 use App\Models\City;
@@ -10,13 +11,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 
-class AdminController extends Controller
+class AdminApartmentController extends Controller
 {
 
     public function section()
     {
 
-        $apartments = Apartment::latest()->with('category', 'landlord', 'city')->get();
+        $apartments = Apartment::orderBy('id', 'ASC')->with('category', 'landlord', 'city')->get();
 
         return view('admin.section', [
             'apartments' => $apartments
