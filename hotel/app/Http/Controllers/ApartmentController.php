@@ -30,13 +30,13 @@ class ApartmentController extends Controller
             )->simplePaginate($items);
         }
         elseif ($sorting == 'oldest') {
-            $apartments = Apartment::orderBy('created_at','DESC')->with('landlord')->filter(
+            $apartments = Apartment::orderBy('created_at','ASC')->with('landlord')->filter(
                 request(['search','category','landlord','city'])
             )->simplePaginate($items);
 
         }
         else {
-            $apartments = Apartment::orderBy('created_at','ASC')->with('landlord')->filter(
+            $apartments = Apartment::orderBy('created_at','DESC')->with('landlord')->filter(
                 request(['search','category','landlord','city'])
             )->simplePaginate($items);
         }
