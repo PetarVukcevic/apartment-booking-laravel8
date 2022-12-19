@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Apartment;
 use App\Models\Badge;
 use App\Models\Blog;
 use App\Models\Feature;
@@ -86,5 +87,12 @@ class AboutController extends Controller
         Feature::create($attributes);
 
         return redirect('/admin-features');
+    }
+
+    public function destroy(Request $request)
+    {
+        Feature::find($request->feature_delete_id)->delete();
+
+        return redirect()->back()->with('success', 'Apartment deleted!');
     }
 }

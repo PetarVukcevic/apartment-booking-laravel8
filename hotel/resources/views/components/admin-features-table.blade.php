@@ -14,7 +14,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <input type="hidden" name="apartment_delete_id" id="apartment_id">
+                    <input type="hidden" name="feature_delete_id" id="feature_id">
                     <h5>Are you sure you want to delete this Feature?</h5>
                 </div>
                 <div class="modal-footer">
@@ -34,7 +34,7 @@
     <td style="display: flex; gap: 2px;">
         <a class="btn btn-success" href="/features-edit/{{ $feature->id }}" >Edit</a>
 
-        <button type="button" value="{{ $feature->id }}" class="btn btn-danger deleteApartment" title='Delete'>Delete</button>
+        <button type="button" value="{{ $feature->id }}" class="btn btn-danger deleteFeature" title='Delete'>Delete</button>
     </td>
 
 </tr>
@@ -42,11 +42,11 @@
 @section('scripts')
     <script>
         $(document).ready(function () {
-            $('.deleteApartment').click(function (e){
+            $('.deleteFeature').click(function (e){
                 e.preventDefault();
 
                 var app_id = $(this).val();
-                $('#apartment_id').val(app_id);
+                $('#feature_id').val(app_id);
                 $('#deleteModal').modal('show');
             });
         });

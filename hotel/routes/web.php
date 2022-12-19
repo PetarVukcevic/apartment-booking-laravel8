@@ -45,6 +45,7 @@ Route::get('/admin-about', [AboutController::class, 'edit']);
 Route::patch('/admin-about', [AboutController::class, 'update']);
 
 Route::get('/admin-features', [AboutController::class, 'features']);
+Route::post('/admin-features', [AboutController::class, 'destroy']);
 Route::get('/features-create', [AboutController::class, 'createFeature']);
 Route::post('/features-create', [AboutController::class, 'storeFeature']);
 
