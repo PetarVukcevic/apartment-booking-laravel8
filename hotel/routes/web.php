@@ -41,6 +41,8 @@ Route::post('/apartments-create', [AdminApartmentController::class, 'store']);
 Route::get('/apartments-edit/{apartment}', [AdminApartmentController::class, 'edit']);
 Route::patch('/apartments-edit/{apartment}', [AdminApartmentController::class, 'update']);
 
+Route::get('/admin-about', [AboutController::class, 'edit']);
+Route::patch('/admin-about', [AboutController::class, 'update']);
 
 
 

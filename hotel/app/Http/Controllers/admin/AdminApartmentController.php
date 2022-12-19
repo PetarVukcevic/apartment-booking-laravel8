@@ -113,7 +113,6 @@ class AdminApartmentController extends Controller
         $attributes['slug'] = Str::slug($attributes['title']);
 
         $apartment->update($attributes);
-
         return back()->with('success', 'Apartment updated!');
     }
 
