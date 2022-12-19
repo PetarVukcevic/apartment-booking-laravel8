@@ -63,4 +63,28 @@ class AboutController extends Controller
 
         return back()->with('success', 'About Us Page updated!');
     }
+
+    public function features() {
+        $features = Feature::all();
+
+        return view('admin-about.features-table', [
+            'features' => $features
+        ]);
+    }
+
+    public function createFeature() {
+        return view('admin-about.features-create');
+    }
+
+    public function storeFeature() {
+        $attributes = \request()->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'about_id' => ''
+        ]);
+        $attributes['about_id'] = 1;
+        Feature::create($attributes);
+
+        return redirect('/admin-features');
+    }
 }

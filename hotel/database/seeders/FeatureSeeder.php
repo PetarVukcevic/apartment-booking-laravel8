@@ -20,7 +20,6 @@ class FeatureSeeder extends Seeder
                 'title' => 'About P Property',
                 'description' => 'Since its foundation the company has doubled its turnover year on year, with its staff numbers swelling accordingly. Today P Property has over 4,000 professionals on its payroll. The company is active in Middle East.',
                 'about_id' => 1,
-                'label' => 'headingOne',
                 'collapse' => 'collapse02-1'
             ],
             [
@@ -28,7 +27,6 @@ class FeatureSeeder extends Seeder
                 'title' => 'Our Mission',
                 'description' => 'We do only what we are great on. If we tackle a project you can be 100% sure that it will be delivered right on time, within the set budget limits and at the top level. We get all our liabilities insured, including third-party liabilities.',
                 'about_id' => 1,
-                'label' => 'headingTwo',
                 'collapse' => 'collapse02-2'
             ],
             [
@@ -36,7 +34,6 @@ class FeatureSeeder extends Seeder
                 'title' => 'Our Goals',
                 'description' => 'P Stays is a leading developer of A-grade commercial, industrial and residential projects in USA. Since its foundation the company has doubled its turnover year on year, with its staff numbers swelling accordingly.',
                 'about_id' => 1,
-                'label' => 'headingThree',
                 'collapse' => 'collapse02-3'
             ],
         ]);

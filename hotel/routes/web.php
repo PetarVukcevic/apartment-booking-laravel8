@@ -44,6 +44,9 @@ Route::patch('/apartments-edit/{apartment}', [AdminApartmentController::class, '
 Route::get('/admin-about', [AboutController::class, 'edit']);
 Route::patch('/admin-about', [AboutController::class, 'update']);
 
+Route::get('/admin-features', [AboutController::class, 'features']);
+Route::get('/features-create', [AboutController::class, 'createFeature']);
+Route::post('/features-create', [AboutController::class, 'storeFeature']);
 
 
 Route::fallback(function ()
