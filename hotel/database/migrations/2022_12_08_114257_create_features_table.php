@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('description', 300);
             $table->foreignId('about_id');
             $table->softDeletes();
-            $table->string('collapse');
             $table->timestamps();
         });
     }

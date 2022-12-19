@@ -6,7 +6,10 @@ use App\Models\About;
 use App\Models\Apartment;
 use App\Models\Badge;
 use App\Models\Blog;
+use App\Models\Category;
+use App\Models\City;
 use App\Models\Feature;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
@@ -93,6 +96,27 @@ class AboutController extends Controller
     {
         Feature::find($request->feature_delete_id)->delete();
 
-        return redirect()->back()->with('success', 'Apartment deleted!');
+        return redirect()->back()->with('success', 'Feature deleted!');
+    }
+
+    public function editFeature($id) {
+        $feature = Feature::find($id);
+
+        return view('admin-about.features-edit',
+            [
+                'feature' => $feature
+            ]);
+    }
+
+    public function updateFeature(Feature $feature)
+    {
+        $attributes = \request()->validate([
+            'title' => 'required',
+            'description' => 'required'
+        ]);
+
+        $feature->update($attributes);
+        return back()->with('success', 'Feature updated!');
+
     }
 }

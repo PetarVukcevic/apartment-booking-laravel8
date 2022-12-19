@@ -28,23 +28,24 @@
 
     <section>
         <div class="container bg-gray p-md rounded">
-            <h1>Create new feature</h1>
+            <h1>Edit Feature</h1>
             <hr/>
 
-            <form method="POST" action="/features-create"  name="create_feature">
+            <form method="POST" action="/features-edit/{{ $feature->id }}"  name="edit_feature">
+                @method('PATCH')
                 @csrf
                 <div class="form-group">
-                        <label for="exampleFormControlInput1">Feature Title</label>
-                        <input type="text" name="title" class="form-control" id="exampleFormControlInput1" value="{{ old('title') }}" placeholder="Title" required>
-                        @error('title')
-                        <p style="color: red">{{ $message }}</p>
-                        @enderror
+                    <label for="exampleFormControlInput1">Feature Title</label>
+                    <input type="text" name="title" class="form-control" id="exampleFormControlInput1" value="{{ $feature->title }}" placeholder="Title" required>
+                    @error('title')
+                    <p style="color: red">{{ $message }}</p>
+                    @enderror
                 </div>
 
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Description</label>
                     <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3" required>
-                        {{ old('description') }}
+                        {{ $feature->description }}
                     </textarea>
                     @error('description')
                     <p style="color: red">{{ $message }}</p>
@@ -57,5 +58,4 @@
 
         </div>
     </section>
-
 </x-layout>

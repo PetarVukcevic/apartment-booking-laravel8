@@ -43,9 +43,15 @@
                     </tr>
                     </thead>
                     <tbody>
+                    @if($features->count())
                     @foreach($features as $feature)
                         <x-admin-features-table :feature="$feature"/>
                     @endforeach
+                    @else
+                        <div>
+                            <h1>No Features in the database</h1>
+                        </div>
+                    @endif
                     </tbody>
                 </table>
 

@@ -48,6 +48,10 @@ Route::get('/admin-features', [AboutController::class, 'features']);
 Route::post('/admin-features', [AboutController::class, 'destroy']);
 Route::get('/features-create', [AboutController::class, 'createFeature']);
 Route::post('/features-create', [AboutController::class, 'storeFeature']);
+Route::get('/features-edit/{feature}', [AboutController::class, 'editFeature']);
+Route::patch('/features-edit/{feature}', [AboutController::class, 'updateFeature']);
+
+
 
 
 Route::fallback(function ()
