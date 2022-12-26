@@ -32,7 +32,7 @@ class AdminCategoryController extends Controller
         $attributes['slug'] = Str::slug($attributes['name']);
 
         Category::create($attributes);
-        return back()->with('success', 'Feature updated!');
+        return back()->with('success', 'city updated!');
     }
 
     public function editCategory($id) {

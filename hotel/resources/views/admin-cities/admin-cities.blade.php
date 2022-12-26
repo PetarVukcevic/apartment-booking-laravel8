@@ -33,7 +33,7 @@
 
             <x-flash/>
             <div class="row">
-                <a href="{{ url('/categories-create') }}" class="btn btn-success">Create new</a>
+                <a href="{{ url('/cities-create') }}" class="btn btn-success">Create new</a>
                 <table class="table">
                     <thead>
                     <tr>

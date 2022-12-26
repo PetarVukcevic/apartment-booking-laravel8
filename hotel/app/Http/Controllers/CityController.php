@@ -17,6 +17,20 @@ class CityController extends Controller
         ]);
     }
 
+    public function createCities() {
+        return view('admin-cities.cities-create');
+    }
+
+    public function storeCities() {
+        $attributes = \request()->validate([
+            'name' => 'required',
+            'description' => 'required',
+        ]);
+
+        City::create($attributes);
+        return back()->with('success', 'City updated!');
+    }
+
     public function editCities($id) {
         $city = City::find($id);
 
