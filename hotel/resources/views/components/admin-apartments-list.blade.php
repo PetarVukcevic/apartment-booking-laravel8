@@ -32,6 +32,8 @@
         <td>{{ $apartment->category->name }}</td>
         <td>{{ $apartment->landlord->first_name }} {{ $apartment->landlord->last_name }}</td>
         <td>{{ $apartment->city->name }}</td>
+        <td>{{ $apartment->created_at }}</td>
+        <td>{{ $apartment->updated_at }}</td>
         <td>
             <a class="btn btn-success" href="/apartments-edit/{{ $apartment->id }}">Edit</a>
 

@@ -13,6 +13,8 @@
                 <th scope="col">Category</th>
                 <th scope="col">Landlord</th>
                 <th scope="col">City</th>
+                <th scope="col">Created At</th>
+                <th scope="col">Updated At</th>
                 <th scope="col">Actions</th>
             </tr>
             </thead>

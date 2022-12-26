@@ -30,6 +30,8 @@
     <td>{{ $blog->author }}</td>
     <td>{{ $blog->author_role }}</td>
     <td>{{ $blog->description }}</td>
+    <td>{{ $blog->created_at }}</td>
+    <td>{{ $blog->updated_at }}</td>
 
     <td style="display: flex; gap: 2px;">
         <a class="btn btn-success" href="/blogs-edit/{{ $blog->id }}" >Edit</a>

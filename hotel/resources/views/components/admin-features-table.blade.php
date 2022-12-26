@@ -30,6 +30,8 @@
     <th scope="row">{{ $feature->id }}</th>
     <td>{{ $feature->title }}</td>
     <td>{{ $feature->description }}</td>
+    <td>{{ $feature->created_at }}</td>
+    <td>{{ $feature->updated_at }}</td>
 
     <td style="display: flex; gap: 2px;">
         <a class="btn btn-success" href="/features-edit/{{ $feature->id }}" >Edit</a>

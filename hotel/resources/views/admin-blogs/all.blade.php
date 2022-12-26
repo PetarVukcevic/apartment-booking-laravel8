@@ -40,6 +40,10 @@
                         <th scope="col">Author</th>
                         <th scope="col">Author's role</th>
                         <th scope="col">Description</th>
+                        <th scope="col">Created At</th>
+                        <th scope="col">Updated At</th>
+                        <th scope="col">Actions</th>
+
                     </tr>
                     </thead>
                     <tbody>
