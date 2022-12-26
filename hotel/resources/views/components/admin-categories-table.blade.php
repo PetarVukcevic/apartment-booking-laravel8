@@ -32,7 +32,7 @@
     <td>{{ $category->description }}</td>
 
     <td style="display: flex; gap: 2px;">
-        <a class="btn btn-success" href="/features-edit/{{ $category->id }}" >Edit</a>
+        <a class="btn btn-success" href="/categories-edit/{{ $category->id }}" >Edit</a>
 
         <button type="button" value="{{ $category->id }}" class="btn btn-danger deleteCategory" title='Delete'>Delete</button>
     </td>
@@ -46,7 +46,7 @@
                 e.preventDefault();
 
                 var app_id = $(this).val();
-                $('#feature_id').val(app_id);
+                $('#category_id').val(app_id);
                 $('#deleteModal').modal('show');
             });
         });

@@ -61,7 +61,8 @@ Route::get('/blogs-edit/{blog}', [AdminBlogController::class, 'edit']);
 Route::patch('/blogs-edit/{blog}', [AdminBlogController::class, 'update']);
 
 Route::get('/admin-categories', [AdminCategoryController::class, 'all']);
-
+Route::get('/categories-edit/{category}', [AdminCategoryController::class, 'editCategory']);
+Route::patch('/categories-edit/{category}', [AdminCategoryController::class, 'updateCategory']);
 
 
 Route::fallback(function ()
