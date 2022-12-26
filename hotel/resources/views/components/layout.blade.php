@@ -125,7 +125,9 @@
                             <li>
                                 <a href="{{ url('admin-features') }}">Features</a>
                             </li>
-
+                            <li>
+                                <a href="{{ url('admin-blogs') }}">Blogs</a>
+                            </li>
                         </ul>
                     </li>
 

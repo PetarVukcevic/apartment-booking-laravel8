@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\admin\AdminApartmentController;
+use App\Http\Controllers\admin\AdminBlogController;
 use App\Http\Controllers\apartment\ApartmentController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HomeController;
@@ -50,6 +51,10 @@ Route::get('/features-create', [AboutController::class, 'createFeature']);
 Route::post('/features-create', [AboutController::class, 'storeFeature']);
 Route::get('/features-edit/{feature}', [AboutController::class, 'editFeature']);
 Route::patch('/features-edit/{feature}', [AboutController::class, 'updateFeature']);
+
+Route::get('/admin-blogs', [AdminBlogController::class, 'blogs']);
+Route::get('/blogs-create', [AdminBlogController::class, 'create']);
+Route::post('/blogs-create', [AdminBlogController::class, 'store']);
 
 
 
