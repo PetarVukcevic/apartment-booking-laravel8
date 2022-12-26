@@ -56,6 +56,9 @@ Route::get('/admin-blogs', [AdminBlogController::class, 'blogs']);
 Route::get('/blogs-create', [AdminBlogController::class, 'create']);
 Route::post('/blogs-create', [AdminBlogController::class, 'store']);
 
+Route::get('/blogs-edit/{blog}', [AdminBlogController::class, 'edit']);
+Route::patch('/blogs-edit/{blog}', [AdminBlogController::class, 'update']);
+
 
 
 

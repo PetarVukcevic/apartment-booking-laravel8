@@ -28,15 +28,17 @@
 
     <section>
         <div class="container bg-gray p-md rounded">
-            <h1>Create new blog</h1>
+            <h1>Edit blog</h1>
             <hr/>
 
-            <form method="POST" action="/blogs-create"  name="create_blog">
+            <form method="POST" action="/blogs-edit/{{ $blog->id }}"  name="create_blog">
                 @csrf
+                @method('PATCH')
+
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="exampleFormControlInput1">Blog Author</label>
-                        <input type="text" name="author" class="form-control" id="exampleFormControlInput1" value="{{ old('author') }}" placeholder="Author" required>
+                        <input type="text" name="author" class="form-control" id="exampleFormControlInput1" value="{{ $blog->author }}" placeholder="Author" required>
                         @error('author')
                         <p style="color: red">{{ $message }}</p>
                         @enderror
@@ -44,7 +46,7 @@
 
                     <div class="form-group col-md-6">
                         <label for="exampleFormControlInput1">Author's Role</label>
-                        <input type="text" name="author_role" class="form-control" id="exampleFormControlInput1" value="{{ old('author_role') }}" placeholder="Author's Role" required>
+                        <input type="text" name="author_role" class="form-control" id="exampleFormControlInput1" value="{{ $blog->author_role }}" placeholder="Author's Role" required>
                         @error('author_role')
                         <p style="color: red">{{ $message }}</p>
                         @enderror
@@ -56,7 +58,7 @@
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Description</label>
                     <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3" required>
-                        {{ old('description') }}
+                        {{ $blog->description }}
                     </textarea>
                     @error('description')
                     <p style="color: red">{{ $message }}</p>
@@ -65,10 +67,13 @@
 
                 <div class="form-group">
                     <label for="exampleFormControlFile1">Insert Author image (50x50)</label>
-                    <input type="file" name="author_img_url" value="{{ old('author_img_url') }}" class="form-control-file" id="exampleFormControlFile1" required>
+                    <input type="file" name="author_img_url" value="{{ old('author_img_url') }}" class="form-control-file" id="exampleFormControlFile1">
                     @error('author_img_url')
                     <p style="color: red">{{ $message }}</p>
                     @enderror
+
+                    <img class="mt-sm" src="{{ asset($blog->author_img_url) }}" alt="current" width="50px" height="50px">
+
                 </div>
 
                 <button type="submit" class="btn btn-primary btn-black btn-block">Submit</button>
@@ -76,5 +81,6 @@
 
         </div>
     </section>
+
 
 </x-layout>

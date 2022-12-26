@@ -13,7 +13,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <input type="hidden" name="feature_delete_id" id="blog_id">
+                    <input type="hidden" name="blog_delete_id" id="blog_id">
                     <h5>Are you sure you want to delete this Blog?</h5>
                 </div>
                 <div class="modal-footer">
@@ -32,7 +32,7 @@
     <td>{{ $blog->description }}</td>
 
     <td style="display: flex; gap: 2px;">
-        <a class="btn btn-success" href="/features-edit/{{ $blog->id }}" >Edit</a>
+        <a class="btn btn-success" href="/blogs-edit/{{ $blog->id }}" >Edit</a>
 
         <button type="button" value="{{ $blog->id }}" class="btn btn-danger deleteBlog" title='Delete'>Delete</button>
     </td>
