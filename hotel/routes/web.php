@@ -78,7 +78,7 @@ Route::get('/faqs-edit/{faq}', [FaqController::class, 'editFaq']);
 Route::patch('/faqs-edit/{faq}', [FaqController::class, 'updateFaq']);
 
 Route::get('/admin-cities', [CityController::class, 'allCities']);
-Route::post('/cities-create', [CityController::class, 'destroyCities']);
+Route::post('/admin-cities', [CityController::class, 'destroyCities']);
 
 Route::get('/cities-create', [CityController::class, 'createCities']);
 Route::post('/cities-create', [CityController::class, 'storeCities']);

@@ -5,7 +5,7 @@
             {{--            <form method="POST" action="{{ route('apartments.destroy' , $apartment->id) }}">--}}
 
 
-            <form method="POST" action="{{ url('admin-categories/') }}">
+            <form method="POST" action="{{ url('admin-cities') }}">
 
                 @csrf
 

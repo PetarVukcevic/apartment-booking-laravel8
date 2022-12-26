@@ -50,4 +50,10 @@ class CityController extends Controller
         return back()->with('success', 'City updated!');
     }
 
+    public function destroyCities(Request $request)
+    {
+        City::find($request->city_delete_id)->delete();
+
+        return redirect()->back()->with('success', 'City deleted!');
+    }
 }
