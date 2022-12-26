@@ -73,6 +73,9 @@ Route::get('/faqs-create', [FaqController::class, 'create']);
 Route::post('/faqs-create', [FaqController::class, 'store']);
 Route::post('/admin-faqs', [FaqController::class, 'destroy']);
 
+Route::get('/faqs-edit/{faq}', [FaqController::class, 'editFaq']);
+Route::patch('/faqs-edit/{faq}', [FaqController::class, 'updateFaq']);
+
 
 
 Route::fallback(function ()

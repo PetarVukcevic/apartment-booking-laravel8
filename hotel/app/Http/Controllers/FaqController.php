@@ -47,27 +47,27 @@ class FaqController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Faq  $faq
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Faq $faq)
+
+    public function editFaq($id)
     {
-        //
+        $faq = Faq::find($id);
+
+        return view('admin-faq.edit',
+            [
+                'faq' => $faq
+            ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Faq  $faq
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Faq $faq)
+
+    public function updateFaq(Faq $faq)
     {
-        //
+        $attributes = \request()->validate([
+            'title' => 'required',
+            'description' => 'required'
+        ]);
+
+        $faq->update($attributes);
+        return back()->with('success', 'FAQ updated!');
     }
 
 
