@@ -120,6 +120,9 @@
                                 <a href="{{ url('admin-categories') }}">Categories</a>
                             </li>
                             <li>
+                                <a href="{{ url('admin-cities') }}">Cities</a>
+                            </li>
+                            <li>
                                 <a href="{{ url('admin-about') }}">About us Page</a>
                             </li>
                             <li>

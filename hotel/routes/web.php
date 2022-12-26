@@ -5,6 +5,7 @@ use App\Http\Controllers\admin\AdminApartmentController;
 use App\Http\Controllers\admin\AdminBlogController;
 use App\Http\Controllers\admin\AdminCategoryController;
 use App\Http\Controllers\apartment\ApartmentController;
+use App\Http\Controllers\CityController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MessageController;
@@ -76,7 +77,7 @@ Route::post('/admin-faqs', [FaqController::class, 'destroy']);
 Route::get('/faqs-edit/{faq}', [FaqController::class, 'editFaq']);
 Route::patch('/faqs-edit/{faq}', [FaqController::class, 'updateFaq']);
 
-
+Route::get('/admin-cities', [CityController::class, 'allCities']);
 
 Route::fallback(function ()
 {
