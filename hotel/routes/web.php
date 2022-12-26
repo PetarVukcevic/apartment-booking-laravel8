@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\admin\AdminApartmentController;
 use App\Http\Controllers\admin\AdminBlogController;
+use App\Http\Controllers\admin\AdminCategoryController;
 use App\Http\Controllers\apartment\ApartmentController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HomeController;
@@ -59,6 +60,7 @@ Route::post('/blogs-create', [AdminBlogController::class, 'store']);
 Route::get('/blogs-edit/{blog}', [AdminBlogController::class, 'edit']);
 Route::patch('/blogs-edit/{blog}', [AdminBlogController::class, 'update']);
 
+Route::get('/admin-categories', [AdminCategoryController::class, 'all']);
 
 
 

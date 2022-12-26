@@ -117,7 +117,7 @@
                                 <a href="{{ url('admin-apartments') }}">Apartments</a>
                             </li>
                             <li>
-                                <a href="{{ url('admin-apartments') }}">Home Page</a>
+                                <a href="{{ url('admin-categories') }}">Categories</a>
                             </li>
                             <li>
                                 <a href="{{ url('admin-about') }}">About us Page</a>
