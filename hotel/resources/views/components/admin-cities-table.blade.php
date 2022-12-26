@@ -37,7 +37,7 @@
 
 
     <td style="display: flex; gap: 2px;">
-        <a class="btn btn-success" href="/categories-edit/{{ $city->id }}" >Edit</a>
+        <a class="btn btn-success" href="/cities-edit/{{ $city->id }}" >Edit</a>
 
         <button type="button" value="{{ $city->id }}" class="btn btn-danger deleteCity" title='Delete'>Delete</button>
     </td>
