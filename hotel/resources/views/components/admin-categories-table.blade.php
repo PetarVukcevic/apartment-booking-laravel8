@@ -3,6 +3,8 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             {{--            <form method="POST" action="{{ route('apartments.destroy' , $apartment->id) }}">--}}
+
+
             <form method="POST" action="{{ url('admin-categories/') }}">
 
                 @csrf
@@ -30,6 +32,9 @@
     <th scope="row">{{ $category->id }}</th>
     <td>{{ $category->name }}</td>
     <td>{{ $category->description }}</td>
+    <td>{{ $category->created_at }}</td>
+    <td>{{ $category->updated_at }}</td>
+
 
     <td style="display: flex; gap: 2px;">
         <a class="btn btn-success" href="/categories-edit/{{ $category->id }}" >Edit</a>

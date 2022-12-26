@@ -33,13 +33,17 @@
 
                 <x-flash/>
                 <div class="row">
-                    <a href="{{ url('/features-create') }}" class="btn btn-success">Create new</a>
+                    <a href="{{ url('/categories-create') }}" class="btn btn-success">Create new</a>
                     <table class="table">
                         <thead>
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Name</th>
                             <th scope="col">Description</th>
+                            <th scope="col">Created At</th>
+                            <th scope="col">Updated At</th>
+
+
                         </tr>
                         </thead>
                         <tbody>

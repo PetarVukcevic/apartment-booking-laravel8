@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use App\Models\Category;
 use App\Models\Feature;
+use Illuminate\Http\Request;
+use Str;
 
 class AdminCategoryController extends Controller
 {
@@ -15,6 +17,22 @@ class AdminCategoryController extends Controller
         return view('admin-categories.categories-table', [
             'categories' => $categories
         ]);
+    }
+
+    public function createCategory() {
+        return view('admin-categories.categories-create');
+    }
+
+    public function storeCategory() {
+        $attributes = \request()->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'slug' => ''
+        ]);
+        $attributes['slug'] = Str::slug($attributes['name']);
+
+        Category::create($attributes);
+        return back()->with('success', 'Feature updated!');
     }
 
     public function editCategory($id) {
@@ -36,6 +54,13 @@ class AdminCategoryController extends Controller
         $category->update($attributes);
         return back()->with('success', 'Feature updated!');
 
+    }
+
+    public function destroyCategory(Request $request)
+    {
+        Category::find($request->category_delete_id)->delete();
+
+        return redirect()->back()->with('success', 'Category deleted!');
     }
 
 
