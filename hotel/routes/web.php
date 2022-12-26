@@ -68,6 +68,11 @@ Route::get('/categories-edit/{category}', [AdminCategoryController::class, 'edit
 Route::patch('/categories-edit/{category}', [AdminCategoryController::class, 'updateCategory']);
 Route::post('/admin-categories', [AdminCategoryController::class, 'destroyCategory']);
 
+Route::get('/admin-faqs', [FaqController::class, 'show']);
+Route::get('/faqs-create', [FaqController::class, 'create']);
+Route::post('/faqs-create', [FaqController::class, 'store']);
+Route::post('/admin-faqs', [FaqController::class, 'destroy']);
+
 
 
 Route::fallback(function ()

@@ -123,6 +123,9 @@
                                 <a href="{{ url('admin-about') }}">About us Page</a>
                             </li>
                             <li>
+                                <a href="{{ url('admin-faqs') }}">FAQs</a>
+                            </li>
+                            <li>
                                 <a href="{{ url('admin-features') }}">Features</a>
                             </li>
                             <li>

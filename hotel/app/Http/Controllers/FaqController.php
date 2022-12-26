@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Faq;
+use App\Models\Feature;
 use Illuminate\Http\Request;
 
 class FaqController extends Controller
@@ -17,36 +18,33 @@ class FaqController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
-        //
+        return view('admin-faq.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+
+    public function store()
     {
-        //
+        $attributes = \request()->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'collapse' => ''
+        ]);
+        $attributes['collapse'] = $attributes['title'];
+        Faq::create($attributes);
+
+        return redirect('/admin-faqs');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Faq  $faq
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Faq $faq)
+    public function show()
     {
-        //
+        $faqs = Faq::all();
+
+        return view('admin-faq.faq-table',[
+            'faqs' => $faqs
+        ]);
     }
 
     /**
@@ -72,14 +70,11 @@ class FaqController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Faq  $faq
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Faq $faq)
+
+    public function destroy(Request $request)
     {
-        //
+        Faq::find($request->faq_delete_id)->delete();
+
+        return redirect()->back()->with('success', 'FAQ deleted!');
     }
 }

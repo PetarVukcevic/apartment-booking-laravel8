@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('title', 50);
             $table->string('description', 500);
             $table->softDeletes();
-            $table->string('label');
             $table->string('collapse');
             $table->timestamps();
         });

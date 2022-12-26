@@ -119,6 +119,9 @@
       <excludeFolder url="file://$MODULE_DIR$/hotel/vendor/itsgoingd/clockwork" />
       <excludeFolder url="file://$MODULE_DIR$/hotel/vendor/_laravel_idea" />
       <excludeFolder url="file://$MODULE_DIR$/hotel/vendor/mailjet/mailjet-apiv3-php" />
+      <excludeFolder url="file://$MODULE_DIR$/hotel/storage/app" />
+      <excludeFolder url="file://$MODULE_DIR$/hotel/storage/clockwork" />
+      <excludeFolder url="file://$MODULE_DIR$/hotel/storage/framework" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
