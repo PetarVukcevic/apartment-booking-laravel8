@@ -31,7 +31,7 @@
             <h1>Create new blog</h1>
             <hr/>
 
-            <form method="POST" action="/blogs-create"  name="create_blog">
+            <form method="POST" action="/blogs-create"  enctype="multipart/form-data"   name="create_blog">
                 @csrf
                 <div class="form-row">
                     <div class="form-group col-md-6">

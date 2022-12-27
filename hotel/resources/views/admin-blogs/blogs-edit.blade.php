@@ -31,7 +31,7 @@
             <h1>Edit blog</h1>
             <hr/>
 
-            <form method="POST" action="/blogs-edit/{{ $blog->id }}"  name="create_blog">
+            <form method="POST" action="/blogs-edit/{{ $blog->id }}"  enctype="multipart/form-data"   name="create_blog">
                 @csrf
                 @method('PATCH')
 
