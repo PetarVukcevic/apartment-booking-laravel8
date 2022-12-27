@@ -80,11 +80,11 @@ Route::patch('/faqs-edit/{faq}', [FaqController::class, 'updateFaq']);
 Route::get('/admin-cities', [CityController::class, 'allCities']);
 Route::post('/admin-cities', [CityController::class, 'destroyCities']);
 
-Route::get('/cities-create', [CityController::class, 'createCities']);
-Route::post('/cities-create', [CityController::class, 'storeCities']);
-
 Route::get('/cities-edit/{city}', [CityController::class, 'editCities']);
 Route::patch('/cities-edit/{city}', [CityController::class, 'updateCities']);
+
+Route::get('/cities-create', [CityController::class, 'createCities']);
+Route::post('/cities-create', [CityController::class, 'storeCities']);
 
 
 

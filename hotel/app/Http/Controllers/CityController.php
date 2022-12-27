@@ -28,7 +28,7 @@ class CityController extends Controller
         ]);
 
         City::create($attributes);
-        return back()->with('success', 'City updated!');
+        return redirect('admin-cities')->with('success', 'City created!');
     }
 
     public function editCities($id) {
@@ -54,6 +54,6 @@ class CityController extends Controller
     {
         City::find($request->city_delete_id)->delete();
 
-        return redirect()->back()->with('success', 'City deleted!');
+        return redirect('/admin-cities')->with('success', 'City deleted!');
     }
 }

@@ -31,7 +31,7 @@
             <h1>Create new city</h1>
             <hr/>
 
-            <form method="POST" action="/admin-cities"  name="create_city">
+            <form method="POST" action="/cities-create"  name="create_city">
                 @csrf
                 <div class="form-group">
                     <label for="exampleFormControlInput1">City Name</label>
