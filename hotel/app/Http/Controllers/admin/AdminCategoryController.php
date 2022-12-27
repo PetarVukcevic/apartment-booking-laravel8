@@ -58,9 +58,14 @@ class AdminCategoryController extends Controller
 
     public function destroyCategory(Request $request)
     {
-        Category::find($request->category_delete_id)->delete();
+        $category = Category::find($request->category_delete_id);
 
-        return redirect()->back()->with('success', 'Category deleted!');
+        if($category->has('apartments')) {
+            return redirect('/admin-cities')->with('success', 'Please remove the apartments from this category first!');
+        }else {
+            $category->delete();
+            return redirect()->back()->with('success', 'Category deleted!');
+        }
     }
 
 

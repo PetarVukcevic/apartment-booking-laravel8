@@ -47,13 +47,19 @@ class CityController extends Controller
         ]);
 
         $city->update($attributes);
-        return back()->with('success', 'City updated!');
+        return redirect('/admin-cities')->with('success', 'City updated!');
     }
 
     public function destroyCities(Request $request)
     {
-        City::find($request->city_delete_id)->delete();
+        $city = City::find($request->city_delete_id);
 
-        return redirect('/admin-cities')->with('success', 'City deleted!');
+        if($city->has('apartments')) {
+            return redirect('/admin-cities')->with('success', 'Please remove the apartments from this city first!');
+        }else {
+            $city->delete();
+            return redirect('/admin-cities')->with('success', 'City deleted!');
+        }
+
     }
 }
