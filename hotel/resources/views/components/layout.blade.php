@@ -34,6 +34,14 @@
     <script src={{asset("assets/js/html5shiv.js")}}></script>
     <script src={{asset("assets/js/respond.min.js")}}></script>
 
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+
     <script defer src={{ asset("https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js")}}></script>
 
     <![endif]-->

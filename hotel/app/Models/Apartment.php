@@ -40,6 +40,14 @@ class Apartment extends Model
         )
         );
 
+        $query->when($filters['minPrice'] ?? false, function ($query, $minPrice) {
+            $query->where('price', '>=', $minPrice);
+        });
+
+        $query->when($filters['maxPrice'] ?? false, function ($query, $maxPrice) {
+            $query->where('price', '<=', $maxPrice);
+        });
+
     }
 
 

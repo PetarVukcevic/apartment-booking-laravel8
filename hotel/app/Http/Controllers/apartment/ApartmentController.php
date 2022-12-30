@@ -14,31 +14,34 @@ class ApartmentController extends Controller
 
         $items = $request->items ?? 10;
         $sorting = $request->sorting ?? "newest";
+        $minPrice = $request->input('minPrice');
+        $maxPrice = $request->input('maxPrice');
+
 
         if ($sorting === 'title') {
             $apartments = Apartment::orderBy('title', 'ASC')->with('landlord')->filter(
-                request(['search','category','landlord','city'])
+                request(['search','category','landlord','city', 'minPrice', 'maxPrice'])
             )->simplePaginate($items);
         }
         elseif ($sorting == 'lowest_price') {
             $apartments = Apartment::orderBy('price', 'ASC')->with('landlord')->filter(
-                request(['search','category','landlord','city'])
+                request(['search','category','landlord','city', 'minPrice', 'maxPrice'])
             )->simplePaginate($items);
         }
         elseif ($sorting == 'highest_price') {
             $apartments = Apartment::orderBy('price', 'DESC')->with('landlord')->filter(
-                request(['search','category','landlord','city'])
+                request(['search','category','landlord','city', 'minPrice', 'maxPrice'])
             )->simplePaginate($items);
         }
         elseif ($sorting == 'oldest') {
             $apartments = Apartment::orderBy('created_at','ASC')->with('landlord')->filter(
-                request(['search','category','landlord','city'])
+                request(['search','category','landlord','city', 'minPrice', 'maxPrice'])
             )->simplePaginate($items);
 
         }
         else {
             $apartments = Apartment::orderBy('created_at','DESC')->with('landlord')->filter(
-                request(['search','category','landlord','city'])
+                request(['search','category','landlord','city', 'minPrice', 'maxPrice'])
             )->simplePaginate($items);
         }
 
@@ -46,7 +49,9 @@ class ApartmentController extends Controller
         return view('catalog.apartments', [
             'apartments' => $apartments,
             'items' => $items,
-            'sorting' => $sorting
+            'sorting' => $sorting,
+            'minPrice' => $minPrice,
+            'maxPrice' => $maxPrice
         ]);
     }
 
