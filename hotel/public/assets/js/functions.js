@@ -458,6 +458,7 @@ $(document).ready(function() {
 
     var $sliderRange = $("#slider-range"),
         $sliderAmount = $("#amount");
+
     $sliderRange.slider({
         range: true,
         min: 0,

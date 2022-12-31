@@ -3,7 +3,7 @@
         <h3>Filter</h3>
     </div>
     <div class="widget-content">
-        <form id="filter-form" action="{{ url('/catalog') }}" method="GET">
+        <form id="filter-form" action="{{ url()->current() }}" method="GET">
             <div id="slider-range">
             </div>
             <p>
@@ -20,13 +20,9 @@
 </div>
 
 <script>
-    var minPrice = {{ $minPrice ?? 0 }};
-    var maxPrice = {{ $maxPrice ?? 1000 }};
 
-    min = document.getElementById("minPrice");
-    min.value = minPrice;
-
-    max = document.getElementById("maxPrice");
-    max.value = maxPrice;
+    var minPrice = "{{ session('minPrice', 0) }}";
+    var maxPrice = "{{ session('maxPrice', 1000) }}";
+    
 
 </script>
