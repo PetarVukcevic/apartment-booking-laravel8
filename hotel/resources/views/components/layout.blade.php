@@ -145,6 +145,36 @@
                         </ul>
                     </li>
 
+
+
+
+                            @auth
+                                <li>
+                                    <a>Welcome  {{ auth()->user()->first_name }}!</a>
+
+                                </li>
+                                <li>
+                                    <form action="/logout" method="post">
+                                        @csrf
+                                        <button type="submit" class="btn btn-warning bold p-sm mt-xs mb-xs">Logout</button>
+
+                                    </form>
+                                </li>
+
+
+                            @else
+                                <li>
+                                    <a href="{{ url('/register') }}">Register</a>
+
+                                </li>
+                                <li>
+
+                                    <a style="color: yellow" href="{{ url('/login') }}">Log in</a>
+
+                                </li>
+                            @endauth
+
+
                 </ul>
 
 
