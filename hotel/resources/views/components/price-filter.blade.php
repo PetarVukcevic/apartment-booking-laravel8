@@ -21,8 +21,7 @@
 
 <script>
 
-    var minPrice = "{{ session('minPrice', 0) }}";
-    var maxPrice = "{{ session('maxPrice', 1000) }}";
-    
+    var minPrice = {{ $minPrice ?? 0 }};
+    var maxPrice = {{ $maxPrice ?? 1000 }};
 
 </script>
