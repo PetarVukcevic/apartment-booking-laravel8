@@ -1,7 +1,13 @@
 @props(['average'])
 
 <span class="product-rating">
-    @if($average <= 0.5)
+    @if($average == 0)
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+    @elseif($average <= 0.5)
         <i class="fa fa-star-half-o"></i>
         <i class="fa fa-star-o"></i>
         <i class="fa fa-star-o"></i>

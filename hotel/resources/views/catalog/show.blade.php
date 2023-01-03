@@ -61,8 +61,12 @@
                 <div class="col-xs-12 col-sm-12 col-md-4">
                     <div class="project-widget project-block">
                         <div class="project-title">
+                            <a class="bold pull-right font-18" href="{{ url()->previous() }}">Back</a>
+
                             <h3>{{ $apartment->title }}</h3>
+
                         </div>
+
                         <div class="project-desc">
                             <ul class="list-unstyled">
                                 <li class="mt-xs">Landlord:
@@ -86,9 +90,7 @@
                                 @endif
 
                                 <li class="mt-xs">Category:
-{{--                                    <span><a href="./?category={{ $apartment->category->slug }}">{{ $apartment->category->name }}</a></span>--}}
                                     <span><a href="{{ url('catalog?category='.$apartment->category->slug) }}">{{ $apartment->category->name }}</a></span>
-
                                 </li>
 
                                 <li class="mt-xs">Price per night:
@@ -101,7 +103,7 @@
                             <span>{{ $apartment->ratings->count() }} Review(s)</span>
                             /
                             <span>
-							    {{ round($apartment->ratings->average('grade'), 2) }}
+							    Rating: {{ round($apartment->ratings->average('grade'), 2) }}
 							</span>
                         </div>
 
@@ -182,17 +184,11 @@
                                 @endif
                                 <!-- .review-comment end -->
                             </ul>
+                            @auth()
                             <div class="form-review">
                                 <form action="{{ url()->current() }}" method="post" id="rating">
                                     @csrf
-                                    <input type="text" name="name" class="form-control" value="{{ old('name') }}" id="name" placeholder="Your Name"/>
-                                    @error('name')
-                                    <p style="color: red">{{ $message }}</p>
-                                    @enderror
-                                    <input type="email" name="email" class="form-control" value="{{ old('email') }}" id="email" placeholder="Your Email"/>
-                                    @error('email')
-                                    <p style="color: red">{{ $message }}</p>
-                                    @enderror
+
                                     <select class="form-control" name="grade">
                                         <option selected="" value="Default">Your Rating</option>
                                         <option value="1">1</option>
@@ -211,6 +207,10 @@
                                     <button type="submit" class="btn btn-primary btn-black btn-block">Post Your review</button>
                                 </form>
                             </div>
+                            @else
+                                <p><a href="{{ url('register') }}">Register</a> or <a href="{{ url('login') }}">Log in</a> to rate the apartment.</p>
+                            @endauth
+
                         </div>
                         <!-- #reviews end -->
                     </div>

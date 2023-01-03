@@ -10,8 +10,6 @@ class About extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $guarded = [];
-
     public function features()
     {
         return $this->hasMany(Feature::class);

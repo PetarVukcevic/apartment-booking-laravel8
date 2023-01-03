@@ -10,8 +10,6 @@ class Apartment extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $guarded = [];
-
     public function scopeFilter($query, array $filters)
     {
         $query->when($filters['search'] ?? false, fn ($query, $search) =>

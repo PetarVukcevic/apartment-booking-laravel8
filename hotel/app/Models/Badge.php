@@ -10,9 +10,6 @@ class Badge extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $guarded = [];
-
-
     public function aboutPage()
     {
         return $this->belongsTo(About::class);

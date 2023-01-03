@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Rating extends Model
 {
     use HasFactory, SoftDeletes;
-    protected $guarded = [];
 
     public function apartment()
     {

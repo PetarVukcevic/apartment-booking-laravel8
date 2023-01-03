@@ -11,12 +11,11 @@ class RatingController extends Controller
     public function store(Apartment $apartment)
     {
         $attributes = \request()->validate([
-           'name' => 'required',
-            'email' => 'email|required',
             'grade' => 'required',
-            'comment' => 'required'
+            'comment' => 'required',
+            'user_id' => ''
         ]);
-
+        $attributes['user_id'] = \request()->user()->id;
         $apartment->ratings()->create($attributes);
 
         return redirect()->back();

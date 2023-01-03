@@ -15,9 +15,8 @@ return new class extends Migration
     {
         Schema::create('ratings', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->foreignId('apartment_id')->constrained()->cascadeOnDelete();
-            $table->string('name');
-            $table->string('email');
             $table->float('grade');
             $table->string('comment');
             $table->timestamps();

@@ -19,52 +19,62 @@ class RatingSeeder extends Seeder
     {
         DB::table('ratings')->insert([
             [
-                'name' => 'Marko Markovic',
-                'email' => 'marko.markovic@gmail.com',
-                'apartment_id' => random_int(1, 10),
+                'user_id' => 1,
+                'apartment_id' => random_int(1, 12),
                 'grade' => 4.5,
                 'comment' => fake()->paragraph()
             ],
             [
-                'name' => 'Petar Markovic',
-                'email' => 'petar.markovic@gmail.com',
-                'apartment_id' => random_int(1, 10),
+                'user_id' => 1,
+                'apartment_id' => random_int(1, 12),
                 'grade' => 5,
                 'comment' => fake()->paragraph()
             ],
             [
-                'name' => 'Lazar Radovic',
-                'email' => 'lazar.radovic@gmail.com',
-                'apartment_id' => random_int(1, 10),
+                'user_id' => 1,
+                'apartment_id' => random_int(1, 12),
                 'grade' => 4,
                 'comment' => fake()->paragraph()
             ],
             [
-                'name' => 'Filip Petrovic',
-                'email' => 'filip.petrovic@gmail.com',
-                'apartment_id' => random_int(1, 10),
+                'user_id' => 2,
+                'apartment_id' => random_int(1, 12),
                 'grade' => 3.5,
                 'comment' => fake()->paragraph()
             ],
             [
-                'name' => 'Marko Markovic',
-                'email' => 'marko.markovic@gmail.com',
-                'apartment_id' => random_int(1, 10),
+                'user_id' => 1,
+                'apartment_id' => random_int(1, 12),
                 'grade' => 4.5,
                 'comment' => fake()->paragraph()
             ],
             [
-                'name' => 'Marko Markovic',
-                'email' => 'marko.markovic@gmail.com',
-                'apartment_id' => random_int(1, 10),
+                'user_id' => 3,
+                'apartment_id' => random_int(1, 12),
+                'grade' => 5,
+                'comment' => fake()->paragraph()
+            ],
+            [
+                'user_id' => 4,
+                'apartment_id' => random_int(1, 12),
+                'grade' => 4.5,
+                'comment' => fake()->paragraph()
+            ],            [
+                'user_id' => 2,
+                'apartment_id' => random_int(1, 12),
+                'grade' => 3.5,
+                'comment' => fake()->paragraph()
+            ],
+            [
+                'user_id' => 1,
+                'apartment_id' => random_int(1, 12),
                 'grade' => 4.5,
                 'comment' => fake()->paragraph()
             ],
             [
-                'name' => 'Marko Markovic',
-                'email' => 'marko.markovic@gmail.com',
-                'apartment_id' => random_int(1, 10),
-                'grade' => 4.5,
+                'user_id' => 3,
+                'apartment_id' => random_int(1, 12),
+                'grade' => 5,
                 'comment' => fake()->paragraph()
             ],
         ]);
