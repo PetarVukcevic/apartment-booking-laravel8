@@ -179,30 +179,27 @@
                         <!-- #details end -->
                         <div role="tabpanel" class="tab-pane reviews" id="reviews">
                             <ul class="product-review list-unstyled">
-                                <li class="review-comment">
-                                    <h6>Mostafa Amin</h6>
-                                    <p class="review-date">22/02/2016</p>
-                                    <div class="product-rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-half-o"></i>
-                                    </div>
-                                    <div class="product-comment">
-                                        <p>Lorem ipsum dolor sit amet, mauris suspendisse viverra eleifend tortor tellus suscipit, tortor aliquet at nulla mus, dignissim neque, nulla neque. Ultrices proin mi urna nibh ut, aenean sollicitudin etiam libero nisl, ultrices ridiculus in magna purus consequuntur, ipsum donec orci ad vitae pede, id odio.</p>
-                                    </div>
-                                </li>
-                                <!-- .review-comment end -->
 
-                                <x-review-comment/>
+                                <!-- .review-comment end -->
+                                @if($apartment->ratings != null)
+                                    @foreach($apartment->ratings as $rating)
+                                        <x-review-comment :rating="$rating"/>
+                                    @endforeach
+                                @endif
                                 <!-- .review-comment end -->
                             </ul>
                             <div class="form-review">
-                                <form>
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name"/>
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email"/>
-                                    <select class="form-control">
+                                <form action="{{ url()->current() }}" method="post">
+                                    @csrf
+                                    <input type="text" name="name" class="form-control" value="{{ old('name') }}" id="name" placeholder="Your Name"/>
+                                    @error('name')
+                                    <p style="color: red">{{ $message }}</p>
+                                    @enderror
+                                    <input type="email" name="email" class="form-control" value="{{ old('email') }}" id="email" placeholder="Your Email"/>
+                                    @error('email')
+                                    <p style="color: red">{{ $message }}</p>
+                                    @enderror
+                                    <select class="form-control" name="grade">
                                         <option selected="" value="Default">Your Rating</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -210,7 +207,13 @@
                                         <option value="4">4</option>
                                         <option value="5">5</option>
                                     </select>
-                                    <textarea class="form-control" id="review" rows="2" placeholder="Review"></textarea>
+                                    @error('grade')
+                                    <p style="color: red">{{ $message }}</p>
+                                    @enderror
+                                    <textarea class="form-control" id="review" name="comment" rows="2" placeholder="Comment">{{ old('comment') }}</textarea>
+                                    @error('comment')
+                                    <p style="color: red">{{ $message }}</p>
+                                    @enderror
                                     <button type="submit" class="btn btn-primary btn-black btn-block">Post Your review</button>
                                 </form>
                             </div>
