@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use DB;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,7 +15,7 @@ class BadgeSeeder extends Seeder
      */
     public function run()
     {
-        \DB::table('badges')->insert([
+        DB::table('badges')->insert([
             [
                 'title' => 'Always Available',
                 'description' => 'all construction sites open for visitors, with 24/7 video surveillance being conducted at all objects',

@@ -7,7 +7,7 @@ use App\Models\City;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use DB;
 
 class ApartmentSeeder extends Seeder
 {
@@ -20,25 +20,23 @@ class ApartmentSeeder extends Seeder
     {
         //
         DB::table('apartments')->insert([
-           [
-               'id' => 1,
-               'title' => 'Petar Apartments',
-               'slug' => 'petar_apartments',
-               'user_id' => 1,
-               'category_id' => 1,
-               'city_id' => 1,
-               'rooms' => 2,
-               'adults' => 3,
-               'price' => 290.00,
-               'description' => fake()->paragraphs(2),
-               'profile_img' => 'assets/images/shop/grid/apartman_pr.png',
-               'view_img' => 'assets/images/shop/grid/apartman_single.png',
-               'lg_profile_img' => 'assets/images/shop/grid/apartman_home.png',
-               'address' => 'Beogradska 21',
-               'created_at' => date_create()
-           ],
             [
-                'id' => 2,
+                'title' => 'Petar Apartments',
+                'slug' => 'petar_apartments',
+                'user_id' => 1,
+                'category_id' => 1,
+                'city_id' => 1,
+                'rooms' => 2,
+                'adults' => 3,
+                'price' => 290.00,
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
+                'profile_img' => 'assets/images/shop/grid/apartman_pr.png',
+                'view_img' => 'assets/images/shop/grid/apartman_single.png',
+                'lg_profile_img' => 'assets/images/shop/grid/apartman_home.png',
+                'address' => 'Beogradska 21',
+                'created_at' => date_create()
+            ],
+            [
                 'title' => 'Delta Lux',
                 'slug' => 'delta_lux',
                 'user_id' => 2,
@@ -47,7 +45,7 @@ class ApartmentSeeder extends Seeder
                 'rooms' => 2,
                 'adults' => 3,
                 'price' => 225.00,
-                'description' => fake()->paragraphs(2),
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
                 'profile_img' => 'assets/images/shop/grid/apartman_pr.png',
                 'view_img' => 'assets/images/shop/grid/apartman_single.png',
                 'lg_profile_img' => 'assets/images/shop/grid/apartman_home.png',
@@ -55,7 +53,6 @@ class ApartmentSeeder extends Seeder
                 'created_at' => date_create()
             ],
             [
-                'id' => 3,
                 'title' => 'Marko Lux',
                 'slug' => 'marko_lux',
                 'user_id' => 3,
@@ -64,14 +61,13 @@ class ApartmentSeeder extends Seeder
                 'rooms' => 2,
                 'adults' => 3,
                 'price' => 490.00,
-                'description' => fake()->paragraphs(2),
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
                 'profile_img' => 'assets/images/shop/grid/apartman_pr.png',
                 'view_img' => 'assets/images/shop/grid/apartman_single.png',
                 'lg_profile_img' => 'assets/images/shop/grid/apartman_home.png',
                 'address' => 'Bulevar Ivana Crnojevica 160',
                 'created_at' => date_create()
             ], [
-                'id' => 4,
                 'title' => 'Kane Lux',
                 'slug' => 'kane_lux',
                 'user_id' => 4,
@@ -80,7 +76,7 @@ class ApartmentSeeder extends Seeder
                 'rooms' => 2,
                 'adults' => 3,
                 'price' => 130.00,
-                'description' => fake()->paragraphs(2),
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
                 'profile_img' => 'assets/images/shop/grid/apartman_pr.png',
                 'view_img' => 'assets/images/shop/grid/apartman_single.png',
                 'lg_profile_img' => 'assets/images/shop/grid/apartman_home.png',
@@ -88,7 +84,6 @@ class ApartmentSeeder extends Seeder
                 'created_at' => date_create()
             ],
             [
-                'id' => 5,
                 'title' => 'Marko Apartments',
                 'slug' => 'marko_apartments',
                 'user_id' => 3,
@@ -97,7 +92,7 @@ class ApartmentSeeder extends Seeder
                 'rooms' => 2,
                 'adults' => 3,
                 'price' => 150.00,
-                'description' => fake()->paragraphs(2),
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
                 'profile_img' => 'assets/images/shop/grid/apartman_pr.png',
                 'view_img' => 'assets/images/shop/grid/apartman_single.png',
                 'lg_profile_img' => 'assets/images/shop/grid/apartman_home.png',
@@ -105,7 +100,6 @@ class ApartmentSeeder extends Seeder
                 'created_at' => date_create()
             ],
             [
-                'id' => 6,
                 'title' => 'Marija Apartments',
                 'slug' => 'marija_apartments',
                 'user_id' => 1,
@@ -114,7 +108,7 @@ class ApartmentSeeder extends Seeder
                 'rooms' => 2,
                 'adults' => 3,
                 'price' => 190.00,
-                'description' => fake()->paragraphs(2),
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
                 'profile_img' => 'assets/images/shop/grid/apartman_pr.png',
                 'view_img' => 'assets/images/shop/grid/apartman_single.png',
                 'lg_profile_img' => 'assets/images/shop/grid/apartman_home.png',
@@ -122,7 +116,6 @@ class ApartmentSeeder extends Seeder
                 'created_at' => date_create()
             ],
             [
-                'id' => 7,
                 'title' => 'City Motel',
                 'slug' => 'city_motel',
                 'user_id' => 4,
@@ -131,7 +124,7 @@ class ApartmentSeeder extends Seeder
                 'rooms' => 4,
                 'adults' => 3,
                 'price' => 40.00,
-                'description' => fake()->paragraphs(2),
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
                 'profile_img' => 'assets/images/shop/grid/apartman_pr.png',
                 'view_img' => 'assets/images/shop/grid/apartman_single.png',
                 'lg_profile_img' => 'assets/images/shop/grid/apartman_home.png',
@@ -139,7 +132,6 @@ class ApartmentSeeder extends Seeder
                 'created_at' => date_create()
             ],
             [
-                'id' => 8,
                 'title' => 'Cheap Room',
                 'slug' => 'cheap_room',
                 'user_id' => 2,
@@ -148,7 +140,7 @@ class ApartmentSeeder extends Seeder
                 'rooms' => 4,
                 'adults' => 3,
                 'price' => 40.00,
-                'description' => fake()->paragraphs(2),
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
                 'profile_img' => 'assets/images/shop/grid/apartman_pr.png',
                 'view_img' => 'assets/images/shop/grid/apartman_single.png',
                 'lg_profile_img' => 'assets/images/shop/grid/apartman_home.png',
@@ -156,7 +148,6 @@ class ApartmentSeeder extends Seeder
                 'created_at' => date_create()
             ],
             [
-                'id' => 9,
                 'title' => 'Marko Room',
                 'slug' => 'marko_room',
                 'user_id' => 3,
@@ -165,7 +156,7 @@ class ApartmentSeeder extends Seeder
                 'rooms' => 1,
                 'adults' => 1,
                 'price' => 45.00,
-                'description' => fake()->paragraphs(2),
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
                 'profile_img' => 'assets/images/shop/grid/apartman_pr.png',
                 'view_img' => 'assets/images/shop/grid/apartman_single.png',
                 'lg_profile_img' => 'assets/images/shop/grid/apartman_home.png',
@@ -173,7 +164,6 @@ class ApartmentSeeder extends Seeder
                 'created_at' => date_create()
             ],
             [
-                'id' => 10,
                 'title' => 'Hotel Alexander',
                 'slug' => 'hotel_alexander',
                 'user_id' => 2,
@@ -182,7 +172,7 @@ class ApartmentSeeder extends Seeder
                 'rooms' => 1,
                 'adults' => 2,
                 'price' => 155.00,
-                'description' => fake()->paragraphs(2),
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
                 'profile_img' => 'assets/images/shop/grid/apartman_pr.png',
                 'view_img' => 'assets/images/shop/grid/apartman_single.png',
                 'lg_profile_img' => 'assets/images/shop/grid/apartman_home.png',
@@ -190,7 +180,6 @@ class ApartmentSeeder extends Seeder
                 'created_at' => date_create()
             ],
             [
-                'id' => 11,
                 'title' => 'Hotel Zabljak',
                 'slug' => 'hotel_zabljak',
                 'user_id' => 4,
@@ -199,7 +188,7 @@ class ApartmentSeeder extends Seeder
                 'rooms' => 1,
                 'adults' => 2,
                 'price' => 110.00,
-                'description' => fake()->paragraphs(2),
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
                 'profile_img' => 'assets/images/shop/grid/apartman_pr.png',
                 'view_img' => 'assets/images/shop/grid/apartman_single.png',
                 'lg_profile_img' => 'assets/images/shop/grid/apartman_home.png',
@@ -207,7 +196,6 @@ class ApartmentSeeder extends Seeder
                 'created_at' => date_create()
             ],
             [
-                'id' => 12,
                 'title' => 'Hotel Berane',
                 'slug' => 'hotel_berane',
                 'user_id' => 2,
@@ -216,7 +204,7 @@ class ApartmentSeeder extends Seeder
                 'rooms' => 2,
                 'adults' => 3,
                 'price' => 90.00,
-                'description' => fake()->paragraphs(2),
+                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
                 'profile_img' => 'assets/images/shop/grid/apartman_pr.png',
                 'view_img' => 'assets/images/shop/grid/apartman_single.png',
                 'lg_profile_img' => 'assets/images/shop/grid/apartman_home.png',
