@@ -97,17 +97,11 @@
                             </ul>
                         </div>
                         <div class="product-review text-left text-center-xs mt-md">
-							<span class="product-rating">
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star-half-o"></i>
-							<i class="fa fa-star-o"></i>
-							</span>
-                            <span>5 Review(s)</span>
+							<x-rating-stars :average="$apartment->ratings->average('grade')"/>
+                            <span>{{ $apartment->ratings->count() }} Review(s)</span>
                             /
                             <span>
-							<a href="#">Add Review</a>
+							    {{ round($apartment->ratings->average('grade'), 2) }}
 							</span>
                         </div>
 
@@ -131,7 +125,7 @@
                             <a href="#details" aria-controls="details" role="tab" data-toggle="tab">details</a>
                         </li>
                         <li role="presentation">
-                            <a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab">reviews(2)</a>
+                            <a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab">reviews({{ $apartment->ratings->count() }})</a>
                         </li>
                     </ul>
 
@@ -189,7 +183,7 @@
                                 <!-- .review-comment end -->
                             </ul>
                             <div class="form-review">
-                                <form action="{{ url()->current() }}" method="post">
+                                <form action="{{ url()->current() }}" method="post" id="rating">
                                     @csrf
                                     <input type="text" name="name" class="form-control" value="{{ old('name') }}" id="name" placeholder="Your Name"/>
                                     @error('name')
