@@ -118,7 +118,7 @@
                     <!-- li end -->
 
                     <!-- Admin section  -->
-                    @can('admin')
+                    @admin
 
                         <li class="has-dropdown" >
                             <a data-toggle="dropdown" class="dropdown-toggle" style="color: yellow">admin</a>
@@ -147,7 +147,7 @@
                             </ul>
                         </li>
 
-                    @endcan
+                    @endadmin
 
 
 
