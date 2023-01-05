@@ -9,10 +9,13 @@ use App\Http\Controllers\CityController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\RatingController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
+use App\Services\Newsletter;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Validation\ValidationException;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,34 +27,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::post('newsletter', function () {
-    request()->validate(['email' => 'required|email']);
-   $mailchimp = new \MailchimpMarketing\ApiClient();
-
-   $mailchimp->setConfig([
-       'apiKey' => config('services.mailchimp.key'),
-       'server' => 'us14'
-   ]);
-
-    try {
-        $response = $mailchimp->lists->addListMember('b2f2f64a7b', [
-            'email_address' => request('email'),
-            'status' => 'subscribed'
-        ]);
-    }
-    catch (Exception $e) {
-        \Illuminate\Validation\ValidationException::withMessages([
-            'email' => 'This email could not be added to our newsletter list.'
-        ]);
-    }
-
-
-   return redirect('/')->with('success', 'You are now singed up for our newsletter!');
-});
 
 
 Route::get('/', [HomeController::class, 'index']);
 Route::post('/', [MessageController::class, 'sendEmail'])->name('send.email');
+
+Route::post('newsletter', NewsletterController::class);
 
 Route::get('/catalog', [ApartmentController::class, 'apartments'])->name('catalog');
 Route::get('catalog/{apartment:slug}', [ApartmentController::class, 'show']);
