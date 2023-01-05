@@ -122,6 +122,7 @@
       <path value="$PROJECT_DIR$/hotel/vendor/itsgoingd/clockwork" />
       <path value="$PROJECT_DIR$/hotel/vendor/_laravel_idea" />
       <path value="$PROJECT_DIR$/hotel/vendor/mailjet/mailjet-apiv3-php" />
+      <path value="$PROJECT_DIR$/hotel/vendor/mailchimp/marketing" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />

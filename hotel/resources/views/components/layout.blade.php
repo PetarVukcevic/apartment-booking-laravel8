@@ -189,6 +189,8 @@
     </nav>
 </header>
 
+<x-flash/>
+
 <!-- Shortcode #2
 ============================================= -->
 
@@ -341,13 +343,17 @@
 
                         <!-- Mailchimp Form
                         =============================================-->
-                        <form class="mailchimp">
+                        <form action="/newsletter" method="post">
+                            @csrf
                             <div class="subscribe-alert">
                             </div>
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Type Your Email Account">
+                                <input type="text" class="form-control" name="email" placeholder="Type Your Email Account">
+                                @error('name')
+                                    <p style="color: red">{{ $message }}</p>
+                                @enderror
                                 <span class="input-group-btn">
-								<button class="btn text-capitalize" type="button">join</button>
+								<button class="btn text-capitalize" type="submit">join</button>
 								</span>
                             </div>
                             <!-- /input-group -->

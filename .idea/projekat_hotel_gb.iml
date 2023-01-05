@@ -122,6 +122,7 @@
       <excludeFolder url="file://$MODULE_DIR$/hotel/storage/app" />
       <excludeFolder url="file://$MODULE_DIR$/hotel/storage/clockwork" />
       <excludeFolder url="file://$MODULE_DIR$/hotel/storage/framework" />
+      <excludeFolder url="file://$MODULE_DIR$/hotel/vendor/mailchimp/marketing" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
