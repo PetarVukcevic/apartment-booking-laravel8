@@ -49,56 +49,56 @@ Route::get('/about-us', [AboutController::class, 'page']);
 
 Route::get('/faq', [FaqController::class, 'page']);
 
-Route::get('/admin-apartments', [AdminApartmentController::class, 'section']);
+Route::get('/admin-apartments', [AdminApartmentController::class, 'section'])->middleware('admin');
 //Route::delete('/admin-apartments/{id}', [AdminApartmentController::class, 'destroy'])->name('apartments.destroy');
-Route::post('/admin-apartments', [AdminApartmentController::class, 'destroy']);
-Route::get('/apartments-create', [AdminApartmentController::class, 'create']);
-Route::post('/apartments-create', [AdminApartmentController::class, 'store']);
+Route::post('/admin-apartments', [AdminApartmentController::class, 'destroy'])->middleware('admin');
+Route::get('/apartments-create', [AdminApartmentController::class, 'create'])->middleware('admin');
+Route::post('/apartments-create', [AdminApartmentController::class, 'store'])->middleware('admin');
 
-Route::get('/apartments-edit/{apartment}', [AdminApartmentController::class, 'edit']);
-Route::patch('/apartments-edit/{apartment}', [AdminApartmentController::class, 'update']);
+Route::get('/apartments-edit/{apartment}', [AdminApartmentController::class, 'edit'])->middleware('admin');
+Route::patch('/apartments-edit/{apartment}', [AdminApartmentController::class, 'update'])->middleware('admin');
 
-Route::get('/admin-about', [AboutController::class, 'edit']);
-Route::patch('/admin-about', [AboutController::class, 'update']);
+Route::get('/admin-about', [AboutController::class, 'edit'])->middleware('admin');
+Route::patch('/admin-about', [AboutController::class, 'update'])->middleware('admin');
 
-Route::get('/admin-features', [AboutController::class, 'features']);
-Route::post('/admin-features', [AboutController::class, 'destroy']);
-Route::get('/features-create', [AboutController::class, 'createFeature']);
-Route::post('/features-create', [AboutController::class, 'storeFeature']);
-Route::get('/features-edit/{feature}', [AboutController::class, 'editFeature']);
-Route::patch('/features-edit/{feature}', [AboutController::class, 'updateFeature']);
+Route::get('/admin-features', [AboutController::class, 'features'])->middleware('admin');
+Route::post('/admin-features', [AboutController::class, 'destroy'])->middleware('admin');
+Route::get('/features-create', [AboutController::class, 'createFeature'])->middleware('admin');
+Route::post('/features-create', [AboutController::class, 'storeFeature'])->middleware('admin');
+Route::get('/features-edit/{feature}', [AboutController::class, 'editFeature'])->middleware('admin');
+Route::patch('/features-edit/{feature}', [AboutController::class, 'updateFeature'])->middleware('admin');
 
-Route::get('/admin-blogs', [AdminBlogController::class, 'blogs']);
-Route::get('/blogs-create', [AdminBlogController::class, 'create']);
-Route::post('/blogs-create', [AdminBlogController::class, 'store']);
+Route::get('/admin-blogs', [AdminBlogController::class, 'blogs'])->middleware('admin');
+Route::get('/blogs-create', [AdminBlogController::class, 'create'])->middleware('admin');
+Route::post('/blogs-create', [AdminBlogController::class, 'store'])->middleware('admin');
 
-Route::get('/blogs-edit/{blog}', [AdminBlogController::class, 'edit']);
-Route::patch('/blogs-edit/{blog}', [AdminBlogController::class, 'update']);
+Route::get('/blogs-edit/{blog}', [AdminBlogController::class, 'edit'])->middleware('admin');
+Route::patch('/blogs-edit/{blog}', [AdminBlogController::class, 'update'])->middleware('admin');
 
-Route::get('/admin-categories', [AdminCategoryController::class, 'all']);
-Route::get('/categories-create', [AdminCategoryController::class, 'createCategory']);
-Route::post('/categories-create', [AdminCategoryController::class, 'storeCategory']);
+Route::get('/admin-categories', [AdminCategoryController::class, 'all'])->middleware('admin');
+Route::get('/categories-create', [AdminCategoryController::class, 'createCategory'])->middleware('admin');
+Route::post('/categories-create', [AdminCategoryController::class, 'storeCategory'])->middleware('admin');
 
-Route::get('/categories-edit/{category}', [AdminCategoryController::class, 'editCategory']);
-Route::patch('/categories-edit/{category}', [AdminCategoryController::class, 'updateCategory']);
-Route::post('/admin-categories', [AdminCategoryController::class, 'destroyCategory']);
+Route::get('/categories-edit/{category}', [AdminCategoryController::class, 'editCategory'])->middleware('admin');
+Route::patch('/categories-edit/{category}', [AdminCategoryController::class, 'updateCategory'])->middleware('admin');
+Route::post('/admin-categories', [AdminCategoryController::class, 'destroyCategory'])->middleware('admin');
 
-Route::get('/admin-faqs', [FaqController::class, 'show']);
-Route::get('/faqs-create', [FaqController::class, 'create']);
-Route::post('/faqs-create', [FaqController::class, 'store']);
-Route::post('/admin-faqs', [FaqController::class, 'destroy']);
+Route::get('/admin-faqs', [FaqController::class, 'show'])->middleware('admin');
+Route::get('/faqs-create', [FaqController::class, 'create'])->middleware('admin');
+Route::post('/faqs-create', [FaqController::class, 'store'])->middleware('admin');
+Route::post('/admin-faqs', [FaqController::class, 'destroy'])->middleware('admin');
 
-Route::get('/faqs-edit/{faq}', [FaqController::class, 'editFaq']);
-Route::patch('/faqs-edit/{faq}', [FaqController::class, 'updateFaq']);
+Route::get('/faqs-edit/{faq}', [FaqController::class, 'editFaq'])->middleware('admin');
+Route::patch('/faqs-edit/{faq}', [FaqController::class, 'updateFaq'])->middleware('admin');
 
-Route::get('/admin-cities', [CityController::class, 'allCities']);
-Route::post('/admin-cities', [CityController::class, 'destroyCities']);
+Route::get('/admin-cities', [CityController::class, 'allCities'])->middleware('admin');
+Route::post('/admin-cities', [CityController::class, 'destroyCities'])->middleware('admin');
 
-Route::get('/cities-edit/{city}', [CityController::class, 'editCities']);
-Route::patch('/cities-edit/{city}', [CityController::class, 'updateCities']);
+Route::get('/cities-edit/{city}', [CityController::class, 'editCities'])->middleware('admin');
+Route::patch('/cities-edit/{city}', [CityController::class, 'updateCities'])->middleware('admin');
 
-Route::get('/cities-create', [CityController::class, 'createCities']);
-Route::post('/cities-create', [CityController::class, 'storeCities']);
+Route::get('/cities-create', [CityController::class, 'createCities'])->middleware('admin');
+Route::post('/cities-create', [CityController::class, 'storeCities'])->middleware('admin');
 
 
 

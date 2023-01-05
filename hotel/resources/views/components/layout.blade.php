@@ -118,47 +118,51 @@
                     <!-- li end -->
 
                     <!-- Admin section  -->
-                    <li class="has-dropdown" >
-                        <a data-toggle="dropdown" class="dropdown-toggle" style="color: yellow">admin</a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="{{ url('admin-apartments') }}">Apartments</a>
-                            </li>
-                            <li>
-                                <a href="{{ url('admin-categories') }}">Categories</a>
-                            </li>
-                            <li>
-                                <a href="{{ url('admin-cities') }}">Cities</a>
-                            </li>
-                            <li>
-                                <a href="{{ url('admin-about') }}">About us Page</a>
-                            </li>
-                            <li>
-                                <a href="{{ url('admin-faqs') }}">FAQs</a>
-                            </li>
-                            <li>
-                                <a href="{{ url('admin-features') }}">Features</a>
-                            </li>
-                            <li>
-                                <a href="{{ url('admin-blogs') }}">Blogs</a>
-                            </li>
-                        </ul>
-                    </li>
+                    @can('admin')
 
+                        <li class="has-dropdown" >
+                            <a data-toggle="dropdown" class="dropdown-toggle" style="color: yellow">admin</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="{{ url('admin-apartments') }}">Apartments</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('admin-categories') }}">Categories</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('admin-cities') }}">Cities</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('admin-about') }}">About us Page</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('admin-faqs') }}">FAQs</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('admin-features') }}">Features</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('admin-blogs') }}">Blogs</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    @endcan
 
 
 
                             @auth
-                                <li>
+                                <li class="has-dropdown" >
                                     <a>Welcome  {{ auth()->user()->first_name }}!</a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="#" id="logout">Log Out</a>
+                                        </li>
+                                        <form action="/logout" id="logout-form" class="hidden" method="post">
+                                            @csrf
 
-                                </li>
-                                <li>
-                                    <form action="/logout" method="post">
-                                        @csrf
-                                        <button type="submit" class="btn btn-warning bold p-sm mt-xs mb-xs">Logout</button>
-
-                                    </form>
+                                        </form>
+                                    </ul>
                                 </li>
 
 
@@ -287,47 +291,7 @@
                         </div>
                     </div>
                 </div>
-{{--                <div class="col-xs-12 col-sm-6 col-md-5 widget-services text-center-xs">--}}
-{{--                    <h5 class="text-capitalize text-white">services</h5>--}}
-{{--                    <div class="row">--}}
-{{--                        <div class="col-xs-4 col-sm-4 col-md-4">--}}
-{{--                            <ul class="list-unstyled text-capitalize">--}}
-{{--                                <li>--}}
-{{--                                    <a href="#"> design &amp; build</a>--}}
-{{--                                </li>--}}
-{{--                                <li>--}}
-{{--                                    <a href="#"> tiling &amp; painting</a>--}}
-{{--                                </li>--}}
-{{--                                <li>--}}
-{{--                                    <a href="#"> revonations</a>--}}
-{{--                                </li>--}}
-{{--                            </ul>--}}
-{{--                        </div>--}}
-{{--                        <div class="col-xs-4 col-sm-4 col-md-4">--}}
-{{--                            <ul class="list-unstyled text-capitalize">--}}
-{{--                                <li>--}}
-{{--                                    <a href="#"> management</a>--}}
-{{--                                </li>--}}
-{{--                                <li>--}}
-{{--                                    <a href="#"> wood flooring</a>--}}
-{{--                                </li>--}}
-{{--                                <li>--}}
-{{--                                    <a href="#"> work consulting</a>--}}
-{{--                                </li>--}}
-{{--                            </ul>--}}
-{{--                        </div>--}}
-{{--                        <div class="col-xs-4 col-sm-4 col-md-4">--}}
-{{--                            <ul class="list-unstyled text-capitalize">--}}
-{{--                                <li>--}}
-{{--                                    <a href="#"> wood flooring</a>--}}
-{{--                                </li>--}}
-{{--                                <li>--}}
-{{--                                    <a href="#"> green building</a>--}}
-{{--                                </li>--}}
-{{--                            </ul>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
+
             </div>
         </div>
     </div>
@@ -425,6 +389,12 @@
 <script type="text/javascript" src={{asset("assets/revolution/js/extensions/revolution.extension.navigation.min.js")}}></script>
 <script type="text/javascript" src={{asset("assets/revolution/js/extensions/revolution.extension.migration.min.js")}}></script>
 <script type="text/javascript" src={{asset("assets/revolution/js/extensions/revolution.extension.parallax.min.js")}}></script>
+
+<script type="text/javascript">
+    document.querySelector('#logout').addEventListener('click', function() {
+        document.querySelector('#logout-form').submit();
+    });
+</script>
 
 <script type="text/javascript">
     jQuery(document).ready(function() {
