@@ -34,9 +34,12 @@ Route::post('/', [MessageController::class, 'sendEmail'])->name('send.email');
 
 Route::post('newsletter', NewsletterController::class);
 
-Route::get('/catalog', [ApartmentController::class, 'apartments'])->name('catalog');
-Route::get('catalog/{apartment:slug}', [ApartmentController::class, 'show']);
-Route::post('catalog/{apartment:slug}', [RatingController::class, 'store']);
+Route::get('my-apartments', [ApartmentController::class, 'myApartments'])->middleware('auth');
+Route::post('my-apartments', [ApartmentController::class, 'destroy'])->middleware('auth');
+Route::get('my-apartments/create', [ApartmentController::class, 'create'])->middleware('auth');
+Route::post('my-apartments/create', [ApartmentController::class, 'store'])->middleware('auth');
+
+
 
 Route::get('/register', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store'])->middleware('guest');
@@ -46,7 +49,9 @@ Route::post('/login', [SessionsController::class, 'store'])->middleware('guest')
 
 Route::post('/logout', [SessionsController::class, 'destroy'])->middleware('auth');
 
-
+Route::get('catalog', [ApartmentController::class, 'apartments'])->name('catalog');
+Route::get('catalog/{apartment:slug}', [ApartmentController::class, 'show']);
+Route::post('catalog/{apartment:slug}', [RatingController::class, 'store']);
 
 
 Route::get('/contact', [MessageController::class, 'create'])->name('contact');

@@ -93,6 +93,11 @@
                             <li>
                                 <a href="{{ url('catalog') }}">Catalog</a>
                             </li>
+                            @auth()
+                            <li>
+                                <a href="{{ url('my-apartments') }}">My Apartments</a>
+                            </li>
+                            @endauth
                         </ul>
                     </li>
 
