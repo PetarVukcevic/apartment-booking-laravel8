@@ -79,12 +79,10 @@ class ApartmentController extends Controller
     public function create() {
         $categories = Category::all();
         $cities = City::all();
-        $landlords = User::all();
 
         return view('catalog.create', [
             'categories' => $categories,
             'cities' => $cities,
-            'landlords' => $landlords
         ]);
     }
 
@@ -129,17 +127,47 @@ class ApartmentController extends Controller
     public function edit($id) {
         $categories = Category::all();
         $cities = City::all();
-        $landlords = User::all();
-        $apartment = auth()->user()->apartments;
+        $apartment = Apartment::find($id);
 
 
-        return view('admin.edit',
+        return view('catalog.edit',
             [
                 'categories' => $categories,
                 'cities' => $cities,
-                'landlords' => $landlords,
                 'apartment' => $apartment
             ]);
+    }
+
+    public function update(Apartment $apartment)
+    {
+        $attributes = \request()->validate([
+            'title' => 'required',
+            'address' => 'required',
+            'category_id' => ['required', Rule::exists('categories', 'id')],
+            'price' => 'required',
+            'city_id' => 'required',
+            'rooms' => 'required',
+            'adults' => 'required',
+            'children' => 'required',
+            'profile_img' => 'image',
+            'view_img' => 'image',
+            'lg_profile_img' => 'image',
+            'description' => 'required',
+        ]);
+
+        if (isset($attributes['profile_img'])) {
+            $attributes['profile_img'] = 'storage/' . \request()->file('profile_img')->store('assets/images');
+        }
+        if (isset($attributes['view_img'])) {
+            $attributes['view_img'] = 'storage/' . \request()->file('view_img')->store('assets/images');
+        }
+        if (isset($attributes['lg_profile_img'])) {
+            $attributes['lg_profile_img'] = 'storage/' . \request()->file('lg_profile_img')->store('assets/images');
+        }
+        $attributes['slug'] = Str::slug($attributes['title']);
+
+        $apartment->update($attributes);
+        return back()->with('success', 'Apartment updated!');
     }
 
 }

@@ -4,7 +4,7 @@
 
     <x-flash/>
     <div class="row">
-        <a href="{{ url('/apartments-create') }}" class="btn btn-success">Create new</a>
+        <a href="{{ url('my-apartments/create') }}" class="btn btn-success">Create new</a>
         <table class="table">
             <thead>
             <tr>
@@ -18,12 +18,13 @@
             </tr>
             </thead>
             <tbody>
-                    @foreach($apartments as $apartment)
-                        <x-my-apartments-list :apartment="$apartment"/>
-                    @endforeach
-                </tbody>
-            </table>
+            @foreach($apartments as $apartment)
+                <x-my-apartments-list :apartment="$apartment"/>
+            @endforeach
+            </tbody>
+        </table>
 
 
     </div>
 </div>
+

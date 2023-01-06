@@ -29,7 +29,7 @@
 
     <section>
         @if($apartments->count())
-            <x-admin-apartments :apartments="$apartments"/>
+            <x-my-apartments :apartments="$apartments"/>
         @else
             <div>
                 <h1 class="text-center">You didn't upload any apartments!</h1>
