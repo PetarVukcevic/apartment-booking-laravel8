@@ -126,4 +126,20 @@ class ApartmentController extends Controller
         return redirect()->back()->with('success', 'Apartment deleted!');
     }
 
+    public function edit($id) {
+        $categories = Category::all();
+        $cities = City::all();
+        $landlords = User::all();
+        $apartment = auth()->user()->apartments;
+
+
+        return view('admin.edit',
+            [
+                'categories' => $categories,
+                'cities' => $cities,
+                'landlords' => $landlords,
+                'apartment' => $apartment
+            ]);
+    }
+
 }

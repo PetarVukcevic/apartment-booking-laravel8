@@ -39,6 +39,7 @@ Route::post('my-apartments', [ApartmentController::class, 'destroy'])->middlewar
 Route::get('my-apartments/create', [ApartmentController::class, 'create'])->middleware('auth');
 Route::post('my-apartments/create', [ApartmentController::class, 'store'])->middleware('auth');
 
+Route::get('my-apartments/{apartment}/edit', [ApartmentController::class, 'edit']);
 
 
 Route::get('/register', [RegisterController::class, 'create'])->middleware('guest');
