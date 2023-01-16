@@ -37,7 +37,7 @@ class SessionsController extends Controller
     {
         auth()->logout();
 
-        return redirect('/')->with('success', 'You logged out!');
+        return redirect('/');
     }
 
 }
