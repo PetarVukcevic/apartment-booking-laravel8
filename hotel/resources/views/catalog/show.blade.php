@@ -37,6 +37,9 @@
 {{--    apartment     --}}
     <section class="single-project pb-0">
         <div class="container">
+            <h2>
+                <a href="{{ url('booking/' . $apartment->slug) }}">Book {{ $apartment->title }} now.</a>
+            </h2>
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-8">
                     <div id="project-carousel" class="project-carousel mb-30">
@@ -128,9 +131,6 @@
                             <a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab">reviews({{ $apartment->ratings->count() }})</a>
                         </li>
 
-                        <li role="presentation">
-                            <a href="{{ url('booking/' . $apartment->slug) }}">Book {{ $apartment->title }}</a>
-                        </li>
                     </ul>
 
                     <!-- Tab panes -->
