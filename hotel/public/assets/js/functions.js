@@ -477,6 +477,8 @@ $(document).ready(function() {
     $sliderRange.slider( "values", 1, maxPrice);
     $sliderAmount.val( $sliderRange.slider("values", 0) + "€" + " - " + $sliderRange.slider("values", 1) + "€");
 
+// date choosing
+
 
 
 }(jQuery));

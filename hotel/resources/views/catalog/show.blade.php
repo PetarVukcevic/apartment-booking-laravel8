@@ -190,18 +190,23 @@
                         <div role="tabpanel" class="tab-pane reviews" id="booking">
                             <h3 class="text-center">Book your apartment now</h3>
                             <hr/>
-                            <form class="needs-validation mt-30" novalidate>
+                            <form class="needs-validation mt-30" id="dates" novalidate>
                                 <div class="form-row">
                                     <div class="col-md-6 mb-3">
                                         <label for="checkin_date">Check-in Date</label>
-                                        <input type="date" class="form-control" id="checkin_date" name="checkin_date" required>
+                                        <input type="date" class="form-control" id="checkin_date" name="checkin_date"
+                                               required min= "{{date('m-d-y')}}" onchange="checkDate()">
 
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="checkout_date">Checkout Date</label>
-                                        <input type="date" class="form-control" id="checkout_date" name="checkout_date" required>
+                                        <input type="date" class="form-control" id="checkout_date" name="checkout_date"
+                                               required min= "{{date('m-d-y')}}" onchange="checkDate()">
 
                                     </div>
+                                    <div class="form-group">
+                                        <h5 id="price">Total Price:</h5>
+                                        <input type="hidden" style="background-color: white" class="form-control text-black-50" id="total_price" name="total_price" readonly>
                                 </div>
                                 <div class="container">
                                     <button class="btn btn-primary" type="submit">Book Apartment</button>
@@ -238,5 +243,27 @@
         <!-- .container end -->
 
     </section>
+    <script type="text/javascript">
+        document.getElementById("checkin_date").min = new Date().toISOString().split("T")[0];
+        document.getElementById("checkout_date").min = new Date().toISOString().split("T")[0];
+        var room_price = {{ $apartment->price }};
+
+        function checkDate() {
+            var checkin_date = new Date(document.getElementById("checkin_date").value);
+            var checkout_date = new Date(document.getElementById("checkout_date").value);
+            var checkin_date_input = document.getElementById("checkin_date");
+            var checkout_date_input = document.getElementById("checkout_date");
+            checkout_date_input.min = checkin_date.toISOString().split("T")[0];
+            var diff_in_time = checkout_date.getTime() - checkin_date.getTime();
+            var diff_in_days = diff_in_time / (1000 * 3600 * 24);
+            var total_price = diff_in_days * room_price;
+            document.getElementById("total_price").value = total_price;
+            console.log(checkout_date.value);
+            if(diff_in_time > 0) {
+                document.getElementById('price').innerHTML = 'Total Price: ' + total_price + '€';
+            }
+        }
+    </script>
+
 
 </x-layout>
