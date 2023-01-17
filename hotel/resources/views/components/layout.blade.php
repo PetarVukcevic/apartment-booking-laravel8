@@ -97,6 +97,9 @@
                             <li>
                                 <a href="{{ url('my-apartments') }}">My Apartments</a>
                             </li>
+                                <li>
+                                    <a href="{{ url('my-bookings') }}">My Booking History</a>
+                                </li>
                             @endauth
                         </ul>
                     </li>

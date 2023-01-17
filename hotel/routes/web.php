@@ -41,6 +41,8 @@ Route::post('my-apartments', [ApartmentController::class, 'destroy'])->middlewar
 Route::get('my-apartments/create', [ApartmentController::class, 'create'])->middleware('auth');
 Route::post('my-apartments/create', [ApartmentController::class, 'store'])->middleware('auth');
 
+Route::get('my-bookings', [BookingController::class, 'all'])->middleware('auth');
+
 Route::get('my-apartments/{apartment}/edit', [ApartmentController::class, 'edit'])->middleware('auth');
 Route::patch('my-apartments/{apartment}/edit', [ApartmentController::class, 'update'])->middleware('auth');
 
@@ -55,10 +57,10 @@ Route::post('/logout', [SessionsController::class, 'destroy'])->middleware('auth
 
 Route::get('catalog', [ApartmentController::class, 'apartments'])->name('catalog');
 Route::get('catalog/{apartment:slug}', [ApartmentController::class, 'show']);
-Route::post('catalog/{apartment:slug}', [RatingController::class, 'store']);
+Route::post('catalog/{apartment:slug}', [RatingController::class, 'store'])->middleware('auth');;
 
-Route::get('booking/{apartment:slug}', [BookingController::class, 'show']);
-Route::post('booking/{apartment:slug}', [BookingController::class, 'store']);
+Route::get('booking/{apartment:slug}', [BookingController::class, 'show'])->middleware('auth');;
+Route::post('booking/{apartment:slug}', [BookingController::class, 'store'])->middleware('auth');;
 
 
 

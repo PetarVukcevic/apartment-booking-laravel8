@@ -179,7 +179,7 @@
             document.getElementById("total_price").value = total_price;
             console.log(checkout_date.value);
             if(diff_in_time > 0) {
-                document.getElementById('price').innerHTML = 'Total Price: ' + total_price + '€';
+                document.getElementById('price').innerHTML = 'Total Price: ' + total_price + '€ for ' + diff_in_days + ' night(s).';
             }
         }
     </script>

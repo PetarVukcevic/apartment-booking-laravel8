@@ -16,7 +16,7 @@ class BookingController extends Controller
         ]);
 
     }
-    function store(Apartment $apartment) {
+    public function store(Apartment $apartment) {
 
         $attributes = request()->validate([
             'check_in' => ['required', 'date'],
@@ -30,6 +30,15 @@ class BookingController extends Controller
 
         $apartment->bookings()->create($attributes);
 
-        return redirect(url()->current())->with('success', 'You booked an apartment.');
+        return redirect(url('/my-bookings'))->with('success', 'You booked an apartment.');
     }
+
+    public function all() {
+        $apartments = auth()->user()->bookings;
+
+        return view('booking.all', [
+            'apartments' => $apartments
+        ]);
+    }
+
 }
