@@ -114,12 +114,12 @@
 
             </div>
 
-            <section>
-                <div class="container bg-gray p-md rounded">
+                <div class="container bg-gray p-md mb-30">
                             {{--          booking start              --}}
                                 <h3 class="text-center p-xs">Book {{ $apartment->title }} now</h3>
                                 <hr/>
                                 <form class="needs-validation mt-30" id="dates" action="{{ url()->current() }}" method="post">
+                                    @csrf
                                     <div class="form-row">
                                         <div class="col-md-6 mb-3">
                                             <label for="checkin_date">Check-in Date</label>
@@ -132,6 +132,16 @@
                                             <input type="date" class="form-control" id="checkout_date" name="check_out"
                                                    required min= "{{date('m-d-y')}}" onchange="checkDate()">
 
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="adults">Adults:</label>
+                                            <input min="0" placeholder="Please enter the number of adults..." required class="form-control" type="number" name="adults" id="adults">
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="children">Children:</label>
+                                            <input min="0" placeholder="Please enter the number of children..."  class="form-control" type="number" name="children" id="children">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -148,7 +158,6 @@
                         <!-- #tab-content end -->
 
                 </div>
-            </section>
         </div>
         <!-- .container end -->
 

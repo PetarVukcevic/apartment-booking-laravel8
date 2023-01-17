@@ -19,8 +19,10 @@ class BookingController extends Controller
     function store(Apartment $apartment) {
 
         $attributes = request()->validate([
-            'check_in' => ['required', 'date', Rule::lessThanOrEqual('checkout_date')],
-            'check_out' => ['required', 'date', Rule::greaterThanOrEqual('checkin_date')],
+            'check_in' => ['required', 'date'],
+            'check_out' => ['required', 'date'],
+            'adults' => 'required',
+            'children' => '',
             'total_price' => 'required',
             'user_id' => '',
         ]);
@@ -29,7 +31,6 @@ class BookingController extends Controller
         $apartment->bookings()->create($attributes);
 
         dd('success');
-        return redirect(url()->current())->with('success', 'You booked an apartment.');
 
     }
 }

@@ -206,10 +206,10 @@
 
                                     </div>
                                 </div>
-                                    <div class="form-group">
+                                <div class="form-group">
                                         <h5 id="price" class="p-xs">Total Price:</h5>
                                         <input type="hidden" style="background-color: white" class="form-control text-black-50" id="total_price" name="total_price" readonly>
-                                    </div>
+                                </div>
                                 <div class="container">
                                     <button class="btn btn-primary" type="submit">Book Apartment</button>
 
