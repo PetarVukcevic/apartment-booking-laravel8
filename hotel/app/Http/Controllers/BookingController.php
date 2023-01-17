@@ -30,7 +30,6 @@ class BookingController extends Controller
 
         $apartment->bookings()->create($attributes);
 
-        dd('success');
-
+        return redirect(url()->current())->with('success', 'You booked an apartment.');
     }
 }
