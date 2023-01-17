@@ -127,14 +127,23 @@
                         <li role="presentation">
                             <a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab">reviews({{ $apartment->ratings->count() }})</a>
                         </li>
+
+                        <li role="presentation">
+                            <a href="#booking" aria-controls="reviews" role="tab" data-toggle="tab">Book Apartment</a>
+                        </li>
                     </ul>
 
                     <!-- Tab panes -->
                     <div class="tab-content">
+                        {{--   descroption start    --}}
                         <div role="tabpanel" class="tab-pane active" id="description">
                             <p>{{ $apartment->description }} </p>
                         </div>
+                        {{--   description start    --}}
 
+
+
+                        {{--     reviews start     --}}
                         <div role="tabpanel" class="tab-pane reviews" id="reviews">
                             <ul class="product-review list-unstyled">
 
@@ -176,6 +185,33 @@
 
                         </div>
                         <!-- #reviews end -->
+
+                        {{--          booking start              --}}
+                        <div role="tabpanel" class="tab-pane reviews" id="booking">
+                            <h3 class="text-center">Book your apartment now</h3>
+                            <hr/>
+                            <form class="needs-validation mt-30" novalidate>
+                                <div class="form-row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="checkin_date">Check-in Date</label>
+                                        <input type="date" class="form-control" id="checkin_date" name="checkin_date" required>
+
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="checkout_date">Checkout Date</label>
+                                        <input type="date" class="form-control" id="checkout_date" name="checkout_date" required>
+
+                                    </div>
+                                </div>
+                                <div class="container">
+                                    <button class="btn btn-primary" type="submit">Book Apartment</button>
+
+                                </div>
+                            </form>
+
+                        </div>
+                        {{--          booking end              --}}
+
                     </div>
                     <!-- #tab-content end -->
                 </div>
