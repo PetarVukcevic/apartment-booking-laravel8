@@ -30,7 +30,7 @@
         @if($apartments->count())
             <div class="container">
                 <h1>My Booking History</h1>
-
+                <hr/>
                 <x-flash/>
                 <div class="row">
                     <table class="table">
@@ -52,7 +52,7 @@
 
                             <tr>
                                 <th scope="row">{{ $apartment->id }}</th>
-                                <td>{{ $apartment->apartment->title }}</td>
+                                <td><a href="{{ url('catalog/'. $apartment->apartment->slug) }}">{{ $apartment->apartment->title }}</a></td>
                                 <td>{{ $apartment->check_in }}</td>
                                 <td>{{ $apartment->check_out }}</td>
                                 <td>{{ $apartment->total_price / $apartment->apartment->price}}</td>

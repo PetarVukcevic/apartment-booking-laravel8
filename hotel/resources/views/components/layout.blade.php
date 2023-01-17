@@ -94,9 +94,6 @@
                                 <a href="{{ url('catalog') }}">Catalog</a>
                             </li>
                             @auth()
-                            <li>
-                                <a href="{{ url('my-apartments') }}">My Apartments</a>
-                            </li>
                                 <li>
                                     <a href="{{ url('my-bookings') }}">My Booking History</a>
                                 </li>
@@ -158,11 +155,18 @@
                     @endadmin
 
 
-
                             @auth
                                 <li class="has-dropdown" >
                                     <a>Welcome  {{ auth()->user()->first_name }}!</a>
                                     <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="{{ url('my-apartments') }}">My Apartments</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="{{ url('my-booked-apartments') }}">My Apartment Booking</a>
+                                        </li>
+
                                         <li>
                                             <a href="#" id="logout">Log Out</a>
                                         </li>
@@ -170,6 +174,7 @@
                                             @csrf
 
                                         </form>
+
                                     </ul>
                                 </li>
 
