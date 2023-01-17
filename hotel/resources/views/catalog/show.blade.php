@@ -123,9 +123,7 @@
                         <li role="presentation" class="active">
                             <a href="#description" aria-controls="description" role="tab" data-toggle="tab">description</a>
                         </li>
-                        <li role="presentation">
-                            <a href="#details" aria-controls="details" role="tab" data-toggle="tab">details</a>
-                        </li>
+
                         <li role="presentation">
                             <a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab">reviews({{ $apartment->ratings->count() }})</a>
                         </li>
@@ -136,43 +134,7 @@
                         <div role="tabpanel" class="tab-pane active" id="description">
                             <p>{{ $apartment->description }} </p>
                         </div>
-                        <!-- #description end -->
-                        <div role="tabpanel" class="tab-pane" id="details">
-                            <h5>Technical Details</h5>
-                            <table class="table table-striped">
-                                <tbody>
-                                <tr>
-                                    <td>Part Number</td>
-                                    <td>60-MCTE</td>
-                                </tr>
-                                <tr>
-                                    <td>Item Weight</td>
-                                    <td>54 pounds</td>
-                                </tr>
-                                <tr>
-                                    <td>Product Dimensions</td>
-                                    <td>92.8 x 92.8 x 92.8 inches</td>
-                                </tr>
-                                <tr>
-                                    <td>Item model number</td>
-                                    <td>60-MCTE</td>
-                                </tr>
-                                <tr>
-                                    <td>Item Package Quantity</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>Number of Handles</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>Batteries Required?</td>
-                                    <td>No</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <!-- #details end -->
+
                         <div role="tabpanel" class="tab-pane reviews" id="reviews">
                             <ul class="product-review list-unstyled">
 
