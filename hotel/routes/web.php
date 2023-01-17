@@ -5,6 +5,7 @@ use App\Http\Controllers\admin\AdminApartmentController;
 use App\Http\Controllers\admin\AdminBlogController;
 use App\Http\Controllers\admin\AdminCategoryController;
 use App\Http\Controllers\apartment\ApartmentController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HomeController;
@@ -13,6 +14,7 @@ use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\RatingController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
+use App\Models\Booking;
 use App\Services\MailchimpNewsletter;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Validation\ValidationException;
@@ -54,6 +56,10 @@ Route::post('/logout', [SessionsController::class, 'destroy'])->middleware('auth
 Route::get('catalog', [ApartmentController::class, 'apartments'])->name('catalog');
 Route::get('catalog/{apartment:slug}', [ApartmentController::class, 'show']);
 Route::post('catalog/{apartment:slug}', [RatingController::class, 'store']);
+
+Route::get('booking/{apartment:slug}', [BookingController::class, 'show']);
+Route::post('booking/{apartment:slug}', [BookingController::class, 'store']);
+
 
 
 Route::get('/contact', [MessageController::class, 'create'])->name('contact');
