@@ -40,6 +40,7 @@
             @auth()
                 @if($apartment->landlord->id === auth()->user()->id)
                     <h2>This is your apartment.</h2>
+                @elseif($apartment->bookings()->where('user_id', auth()->user()->id)->where('check_out', '>', \Carbon\Carbon::now())->exists())                    <h2>You have booked this apartment currently.</h2>
                 @else
                     <h2>
                         <a href="{{ url('booking/' . $apartment->slug) }}">Book {{ $apartment->title }} now.</a>
