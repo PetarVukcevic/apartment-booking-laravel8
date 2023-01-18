@@ -37,9 +37,16 @@
 {{--    apartment     --}}
     <section class="single-project pb-0">
         <div class="container">
-            <h2>
-                <a href="{{ url('booking/' . $apartment->slug) }}">Book {{ $apartment->title }} now.</a>
-            </h2>
+            @auth()
+                @if($apartment->landlord->id === auth()->user()->id)
+                    <h2>This is your apartment.</h2>
+                @else
+                    <h2>
+                        <a href="{{ url('booking/' . $apartment->slug) }}">Book {{ $apartment->title }} now.</a>
+                    </h2>
+                @endif
+
+            @endauth
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-8">
                     <div id="project-carousel" class="project-carousel mb-30">
