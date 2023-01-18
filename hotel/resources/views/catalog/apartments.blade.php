@@ -40,6 +40,7 @@
                                 <div class="product-options2 pull-left pull-none-xs">
                                     <ul class="list-inline">
                                         <li>
+                                            <!-- FILTERS START -->
                                             <div class="product-sort mb-15-xs">
                                                 <span>sort by:</span>
                                                 <select id="sorting">
@@ -68,8 +69,8 @@
                                 <!-- .product-options end -->
                                 <div class="product-view-mode text-right pull-none-xs">
                                     <span>view as:</span>
-                                    <a class="active" href="#"><i class="fa fa-th-large"></i></a>
-                                    <a href="#"><i class="fa fa-th-list"></i></a>
+                                    <a href="{{ request()->fullUrlWithQuery(['view' => 'grid']) }}" class="{{ $viewMode === 'grid' ? 'active' : '' }}"><i class="fa fa-th-large"></i></a>
+                                    <a href="{{ request()->fullUrlWithQuery(['view' => 'list']) }}" class="{{ $viewMode === 'list' ? 'active' : '' }}"><i class="fa fa-th-list"></i></a>
                                 </div>
                                 <!-- .product-num end -->
                             </div>
@@ -77,12 +78,17 @@
                         </div>
                         <!-- .col-md-12 end -->
                     </div>
+                    <!-- FILTERS END -->
+
                     <!-- .row end -->
                     <div class="row">
 
                         @if($apartments->count())
-                            <x-apartments-grid :apartments="$apartments"/>
-
+                            @if($viewMode === 'grid')
+                                <x-apartments-grid :apartments="$apartments"/>
+                            @else
+                                <x-apartments-list :apartments="$apartments"/>
+                            @endif
                             {{ $apartments->links() }}
                         @else
                             <h1 class="text-center mt-30">No apartments found. Please check back later.</h1>
@@ -131,6 +137,8 @@
         document.getElementById('sorting').onchange = function() {
             window.location = "{{ $apartments->url(1) }}&sorting=" + this.value;
         };
+
+
     </script>
 
 

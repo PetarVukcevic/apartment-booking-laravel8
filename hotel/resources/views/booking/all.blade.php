@@ -58,7 +58,13 @@
                                 <td>{{ $apartment->total_price / $apartment->apartment->price}}</td>
                                 <td>{{ $apartment->total_price }} €</td>
                                 <td>{{ $apartment->adults }}</td>
-                                <td>{{ $apartment->children }}</td>
+                                <td>
+                                    @if($apartment->children != null)
+                                        {{ $apartment->children }}
+                                    @else
+                                        None
+                                    @endif
+                                </td>
                                 <td>{{ date('F d, Y', strtotime($apartment->created_at)) }}</td>
                             </tr>
                         @endforeach

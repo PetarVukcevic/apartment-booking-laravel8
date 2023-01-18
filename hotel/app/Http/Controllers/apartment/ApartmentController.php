@@ -22,7 +22,7 @@ class ApartmentController extends Controller
         $sorting = $request->sorting ?? "newest";
         $minPrice = $request->input('minPrice');
         $maxPrice = $request->input('maxPrice');
-
+        $viewMode = $request->view ?? 'grid';
 
         if ($sorting === 'title') {
             $apartments = Apartment::orderBy('title', 'ASC')->with('landlord','city','category','ratings')->filter(
@@ -57,7 +57,8 @@ class ApartmentController extends Controller
             'items' => $items,
             'sorting' => $sorting,
             'minPrice' => $minPrice,
-            'maxPrice' => $maxPrice
+            'maxPrice' => $maxPrice,
+            'viewMode' => $viewMode,
         ]);
     }
 
