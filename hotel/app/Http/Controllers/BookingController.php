@@ -35,8 +35,10 @@ class BookingController extends Controller
 
     public function all() {
         $apartments = auth()->user()->bookings->sortByDesc('created_at');
+        $sum = auth()->user()->bookings->sum('total_price');
         return view('booking.all', [
-            'apartments' => $apartments
+            'apartments' => $apartments,
+            'sum' => $sum
         ]);
     }
 

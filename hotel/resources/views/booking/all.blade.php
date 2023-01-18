@@ -64,8 +64,7 @@
                         @endforeach
                         </tbody>
                     </table>
-
-
+                    <h2>Total money spent: {{ $sum }} €</h2>
                 </div>
             </div>
 
