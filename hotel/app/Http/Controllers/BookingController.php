@@ -19,8 +19,8 @@ class BookingController extends Controller
     public function store(Apartment $apartment) {
 
         $attributes = request()->validate([
-            'check_in' => ['required', 'date'],
-            'check_out' => ['required', 'date'],
+            'check_in' => ['required', 'date', 'after_or_equal:today'],
+            'check_out' => ['required', 'date', 'after_or_equal:check_in'],
             'adults' => 'required',
             'children' => '',
             'total_price' => 'required',
@@ -34,11 +34,12 @@ class BookingController extends Controller
     }
 
     public function all() {
-        $apartments = auth()->user()->bookings;
-
+        $apartments = auth()->user()->bookings->sortByDesc('created_at');
         return view('booking.all', [
             'apartments' => $apartments
         ]);
     }
+
+
 
 }
