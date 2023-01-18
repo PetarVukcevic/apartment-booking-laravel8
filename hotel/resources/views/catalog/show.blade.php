@@ -206,12 +206,16 @@
             <!-- .row end -->
             <div class="col-xs-12 col-sm-12 col-md-12 pager-2">
                 <div class="page-prev">
-                    <a href="#"><i class="fa fa-angle-left"></i>
+                    <a href="
+                    {{ optional($prevApartment)->slug ? url('catalog/'.optional($prevApartment)->slug) : ''}}"
+                        {{ optional($prevApartment)->slug ? '' : 'disabled'}}><i class="fa fa-angle-left"></i>
                         <span>Previous Apartment</span>
                     </a>
                 </div>
                 <div class="page-next">
-                    <a href="#">
+                    <a href="
+                    {{ optional($nextApartment)->slug ? url('catalog/'.optional($nextApartment)->slug) : ''}}"
+                        {{ optional($nextApartment)->slug ? '' : 'disabled'}}>
                         <span>Next Apartment</span>
                         <i class="fa fa-angle-right"></i></a>
                 </div>

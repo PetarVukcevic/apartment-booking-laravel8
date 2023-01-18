@@ -63,11 +63,15 @@ class ApartmentController extends Controller
     }
 
     public function show(Apartment $apartment) {
+        $nextApartment = Apartment::where('id', '>', $apartment->id)->first();
+        $prevApartment = Apartment::where('id', '<', $apartment->id)->orderBy('id', 'desc')->first();
         return view('catalog.show',[
-            'apartment' => $apartment
+            'apartment' => $apartment,
+            'nextApartment' => $nextApartment,
+            'prevApartment' => $prevApartment
         ]);
-
     }
+
 
     public function myApartments()
     {
