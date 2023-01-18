@@ -39,7 +39,7 @@
                             <th scope="col">#</th>
                             <th scope="col">Apartment</th>
                             <th scope="col">Check-in Date</th>
-                            <th scope="col">Checkout Date</th>
+                            <th scope="col">Check-out Date</th>
                             <th scope="col">Nights</th>
                             <th scope="col">Total Price</th>
                             <th scope="col">Adults</th>

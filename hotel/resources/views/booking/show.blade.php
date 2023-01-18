@@ -57,7 +57,7 @@
                                             @enderror
                                         </div>
                                         <div class="col-md-6 mb-3">
-                                            <label for="checkout_date">Checkout Date:</label>
+                                            <label for="checkout_date">Check-out Date:</label>
                                             <input type="date" class="form-control" id="checkout_date" name="check_out"
                                                    required min="{{date('m-d-y')}}" onchange="checkDate()">
                                             @error('check_out')
