@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Apartment;
-use App\Models\Booking;
-use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\DB;
+use App\Rules\BookedDatesRule;
+
 
 class BookingController extends Controller
 {
@@ -19,8 +19,8 @@ class BookingController extends Controller
     public function store(Apartment $apartment) {
 
         $attributes = request()->validate([
-            'check_in' => ['required', 'date', 'after_or_equal:today'],
-            'check_out' => ['required', 'date', 'after_or_equal:check_in'],
+            'check_in' => ['required', 'date', 'after_or_equal:today', new BookedDatesRule(request()->check_in, request()->check_out)],
+            'check_out' => ['required', 'date', 'after_or_equal:check_in', new BookedDatesRule(request()->check_in, request()->check_out)],
             'adults' => 'required',
             'children' => '',
             'total_price' => 'required',
@@ -32,6 +32,8 @@ class BookingController extends Controller
 
         return redirect(url('/my-bookings'))->with('success', 'You booked an apartment.');
     }
+
+
 
     public function all() {
         $apartments = auth()->user()->bookings->sortByDesc('created_at');

@@ -41,7 +41,7 @@
 
                 <div class="container bg-gray p-md mb-30">
                             {{--          booking start              --}}
-                    <a class="bold pull-right font-18" href="{{ url()->previous() }}">Back</a>
+                    <a class="bold pull-right font-18 p-xs" href="{{ url()->previous() }}">Back</a>
 
                     <h3 class="text-center p-xs">Book {{ $apartment->title }} now</h3>
                                 <hr/>
@@ -59,7 +59,7 @@
                                         <div class="col-md-6 mb-3">
                                             <label for="checkout_date">Check-out Date:</label>
                                             <input type="date" class="form-control" id="checkout_date" name="check_out"
-                                                   required min="{{date('m-d-y')}}" onchange="checkDate()">
+                                                   min="{{date('m-d-y')}}" onchange="checkDate()">
                                             @error('check_out')
                                             <p style="color: red">{{ $message }}</p>
                                             @enderror
