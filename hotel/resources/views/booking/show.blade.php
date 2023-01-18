@@ -52,24 +52,32 @@
                                             <label for="checkin_date">Check-in Date:</label>
                                             <input type="date" class="form-control" id="checkin_date" name="check_in"
                                                    required min= "{{date('m-d-y')}}" onchange="checkDate()">
-
+                                            @error('check_in')
+                                            <p style="color: red">{{ $message }}</p>
+                                            @enderror
                                         </div>
                                         <div class="col-md-6 mb-3">
                                             <label for="checkout_date">Checkout Date:</label>
                                             <input type="date" class="form-control" id="checkout_date" name="check_out"
                                                    required min= "{{date('m-d-y')}}" onchange="checkDate()">
-
+                                            @error('check_out')
+                                            <p style="color: red">{{ $message }}</p>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-md-6 mb-3">
                                             <label for="adults">Adults:</label>
                                             <input min="0" placeholder="Please enter the number of adults..." required class="form-control" type="number" name="adults" id="adults">
+
                                         </div>
+
                                         <div class="col-md-6 mb-3">
                                             <label for="children">Children:</label>
                                             <input min="0" placeholder="Please enter the number of children..."  class="form-control" type="number" name="children" id="children">
+
                                         </div>
+
                                     </div>
                                     <div class="form-group">
                                         <h5 id="price" class="p-xs">Total Price:</h5>
@@ -106,6 +114,10 @@
             document.getElementById("total_price").value = total_price;
             if(diff_in_time > 0) {
                 document.getElementById('price').innerHTML = 'Total Price: ' + total_price + '€ for ' + diff_in_days + ' night(s).';
+            }else if (diff_in_days === 0) {
+                diff_in_days = 1
+                document.getElementById('price').innerHTML = 'Total Price: ' + room_price + '€ for ' + diff_in_days + ' night(s).';
+
             }
         }
 
