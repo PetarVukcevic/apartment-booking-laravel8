@@ -16,6 +16,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use App\Models\Booking;
 use App\Services\MailchimpNewsletter;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Validation\ValidationException;
 
@@ -57,12 +58,12 @@ Route::post('/logout', [SessionsController::class, 'destroy'])->middleware('auth
 
 Route::get('catalog', [ApartmentController::class, 'apartments'])->name('catalog');
 Route::get('catalog/{apartment:slug}', [ApartmentController::class, 'show']);
-Route::post('catalog/{apartment:slug}', [RatingController::class, 'store'])->middleware('auth');;
+Route::post('catalog/{apartment:slug}', [RatingController::class, 'store'])->middleware('auth');
 
-Route::get('booking/{apartment:slug}', [BookingController::class, 'show'])->middleware('auth');;
-Route::post('booking/{apartment:slug}', [BookingController::class, 'store'])->middleware('auth');;
+Route::get('booking/{apartment:slug}', [BookingController::class, 'show'])->middleware('auth');
+Route::post('booking/{apartment:slug}', [BookingController::class, 'store'])->middleware('auth');
 
-
+Route::get('my-booked-apartments', [BookingController::class, 'myBookedApartments'])->middleware('auth');
 
 Route::get('/contact', [MessageController::class, 'create'])->name('contact');
 Route::post('/contact', [MessageController::class, 'sendEmail'])->name('send.email');

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Apartment;
+use App\Models\Booking;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Rules\BookedDatesRule;
 
@@ -42,6 +44,18 @@ class BookingController extends Controller
             'apartments' => $apartments,
             'sum' => $sum
         ]);
+    }
+
+    public function myBookedApartments() {
+
+        $bookings = Booking::landlordBookings()->get();
+        $totalEarnings = Booking::landlordBookings()->sum('total_price');
+
+        return view('booking.my-apartments', [
+            'bookings' => $bookings,
+            'totalEarnings' => $totalEarnings
+        ]);
+
     }
 
 

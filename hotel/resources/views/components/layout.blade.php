@@ -164,7 +164,7 @@
                                         </li>
 
                                         <li>
-                                            <a href="{{ url('my-booked-apartments') }}">My Apartment Booking</a>
+                                            <a href="{{ url('my-booked-apartments') }}">My Booked Apartments</a>
                                         </li>
 
                                         <li>
@@ -244,7 +244,7 @@
                             </div>
                             <div class="widget-contact-info">
                                 <p class="text-capitalize text-white">call us</p>
-                                <p class="text-capitalize font-heading">+382 67 255 888</p>
+                                <p class="text-capitalize font-heading">+382 67 111 111</p>
                             </div>
                         </div>
                         <!-- .widget end -->
