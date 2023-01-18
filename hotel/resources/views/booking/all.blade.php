@@ -53,13 +53,13 @@
                             <tr>
                                 <th scope="row">{{ $apartment->id }}</th>
                                 <td><a href="{{ url('catalog/'. $apartment->apartment->slug) }}">{{ $apartment->apartment->title }}</a></td>
-                                <td>{{ $apartment->check_in }}</td>
-                                <td>{{ $apartment->check_out }}</td>
+                                <td>{{ date('F d, Y', strtotime($apartment->check_in)) }}</td>
+                                <td>{{ date('F d, Y', strtotime($apartment->check_out)) }}</td>
                                 <td>{{ $apartment->total_price / $apartment->apartment->price}}</td>
                                 <td>{{ $apartment->total_price }} €</td>
                                 <td>{{ $apartment->adults }}</td>
                                 <td>{{ $apartment->children }}</td>
-                                <td>{{ $apartment->created_at }}</td>
+                                <td>{{ date('F d, Y', strtotime($apartment->created_at)) }}</td>
                             </tr>
                         @endforeach
                         </tbody>
