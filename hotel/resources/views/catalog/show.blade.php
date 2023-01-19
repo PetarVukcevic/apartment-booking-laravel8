@@ -1,5 +1,6 @@
 <x-layout>
 
+
 <section class="bg-overlay bg-overlay-gradient pb-0">
     <div class="bg-section" >
         <img src={{ asset("assets/images/page-title/2.jpg") }} alt="Background"/>
@@ -33,6 +34,8 @@
     </div>
     <!-- .container end -->
 </section>
+
+
 
 {{--    apartment     --}}
     <section class="single-project pb-0">
@@ -228,5 +231,4 @@
         <!-- .container end -->
 
     </section>
-
 </x-layout>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Apartment;
+use App\Models\Rating;
 use Illuminate\Http\Request;
 
 class RatingController extends Controller
@@ -19,5 +20,11 @@ class RatingController extends Controller
         $apartment->ratings()->create($attributes);
 
         return redirect()->back();
+    }
+
+    public function destroy(Request $request) {
+        Rating::find($request->review_delete_id)->delete();
+
+        return redirect()->back()->with('success', 'Apartment deleted!');
     }
 }

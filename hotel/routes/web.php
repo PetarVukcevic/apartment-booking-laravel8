@@ -62,6 +62,7 @@ Route::post('/logout', [SessionsController::class, 'destroy'])->middleware('auth
 Route::get('catalog', [ApartmentController::class, 'apartments'])->name('catalog');
 Route::get('catalog/{apartment:slug}', [ApartmentController::class, 'show']);
 Route::post('catalog/{apartment:slug}', [RatingController::class, 'store'])->middleware('auth');
+Route::post('catalog/{apartment:slug}', [RatingController::class, 'destroy'])->middleware('auth');
 
 Route::get('booking/{apartment:slug}', [BookingController::class, 'show'])->middleware('auth');
 Route::post('booking/{apartment:slug}', [BookingController::class, 'store'])->middleware('auth');
