@@ -32,7 +32,6 @@
     <h6>{{ $rating->user->first_name }} {{ $rating->user->last_name }}</h6>
     @if(@auth()->user()->id === $rating->user->id)
         <button type="button" value="{{ $rating->id }}" style="margin-left: 5px" class="pull-right btn btn-danger deleteReview" title='Delete'>Delete</button>
-        <a class="btn btn-success pull-right text-white">Edit</a>
 
 
     @endif

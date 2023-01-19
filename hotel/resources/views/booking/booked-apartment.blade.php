@@ -36,6 +36,10 @@
     <section class="single-project pb-0">
         <div class="container">
             <h1>Thanks for choosing {{ $booking->apartment->title }}!</h1>
+            <h3><a href="{{ url('catalog/' . $booking->apartment->slug)}}">
+                    Book {{ $booking->apartment->title }} again?
+                </a></h3>
+
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-8">
                     <div id="project-carousel" class="project-carousel mb-30">
@@ -106,10 +110,8 @@
 
                 </div>
 
+
             </div>
-            <h3><a href="{{ url('catalog/' . $booking->apartment->slug)}}">
-                    Book {{ $booking->apartment->title }} again?
-                </a></h3>
 
             <x-flash/>
         </div>

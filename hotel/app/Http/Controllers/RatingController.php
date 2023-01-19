@@ -27,4 +27,5 @@ class RatingController extends Controller
 
         return redirect()->back()->with('success', 'Apartment deleted!');
     }
+
 }
