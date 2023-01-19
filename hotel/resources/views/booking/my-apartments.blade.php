@@ -52,7 +52,7 @@
 
                             <tr>
                                 <th scope="row">{{ $booking->id }}</th>
-                                <td><a href="{{ url('catalog/'. $booking->apartment->slug) }}">{{ $apartment->apartment->title }}</a></td>
+                                <td><a href="{{ url('catalog/'. $booking->apartment->slug) }}">{{ $booking->apartment->title }}</a></td>
                                 <td>{{ date('F d, Y', strtotime($booking->check_in)) }}</td>
                                 <td>{{ date('F d, Y', strtotime($booking->check_out)) }}</td>
                                 <td>{{ $booking->total_price }} €</td>
