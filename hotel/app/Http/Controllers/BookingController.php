@@ -30,9 +30,9 @@ class BookingController extends Controller
         ]);
         $attributes['user_id'] = \request()->user()->id;
 
-        $apartment->bookings()->create($attributes);
+        $booking = $apartment->bookings()->create($attributes);
 
-        return redirect(url('/my-bookings'))->with('success', 'You booked an apartment.');
+        return redirect(url('my-bookings/' . $booking->id ))->with('success', 'You have successfully booked this apartment.');
     }
 
 
@@ -48,7 +48,7 @@ class BookingController extends Controller
 
     public function myBookedApartments() {
 
-        $bookings = Booking::landlordBookings()->get();
+        $bookings = Booking::with('user','apartment')->landlordBookings()->get();
         $totalEarnings = Booking::landlordBookings()->sum('total_price');
 
         return view('booking.my-apartments', [
@@ -56,6 +56,13 @@ class BookingController extends Controller
             'totalEarnings' => $totalEarnings
         ]);
 
+    }
+
+    public function getBooking(Booking $booking) {
+
+        return view('booking.booked-apartment', [
+            'booking' => $booking
+        ]);
     }
 
 

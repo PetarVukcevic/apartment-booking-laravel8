@@ -43,9 +43,12 @@ Route::get('my-apartments/create', [ApartmentController::class, 'create'])->midd
 Route::post('my-apartments/create', [ApartmentController::class, 'store'])->middleware('auth');
 
 Route::get('my-bookings', [BookingController::class, 'all'])->middleware('auth');
+Route::get('my-bookings/{booking}', [BookingController::class, 'getBooking'])->middleware('auth');
+
 
 Route::get('my-apartments/{apartment}/edit', [ApartmentController::class, 'edit'])->middleware('auth');
 Route::patch('my-apartments/{apartment}/edit', [ApartmentController::class, 'update'])->middleware('auth');
+
 
 
 Route::get('/register', [RegisterController::class, 'create'])->middleware('guest');

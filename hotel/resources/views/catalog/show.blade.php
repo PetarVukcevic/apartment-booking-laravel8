@@ -164,7 +164,7 @@
                                 <!-- .review-comment end -->
                             </ul>
                             @auth()
-                            <div class="form-review">
+                            <div class="form-review" id="form-review">
                                 <h3>Rate the apartment</h3>
                                 <form action="{{ url()->current() }}" method="post" id="rating">
                                     @csrf
