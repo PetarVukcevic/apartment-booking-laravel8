@@ -5,6 +5,7 @@
             {{--            <form method="POST" action="{{ route('apartments.destroy' , $apartment->id) }}">--}}
             <form method="POST" action="{{ url()->current() }}">
 
+                @method('DELETE')
                 @csrf
 
                 <div class="modal-header">
@@ -48,10 +49,10 @@
         $(document).ready(function () {
             $('.deleteReview').click(function (e){
                 e.preventDefault();
-
                 var app_id = $(this).val();
                 $('#review_id').val(app_id);
                 $('#deleteModal').modal('show');
+                $('#deleteForm').attr("method", "DELETE");
             });
         });
     </script>
