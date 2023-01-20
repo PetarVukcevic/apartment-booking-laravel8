@@ -44,7 +44,7 @@
                             <th scope="col">Total Price</th>
                             <th scope="col">Adults</th>
                             <th scope="col">Children</th>
-                            <th scope="col">Created at</th>
+                            <th scope="col">Booked On</th>
                         </tr>
                         </thead>
                         <tbody>

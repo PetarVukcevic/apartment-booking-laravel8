@@ -44,7 +44,7 @@
                             <th scope="col">Guest</th>
                             <th scope="col">Guest's Phone</th>
                             <th scope="col">Guest's Email</th>
-                            <th scope="col">Created At</th>
+                            <th scope="col">Booked On</th>
                         </tr>
                         </thead>
                         <tbody>
