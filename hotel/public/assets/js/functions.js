@@ -456,26 +456,27 @@ $(document).ready(function() {
 
     /* ------------------ 20.Shop Pricing Range ------------------ */
 
-    var $sliderRange = $("#slider-range"),
-        $sliderAmount = $("#amount");
+    if (typeof minPrice !== 'undefined' && typeof maxPrice !== 'undefined') {
+        var $sliderRange = $("#slider-range"),
+            $sliderAmount = $("#amount");
 
-    $sliderRange.slider({
-        range: true,
-        min: 0,
-        max: 1000,
-        step: 10,
-        values: [ minPrice, maxPrice ],
-        slide: function( event, ui ) {
-            $( "#minPrice" ).val(ui.values[ 0 ]);
-            $( "#maxPrice" ).val(ui.values[ 1 ]);
-            $sliderAmount.val(ui.values[0] + "€" + " - " + ui.values[1] + "€");
+        $sliderRange.slider({
+            range: true,
+            min: 0,
+            max: 1000,
+            step: 10,
+            values: [ minPrice, maxPrice ],
+            slide: function( event, ui ) {
+                $( "#minPrice" ).val(ui.values[ 0 ]);
+                $( "#maxPrice" ).val(ui.values[ 1 ]);
+                $sliderAmount.val(ui.values[0] + "€" + " - " + ui.values[1] + "€");
+            }
+        });
 
-        }
-    });
-
-    $sliderRange.slider( "values", 0, minPrice);
-    $sliderRange.slider( "values", 1, maxPrice);
-    $sliderAmount.val( $sliderRange.slider("values", 0) + "€" + " - " + $sliderRange.slider("values", 1) + "€");
+        $sliderRange.slider( "values", 0, minPrice);
+        $sliderRange.slider( "values", 1, maxPrice);
+        $sliderAmount.val( $sliderRange.slider("values", 0) + "€" + " - " + $sliderRange.slider("values", 1) + "€");
+    }
 
 // date choosing
 

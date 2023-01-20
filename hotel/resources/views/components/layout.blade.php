@@ -169,11 +169,12 @@
 
                                         <li>
                                             <a href="#" id="logout">Log Out</a>
-                                        </li>
-                                        <form action="/logout" id="logout-form" class="hidden" method="post">
-                                            @csrf
+                                            <form action="/logout" id="logout-form" class="hidden" method="post">
+                                                @csrf
 
-                                        </form>
+                                            </form>
+                                        </li>
+
 
                                     </ul>
                                 </li>
@@ -408,9 +409,13 @@
 <script type="text/javascript" src={{asset("assets/revolution/js/extensions/revolution.extension.parallax.min.js")}}></script>
 
 <script type="text/javascript">
-    document.querySelector('#logout').addEventListener('click', function() {
-        document.querySelector('#logout-form').submit();
-    });
+    let logoutButton = document.querySelector('#logout');
+    if (logoutButton !== null) {
+        logoutButton.addEventListener('click', function() {
+            document.querySelector('#logout-form').submit();
+        });
+    }
+
 </script>
 
 <script type="text/javascript">
