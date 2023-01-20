@@ -168,28 +168,31 @@
                             </ul>
                             @auth()
                                 @if(!$apartment->ratings->where('user_id', auth()->user()->id)->first())
-                                    <div class="form-review" id="form-review">
-                                        <h3>Rate the apartment</h3>
-                                        <form action="{{ url()->current() }}" method="post" id="rating">
-                                            @csrf
-                                            <select class="form-control" name="grade">
-                                                <option value="">Grade(1-5)</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                            </select>
-                                            @error('grade')
-                                            <span style="color: red">{{ $message }}</span>
-                                            @enderror
-                                            <textarea class="form-control" id="review" name="comment" rows="2" placeholder="Comment">{{ old('comment') }}</textarea>
-                                            @error('comment')
-                                            <span style="color: red">{{ $message }}</span>
-                                            @enderror
-                                            <button type="submit" class="btn btn-primary btn-black btn-block">Post Your review</button>
-                                        </form>
-                                    </div>
+                                    @if($apartment->landlord->id !== auth()->user()->id)
+                                        <div class="form-review" id="form-review">
+                                            <h3>Rate the apartment</h3>
+                                            <form action="{{ url()->current() }}" method="post" id="rating">
+                                                @csrf
+                                                <select class="form-control" name="grade">
+                                                    <option value="">Grade(1-5)</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                </select>
+                                                @error('grade')
+                                                <span style="color: red">{{ $message }}</span>
+                                                @enderror
+                                                <textarea class="form-control" id="review" name="comment" rows="2" placeholder="Comment">{{ old('comment') }}</textarea>
+                                                @error('comment')
+                                                <span style="color: red">{{ $message }}</span>
+                                                @enderror
+                                                <button type="submit" class="btn btn-primary btn-black btn-block">Post Your review</button>
+                                            </form>
+                                        </div>
+
+                                    @endif
                                 @else
                                     <p>You have already left a rating for this apartment.</p>
                                 @endif
