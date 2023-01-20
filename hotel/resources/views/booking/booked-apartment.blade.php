@@ -36,9 +36,13 @@
     <section class="single-project pb-0">
         <div class="container">
             <h1>Thanks for choosing {{ $booking->apartment->title }}!</h1>
-            <h3><a href="{{ url('catalog/' . $booking->apartment->slug)}}">
-                    Book {{ $booking->apartment->title }} again?
-                </a></h3>
+
+            @if(!$booking->where('user_id', auth()->user()->id)->where('check_out', '>', \Carbon\Carbon::now())->exists())
+                <h3><a href="{{ url('catalog/' . $booking->apartment->slug)}}">
+                        Book {{ $booking->apartment->title }} again?
+                    </a></h3>
+            @endif
+
 
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-8">
