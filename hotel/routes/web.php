@@ -14,11 +14,8 @@ use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\RatingController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
-use App\Models\Booking;
-use App\Services\MailchimpNewsletter;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Validation\ValidationException;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,37 +34,44 @@ Route::post('/', [MessageController::class, 'sendEmail'])->name('send.email');
 
 Route::post('newsletter', NewsletterController::class);
 
-Route::get('my-apartments', [ApartmentController::class, 'myApartments'])->middleware('auth');
-Route::post('my-apartments', [ApartmentController::class, 'destroy'])->middleware('auth');
-Route::get('my-apartments/create', [ApartmentController::class, 'create'])->middleware('auth');
-Route::post('my-apartments/create', [ApartmentController::class, 'store'])->middleware('auth');
+Route::middleware('auth')->group(function () {
 
-Route::get('my-bookings', [BookingController::class, 'all'])->middleware('auth');
-Route::get('my-bookings/{booking}', [BookingController::class, 'getBooking'])->middleware('auth');
+    Route::get('my-apartments', [ApartmentController::class, 'myApartments']);
+    Route::post('my-apartments', [ApartmentController::class, 'destroy']);
+    Route::get('my-apartments/create', [ApartmentController::class, 'create']);
+    Route::post('my-apartments/create', [ApartmentController::class, 'store']);
+
+    Route::get('my-bookings', [BookingController::class, 'all']);
+    Route::get('my-bookings/{booking}', [BookingController::class, 'getBooking']);
+
+    Route::get('my-apartments/{apartment}/edit', [ApartmentController::class, 'edit']);
+    Route::patch('my-apartments/{apartment}/edit', [ApartmentController::class, 'update']);
+
+    Route::post('/logout', [SessionsController::class, 'destroy']);
+    Route::post('catalog/{apartment:slug}', [RatingController::class, 'store']);
+    Route::delete('catalog/{apartment:slug}', [RatingController::class, 'destroy']);
+
+    Route::get('booking/{apartment:slug}', [BookingController::class, 'show']);
+    Route::post('booking/{apartment:slug}', [BookingController::class, 'store']);
+
+    Route::get('my-booked-apartments', [BookingController::class, 'myBookedApartments']);
+
+});
 
 
-Route::get('my-apartments/{apartment}/edit', [ApartmentController::class, 'edit'])->middleware('auth');
-Route::patch('my-apartments/{apartment}/edit', [ApartmentController::class, 'update'])->middleware('auth');
+Route::middleware('guest')->group(function () {
+    Route::get('/register', [RegisterController::class, 'create']);
+    Route::post('/register', [RegisterController::class, 'store']);
+
+    Route::get('/login', [SessionsController::class, 'create']);
+    Route::post('/login', [SessionsController::class, 'store']);
+
+});
 
 
-
-Route::get('/register', [RegisterController::class, 'create'])->middleware('guest');
-Route::post('/register', [RegisterController::class, 'store'])->middleware('guest');
-
-Route::get('/login', [SessionsController::class, 'create'])->middleware('guest');
-Route::post('/login', [SessionsController::class, 'store'])->middleware('guest');
-
-Route::post('/logout', [SessionsController::class, 'destroy'])->middleware('auth');
 
 Route::get('catalog', [ApartmentController::class, 'apartments'])->name('catalog');
 Route::get('catalog/{apartment:slug}', [ApartmentController::class, 'show']);
-Route::post('catalog/{apartment:slug}', [RatingController::class, 'store'])->middleware('auth');
-Route::delete('catalog/{apartment:slug}', [RatingController::class, 'destroy'])->middleware('auth');
-
-Route::get('booking/{apartment:slug}', [BookingController::class, 'show'])->middleware('auth');
-Route::post('booking/{apartment:slug}', [BookingController::class, 'store'])->middleware('auth');
-
-Route::get('my-booked-apartments', [BookingController::class, 'myBookedApartments'])->middleware('auth');
 
 Route::get('/contact', [MessageController::class, 'create'])->name('contact');
 Route::post('/contact', [MessageController::class, 'sendEmail'])->name('send.email');
@@ -135,11 +139,7 @@ Route::middleware('can:admin')->group(function () {
 
 Route::fallback(function ()
 {
-    # To Specific Controller
     return Redirect::to('/'); # ('/') if defined
-
-    # To Specific View
-    return response()->view('home', [], 404);
 });
 
 

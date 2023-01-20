@@ -64,14 +64,14 @@
                         @endforeach
                         </tbody>
                     </table>
-                    <h2>Total money earned: {{ $totalEarnings }} €</h2>
+                    <h2>Total earnings: {{ $totalEarnings }} €</h2>
                 </div>
             </div>
 
 
         @else
-            <div>
-                <h1>You don't have booked apartments yet.</h1>
+            <div class="container">
+                <h1 class="text-center">You don't have booked apartments yet.</h1>
             </div>
         @endif
     </section>
