@@ -78,7 +78,7 @@
 
                     <div class="form-group col-md-6">
                         <label for="exampleFormControlInput1">Price per night</label>
-                        <input type="number" value="{{ old('price') }}" name="price" class="form-control" id="exampleFormControlInput1" placeholder="Enter price" required>
+                        <input type="number" value="{{ old('price') }}" min="0" name="price" class="form-control" id="exampleFormControlInput1" placeholder="Enter price" required>
                         @error('price')
                         <p style="color: red">{{ $message }}</p>
                         @enderror
