@@ -118,6 +118,11 @@
       <excludeFolder url="file://$MODULE_DIR$/hotel/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/hotel/vendor/itsgoingd/clockwork" />
       <excludeFolder url="file://$MODULE_DIR$/hotel/vendor/_laravel_idea" />
+      <excludeFolder url="file://$MODULE_DIR$/hotel/vendor/mailjet/mailjet-apiv3-php" />
+      <excludeFolder url="file://$MODULE_DIR$/hotel/storage/app" />
+      <excludeFolder url="file://$MODULE_DIR$/hotel/storage/clockwork" />
+      <excludeFolder url="file://$MODULE_DIR$/hotel/storage/framework" />
+      <excludeFolder url="file://$MODULE_DIR$/hotel/vendor/mailchimp/marketing" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

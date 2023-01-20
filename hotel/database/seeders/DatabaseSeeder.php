@@ -7,6 +7,7 @@ use App\Models\Apartment;
 use App\Models\Booking;
 use App\Models\Category;
 use App\Models\City;
+use App\Models\Feature;
 use App\Models\Rating;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -26,8 +27,12 @@ class DatabaseSeeder extends Seeder
             CitySeeder::class,
             ApartmentSeeder::class,
             BookingSeeder::class,
-            RatingSeeder::class
-
+            RatingSeeder::class,
+            AboutSeeder::class,
+            FeatureSeeder::class,
+            BlogSeeder::class,
+            BadgeSeeder::class,
+            FaqSeeder::class,
         ]);
     }
 }

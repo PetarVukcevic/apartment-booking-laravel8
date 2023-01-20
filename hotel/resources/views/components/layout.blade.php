@@ -28,10 +28,22 @@
     <link rel="stylesheet" type="text/css" href={{asset("assets/revolution/css/settings.css")}}>
     <link rel="stylesheet" type="text/css" href={{asset("assets/revolution/css/layers.css")}}>
     <link rel="stylesheet" type="text/css" href={{asset("assets/revolution/css/navigation.css")}}>
+    <!-- CSS only -->
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
     <!--[if lt IE 9]>
     <script src={{asset("assets/js/html5shiv.js")}}></script>
     <script src={{asset("assets/js/respond.min.js")}}></script>
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+
+    <script defer src={{ asset("https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js")}}></script>
+
     <![endif]-->
 
     <!-- Document Title
@@ -61,8 +73,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="logo" href="/">
-                    <img src={{url("assets/images/logo/nav-logo.png")}} alt="Vukcevic Apartments">
+                <a class="logo" href="{{url('/')}}">
+                    <img src="{{asset("assets/images/logo/nav-logo.png")}}" alt="Vukcevic Apartments">
                 </a>
 
             </div>
@@ -71,95 +83,117 @@
             <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-left">
                     <li>
-                        <a href="/">Home</a>
-                    </li>
-                    <!-- li end -->
-                    <!-- About us-->
-                    <li class="has-dropdown">
-                        <a href="/about-us" data-toggle="dropdown" class="dropdown-toggle">about</a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="/about-us">about us</a>
-                            </li>
-
-                            <li>
-                                <a href="/testimonials">testimonials</a>
-                            </li>
-                            <li>
-                                <a href="/faq">FAQS</a>
-                            </li>
-                        </ul>
+                        <a href="{{ url('/') }}">Home</a>
                     </li>
 
-                    <!-- li end -->
-                    <li class="has-dropdown">
-                        <a href="/blog">blog</a>
-                    </li>
-                    <!-- li end -->
+                    <!-- Apartments -->
                     <li class="has-dropdown">
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle">Apartments</a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="/catalog">Catalog</a>
+                                <a href="{{ url('catalog') }}">Catalog</a>
                             </li>
+                            @auth()
+                                <li>
+                                    <a href="{{ url('my-bookings') }}">My Booking History</a>
+                                </li>
+                            @endauth
                         </ul>
                     </li>
+
+                    <!-- About us-->
+                    <li class="has-dropdown">
+                        <a href="{{ url('about-us') }}" data-toggle="dropdown" class="dropdown-toggle">about</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="{{ url('about-us') }}">about us</a>
+                            </li>
+
+                            <li>
+                                <a href="{{ url('faq') }}">FAQS</a>
+                            </li>
+
+                        </ul>
+                    </li>
+
                     <!-- li end -->
-                    <li class="has-dropdown pull-left">
-                        <a href="/contact">contact</a>
+                    <li>
+                        <a href="{{ url('contact') }}">contact</a>
                     </li>
                     <!-- li end -->
+
+                    <!-- Admin section  -->
+                    @admin
+
+                        <li class="has-dropdown" >
+                            <a data-toggle="dropdown" class="dropdown-toggle" style="color: yellow">admin</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="{{ url('admin-apartments') }}">Apartments</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('admin-categories') }}">Categories</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('admin-cities') }}">Cities</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('admin-about') }}">About us Page</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('admin-faqs') }}">FAQs</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('admin-features') }}">Features</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('admin-blogs') }}">Blogs</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    @endadmin
+
+
+                            @auth
+                                <li class="has-dropdown" >
+                                    <a>Welcome  {{ auth()->user()->first_name }}!</a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="{{ url('my-apartments') }}">My Apartments</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="{{ url('my-booked-apartments') }}">My Booked Apartments</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#" id="logout">Log Out</a>
+                                        </li>
+                                        <form action="/logout" id="logout-form" class="hidden" method="post">
+                                            @csrf
+
+                                        </form>
+
+                                    </ul>
+                                </li>
+
+
+                            @else
+                                <li>
+                                    <a href="{{ url('/register') }}">Register</a>
+
+                                </li>
+                                <li>
+
+                                    <a style="color: yellow" href="{{ url('/login') }}">Log in</a>
+
+                                </li>
+                            @endauth
+
+
                 </ul>
 
-
-
-                <!-- .module-cart -->
-{{--                <div class="module module-cart pull-left">--}}
-{{--                    <div class="cart-icon">--}}
-{{--                        <i class="fa fa-shopping-cart"></i>--}}
-{{--                        <span class="title">shop cart</span>--}}
-{{--                        <span class="cart-label">2</span>--}}
-{{--                    </div>--}}
-{{--                    <div class="cart-box">--}}
-{{--                        <div class="cart-overview">--}}
-{{--                            <ul class="list-unstyled">--}}
-{{--                                <li>--}}
-{{--                                    <img class="img-responsive" src="assets/images/shop/thumb/1h.png" alt="product"/>--}}
-{{--                                    <div class="product-meta">--}}
-{{--                                        <h5 class="product-title">CST/Berger</h5>--}}
-{{--                                        <p class="product-price">Price: $68.00 </p>--}}
-{{--                                        <p class="product-quantity">Quantity: 1</p>--}}
-{{--                                    </div>--}}
-{{--                                    <a class="cancel" href="#">cancel</a>--}}
-{{--                                </li>--}}
-{{--                                <li>--}}
-{{--                                    <img class="img-responsive" src="assets/images/shop/thumb/2h.png" alt="product"/>--}}
-{{--                                    <div class="product-meta">--}}
-{{--                                        <h5 class="product-title">Charger/Radio</h5>--}}
-{{--                                        <p class="product-price">Price: $180.00 </p>--}}
-{{--                                        <p class="product-quantity">Quantity: 1</p>--}}
-{{--                                    </div>--}}
-{{--                                    <a class="cancel" href="#">cancel</a>--}}
-{{--                                </li>--}}
-{{--                            </ul>--}}
-{{--                        </div>--}}
-{{--                        <div class="cart-total">--}}
-{{--                            <div class="total-desc">--}}
-{{--                                <h5>CART SUBTOTAL :</h5>--}}
-{{--                            </div>--}}
-{{--                            <div class="total-price">--}}
-{{--                                <h5>$248.00</h5>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="clearfix">--}}
-{{--                        </div>--}}
-{{--                        <div class="cart-control">--}}
-{{--                            <a class="btn btn-primary" href="#">view cart</a>--}}
-{{--                            <a class="btn btn-secondary pull-right" href="#">check out</a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-                <!-- .module-cart end -->
 
             </div>
             <!-- /.navbar-collapse -->
@@ -210,7 +244,7 @@
                             </div>
                             <div class="widget-contact-info">
                                 <p class="text-capitalize text-white">call us</p>
-                                <p class="text-capitalize font-heading">+382 67 255 888</p>
+                                <p class="text-capitalize font-heading">+382 67 111 111</p>
                             </div>
                         </div>
                         <!-- .widget end -->
@@ -232,7 +266,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12 widgets-links">
                 <div class="col-xs-12 col-sm-12 col-md-4 widget-about text-center-xs mb-30-xs">
                     <div class="widget-about-logo pull-left pull-none-xs">
-                        <img src={{url("assets/images/logo/footer-logo.png")}} alt="logo"/>
+                        <img src={{asset("assets/images/logo/footer-logo.png")}} alt="logo"/>
                     </div>
                     <div class="widget-about-info">
                         <h5 class="text-capitalize text-white">p property</h5>
@@ -245,72 +279,32 @@
                         <div class="col-xs-6 col-sm-6 col-md-6">
                             <ul class="list-unstyled text-capitalize">
                                 <li>
-                                    <a href="/about-us"> about us</a>
+                                    <a href="{{ url('about-us') }}"> about us</a>
                                 </li>
                                 <li>
-                                    <a href="#"> careers</a>
+                                    <a href="{{ url('catalog') }}"> catalog</a>
                                 </li>
                                 <li>
-                                    <a href="#"> pricing plans</a>
+                                    <a href="{{ url('contact') }}"> contact</a>
                                 </li>
                             </ul>
                         </div>
                         <div class="col-xs-6 col-sm-6 col-md-6">
                             <ul class="list-unstyled text-capitalize">
                                 <li>
-                                    <a href="#"> team</a>
+                                    <a href="{{ url('about-us') }}"> about</a>
                                 </li>
                                 <li>
-                                    <a href="#"> projects</a>
+                                    <a href="{{ url('catalog') }}"> apartments</a>
                                 </li>
                                 <li>
-                                    <a href="#"> FAQs</a>
+                                    <a href="{{ url('faq') }}"> FAQs</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-5 widget-services text-center-xs">
-                    <h5 class="text-capitalize text-white">services</h5>
-                    <div class="row">
-                        <div class="col-xs-4 col-sm-4 col-md-4">
-                            <ul class="list-unstyled text-capitalize">
-                                <li>
-                                    <a href="#"> design &amp; build</a>
-                                </li>
-                                <li>
-                                    <a href="#"> tiling &amp; painting</a>
-                                </li>
-                                <li>
-                                    <a href="#"> revonations</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-xs-4 col-sm-4 col-md-4">
-                            <ul class="list-unstyled text-capitalize">
-                                <li>
-                                    <a href="#"> management</a>
-                                </li>
-                                <li>
-                                    <a href="#"> wood flooring</a>
-                                </li>
-                                <li>
-                                    <a href="#"> work consulting</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-xs-4 col-sm-4 col-md-4">
-                            <ul class="list-unstyled text-capitalize">
-                                <li>
-                                    <a href="#"> wood flooring</a>
-                                </li>
-                                <li>
-                                    <a href="#"> green building</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
@@ -360,13 +354,17 @@
 
                         <!-- Mailchimp Form
                         =============================================-->
-                        <form class="mailchimp">
+                        <form action="/newsletter" method="post">
+                            @csrf
                             <div class="subscribe-alert">
                             </div>
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Type Your Email Account">
+                                <input type="text" class="form-control" name="email" placeholder="Type Your Email Account">
+                                @error('name')
+                                    <p style="color: red">{{ $message }}</p>
+                                @enderror
                                 <span class="input-group-btn">
-								<button class="btn text-capitalize" type="button">join</button>
+								<button class="btn text-capitalize" type="submit">join</button>
 								</span>
                             </div>
                             <!-- /input-group -->
@@ -384,7 +382,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12 copyrights text-center">
                 <p class="text-capitalize">© 2022 p property. all rights reserved</p>
                 <p class="text-capitalize">With Love by
-                    <a href="http://petarvukcevic.ml">petarvukcevic.ml</a>
+                    <a href="{{url('http://petarvukcevic.ml')}}">petarvukcevic.ml</a>
                 </p>
             </div>
         </div>
@@ -408,6 +406,12 @@
 <script type="text/javascript" src={{asset("assets/revolution/js/extensions/revolution.extension.navigation.min.js")}}></script>
 <script type="text/javascript" src={{asset("assets/revolution/js/extensions/revolution.extension.migration.min.js")}}></script>
 <script type="text/javascript" src={{asset("assets/revolution/js/extensions/revolution.extension.parallax.min.js")}}></script>
+
+<script type="text/javascript">
+    document.querySelector('#logout').addEventListener('click', function() {
+        document.querySelector('#logout-form').submit();
+    });
+</script>
 
 <script type="text/javascript">
     jQuery(document).ready(function() {
@@ -448,5 +452,7 @@
         });
     });
 </script>
+
+@yield('scripts')
 </body>
 </html>

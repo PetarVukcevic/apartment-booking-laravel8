@@ -19,22 +19,22 @@ class CitySeeder extends Seeder
         DB::table('cities')->insert([
             [
                 'id' => 1,
-                'name' => fake()->word(),
+                'name' => 'Podgorica',
                 'description' => fake()->text()
             ],
             [
                 'id' => 2,
-                'name' => fake()->word(),
+                'name' => 'Tivat',
                 'description' => fake()->text()
             ],
             [
                 'id' => 3,
-                'name' => fake()->word(),
+                'name' => 'Zabljak',
                 'description' => fake()->text()
             ],
             [
                 'id' => 4,
-                'name' => fake()->word(),
+                'name' => 'Berane',
                 'description' => fake()->text()
             ],
         ]);

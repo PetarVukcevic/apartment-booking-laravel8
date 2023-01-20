@@ -19,28 +19,74 @@ class RatingSeeder extends Seeder
     {
         DB::table('ratings')->insert([
             [
-                'user_id' => random_int(1, 4),
-                'apartment_id' => random_int(1, 4),
-                'grade' => 4.5,
-                'comment' => fake()->paragraph()
+                'user_id' => 1,
+                'apartment_id' => random_int(1, 12),
+                'grade' => 5,
+                'comment' => fake()->paragraph(),
+                'created_at' => '2023-01-17 08:28:57'
             ],
             [
-                'user_id' => random_int(1, 4),
-                'apartment_id' => random_int(1, 4),
-                'grade' => 4.5,
-                'comment' => fake()->paragraph()
+                'user_id' => 1,
+                'apartment_id' => random_int(1, 12),
+                'grade' => 5,
+                'comment' => fake()->paragraph(),
+                'created_at' => '2023-01-17 08:28:57'
             ],
             [
-                'user_id' => random_int(1, 4),
-                'apartment_id' => random_int(1, 4),
-                'grade' => 4.5,
-                'comment' => fake()->paragraph()
+                'user_id' => 1,
+                'apartment_id' => random_int(1, 12),
+                'grade' => 4,
+                'comment' => fake()->paragraph(),
+                'created_at' => '2023-01-17 08:28:57'
+
             ],
             [
-                'user_id' => random_int(1, 4),
-                'apartment_id' => random_int(1, 4),
-                'grade' => 4.5,
-                'comment' => fake()->paragraph()
+                'user_id' => 2,
+                'apartment_id' => random_int(1, 12),
+                'grade' => 3,
+                'comment' => fake()->paragraph(),
+                'created_at' => '2023-01-17 08:28:57'
+            ],
+            [
+                'user_id' => 1,
+                'apartment_id' => random_int(1, 12),
+                'grade' => 4,
+                'comment' => fake()->paragraph(),
+                'created_at' => '2023-01-17 08:28:57'
+            ],
+            [
+                'user_id' => 3,
+                'apartment_id' => random_int(1, 12),
+                'grade' => 5,
+                'comment' => fake()->paragraph(),
+                'created_at' => '2023-01-17 08:28:57'
+            ],
+            [
+                'user_id' => 4,
+                'apartment_id' => random_int(1, 12),
+                'grade' => 4,
+                'comment' => fake()->paragraph(),
+                'created_at' => '2023-01-17 08:28:57'
+            ],            [
+                'user_id' => 2,
+                'apartment_id' => random_int(1, 12),
+                'grade' => 3,
+                'comment' => fake()->paragraph(),
+                'created_at' => '2023-01-17 08:28:57'
+            ],
+            [
+                'user_id' => 1,
+                'apartment_id' => random_int(1, 12),
+                'grade' => 4,
+                'comment' => fake()->paragraph(),
+                'created_at' => '2023-01-17 08:28:57'
+            ],
+            [
+                'user_id' => 3,
+                'apartment_id' => random_int(1, 12),
+                'grade' => 5,
+                'comment' => fake()->paragraph(),
+                'created_at' => '2023-01-17 08:28:57'
             ],
         ]);
     }

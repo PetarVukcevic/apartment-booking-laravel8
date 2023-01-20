@@ -17,7 +17,7 @@ class CategorySidebar extends Component
     {
         return view('components.category-sidebar', [
             'categories' => Category::all(),
-            //'currentCategory' => Category::firstWhere('name',\request(('category')))
+//            'currentCategory' => Category::firstWhere('name',\request(('category')))
 
         ]);
     }

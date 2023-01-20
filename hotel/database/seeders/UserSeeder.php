@@ -25,7 +25,7 @@ class UserSeeder extends Seeder
                 'username' => 'petarvukcevic',
                 'email' => 'petarvukcevic@goldbear.me',
                 'phone_number' => fake()->phoneNumber(),
-                'password' => Hash::make('password') // password
+                'password' => '$2y$10$mi150b/u0qmXpcvoZYb04uqgabwSc.NzJoZNn9QOphwMKq.GCKRjy',
 
             ],
             [
@@ -35,7 +35,7 @@ class UserSeeder extends Seeder
                 'username' => fake()->unique()->userName(),
                 'email' => fake()->unique()->safeEmail(),
                 'phone_number' => fake()->phoneNumber(),
-                'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
+                'password' => '$2y$10$mi150b/u0qmXpcvoZYb04uqgabwSc.NzJoZNn9QOphwMKq.GCKRjy',
             ],
             [
                 'id' => 3,
@@ -44,7 +44,7 @@ class UserSeeder extends Seeder
                 'username' => 'markomarkovic',
                 'email' => 'markomarkovic@goldbear.me',
                 'phone_number' => fake()->phoneNumber(),
-                'password' => Hash::make('password')
+                'password' => '$2y$10$mi150b/u0qmXpcvoZYb04uqgabwSc.NzJoZNn9QOphwMKq.GCKRjy',
             ],
             [
                 'id' => 4,
@@ -55,7 +55,8 @@ class UserSeeder extends Seeder
                 'phone_number' => fake()->phoneNumber(),
                 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
             ],
+
         ]);
-        //
+
     }
 }

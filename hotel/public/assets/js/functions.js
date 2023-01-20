@@ -15,23 +15,23 @@
 	12. Ajax Campaignmonito
 	13. Ajax Contact Form
 	14. Ajax Quote Form
-	15. Ajax POPUP Quote Form 
+	15. Ajax POPUP Quote Form
 	16. Ajax POPUP Quote Form 2
 	17. Ajax Header POPUP Quote Form
 	18. MAGNIFIC POPUP
 	19. PROJECTS FLITER / SHOP FLITER
 	20. Shop Pricing Range
-*/	
+*/
 $(document).ready(function() {
     "use strict";
 
     /* ------------------  1.Loading Screen ------------------ */
-	
+
     $(window).on("load", function() {
         $(".preloader").fadeOut("slow");
         $(".preloader").remove();
     });
-	
+
     /* ------------------  2.Mobile Menu ------------------ */
 
     var $dropToggle = $("ul.dropdown-menu [data-toggle=dropdown]"),
@@ -458,15 +458,27 @@ $(document).ready(function() {
 
     var $sliderRange = $("#slider-range"),
         $sliderAmount = $("#amount");
+
     $sliderRange.slider({
         range: true,
         min: 0,
-        max: 500,
-        values: [50, 300],
-        slide: function(event, ui) {
-            $sliderAmount.val("$" + ui.values[0] + " - $" + ui.values[1]);
+        max: 1000,
+        step: 10,
+        values: [ minPrice, maxPrice ],
+        slide: function( event, ui ) {
+            $( "#minPrice" ).val(ui.values[ 0 ]);
+            $( "#maxPrice" ).val(ui.values[ 1 ]);
+            $sliderAmount.val(ui.values[0] + "€" + " - " + ui.values[1] + "€");
+
         }
     });
-    $sliderAmount.val("$" + $sliderRange.slider("values", 0) + " - $" + $sliderRange.slider("values", 1));
+
+    $sliderRange.slider( "values", 0, minPrice);
+    $sliderRange.slider( "values", 1, maxPrice);
+    $sliderAmount.val( $sliderRange.slider("values", 0) + "€" + " - " + $sliderRange.slider("values", 1) + "€");
+
+// date choosing
+
+
 
 }(jQuery));

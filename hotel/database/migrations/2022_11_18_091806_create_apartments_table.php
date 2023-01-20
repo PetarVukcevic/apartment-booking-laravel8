@@ -15,19 +15,22 @@ return new class extends Migration
     {
         Schema::create('apartments', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 30);
-            $table->foreignId('category_id');
-            $table->foreignId('city_id');
-            $table->foreignId('user_id');
+            $table->string('title', 255);
+            $table->string('slug', 255);
+            $table->foreignId('category_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('city_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->integer('rooms');
             $table->float('price');
             $table->text('description');
-            $table->string('img_url');
-            $table->string('address',100);
+            $table->string('profile_img');
+            $table->string('view_img');
+            $table->string('lg_profile_img');
+            $table->string('address',255);
             $table->integer('adults');
             $table->integer('children')->nullable();
             $table->timestamps();
-            $table->boolean('deleted')->nullable();
+            $table->softDeletes();
         });
     }
 
