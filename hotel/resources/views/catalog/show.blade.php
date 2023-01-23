@@ -113,7 +113,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="product-review text-left text-center-xs mt-md">
+                        <div class="product-review text-left text-center-xs {{ $apartment->children === null ? 'mt-md' : ''}}">
 							<x-rating-stars :average="$apartment->ratings->average('grade')"/>
                             <span>{{ $apartment->ratings->count() }} Review(s)</span>
                             /

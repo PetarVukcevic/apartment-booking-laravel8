@@ -68,7 +68,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-4">
                     <div class="project-widget project-block">
                         <div class="project-title">
-                            <a class="bold pull-right font-18" href="{{ url('catalog') }}">Back</a>
+                            <a class="bold pull-right font-18" href="{{ url()->previous() }}">Back</a>
 
                             <h3>{{ $booking->apartment->title }}</h3>
 
