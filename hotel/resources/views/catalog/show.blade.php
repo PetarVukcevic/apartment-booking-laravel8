@@ -40,6 +40,7 @@
 {{--    apartment     --}}
     <section class="single-project pb-0">
         <div class="container">
+
             @auth()
                 @if($apartment->landlord->id === auth()->user()->id)
                     <h2>This is your apartment.</h2>
@@ -50,6 +51,9 @@
                         <a href="{{ url('booking/' . $apartment->slug) }}">Book {{ $apartment->title }} now.</a>
                     </h2>
                 @endif
+            @else
+                <h2><a href="{{ url('register') }}">Register</a> or <a href="{{ url('login') }}">Log in</a> to book the apartment.</h2>
+
 
             @endauth
             <div class="row">

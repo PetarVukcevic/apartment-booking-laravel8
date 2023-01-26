@@ -55,7 +55,7 @@
                              data-fontweight="['700','500','600','300']"
                              data-color="#ffc527" style="font-family: montserrat;"
                         >
-                            <h1 style="color:#ffc527; font-size:55px;">P Property Construction</h1>
+                            <h1 style="color:#ffc527; font-size:55px;">P Property</h1>
                         </div>
 
                         <!-- LAYER NR. 3 -->
